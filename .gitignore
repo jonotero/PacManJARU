@@ -1,0 +1,17 @@
+# JARU compiler-generated files
+*.compiled
+*.o
+*.or
+*.ppu
+*.rst
+*.a
+
+# JARU backup files
+*.bak
+*~
+
+# JARU local files (user-specific)
+*.lps
+
+# Build directory
+Build/
