@@ -155,46 +155,110 @@ class ObjPacMan
 
     end
 
-    def elegirDireccion()
+  def elegirDireccion()
         var celdaActual = CoordenadasACelda(this.x, this.y)
         var columnaActual = celdaActual[0]
         var filaActual = celdaActual[1]
 
-        var direccionesValidas = []
+        // --- PASO 1: Encontrar el fantasma más cercano y evaluar el nivel de amenaza ---
+        var fantasmaMasCercano = nil
+        var distanciaMinima = 99999
+        foreach (var ghost in ghosts)
+            if (ghost.active) then
+                var celdaFantasma = CoordenadasACelda(ghost.x, ghost.y)
+                var distancia = CalcularDistancia(columnaActual, filaActual, celdaFantasma[0], celdaFantasma[1])
+                if (distancia < distanciaMinima) then
+                    distanciaMinima = distancia
+                    fantasmaMasCercano = ghost
+                end
+            end
+        end
 
-        if (EsCeldaTransitable(columnaActual, filaActual - 1)) then
-            direccionesValidas.insert(DIRECTION.UP)
-        end
-        if (EsCeldaTransitable(columnaActual, filaActual + 1)) then
-            direccionesValidas.insert(DIRECTION.DOWN)
-        end
-        if (EsCeldaTransitable(columnaActual - 1, filaActual)) then
-            direccionesValidas.insert(DIRECTION.LEFT)
-        end
-        if (EsCeldaTransitable(columnaActual + 1, filaActual)) then
-            direccionesValidas.insert(DIRECTION.RIGHT)
-        end
+        // --- UMBRAL DE PELIGRO ---
+        // Si un fantasma está a 7 casillas o menos, entramos en "Modo Huida".
+        // Puedes cambiar este valor para hacerlo más valiente (un número más bajo) o más cauto.
+        const UMBRAL_PELIGRO = 7
 
-        if (direccionesValidas.size() > 0) then
-            var indiceAleatorio = random(0, direccionesValidas.size() - 1)
-            this.direction=direccionesValidas[indiceAleatorio]
+        if (fantasmaMasCercano != nil and distanciaMinima <= UMBRAL_PELIGRO) then
+            // =================================================
+            // MODO HUIDA: El fantasma está demasiado cerca.
+            // =================================================
+            var celdaFantasmaCercano = CoordenadasACelda(fantasmaMasCercano.x, fantasmaMasCercano.y)
+            var mejorDireccion = nil
+            var mejorDistancia = -1
+            var direccionOpuesta = ObtenerDireccionOpuesta(this.direction)
+            var direccionesValidas = []
+
+            // Buscamos la dirección que nos aleje más.
+            if (EsCeldaTransitable(columnaActual, filaActual - 1)) then direccionesValidas.insert(DIRECTION.UP) end
+            if (EsCeldaTransitable(columnaActual, filaActual + 1)) then direccionesValidas.insert(DIRECTION.DOWN) end
+            if (EsCeldaTransitable(columnaActual - 1, filaActual)) then direccionesValidas.insert(DIRECTION.LEFT) end
+            if (EsCeldaTransitable(columnaActual + 1, filaActual)) then direccionesValidas.insert(DIRECTION.RIGHT) end
+
+            foreach (var direccion in direccionesValidas)
+                var celdaDestino = NextCellView(direccion, columnaActual, filaActual)
+                var distanciaEvaluada = CalcularDistancia(celdaDestino[0], celdaDestino[1], celdaFantasmaCercano[0], celdaFantasmaCercano[1])
+                if (distanciaEvaluada > mejorDistancia) then
+                    mejorDistancia = distanciaEvaluada
+                    mejorDireccion = direccion
+                end
+            end
+
+            if(mejorDireccion != nil) then this.direction = mejorDireccion end
+
+        else
+            // =================================================
+            // MODO BÚSQUEDA: No hay peligro, a comer puntos.
+            // =================================================
+            var mejorDireccion = nil
+            var mejorPuntuacion = -1.0
+
+            var direccionOpuesta = ObtenerDireccionOpuesta(this.direction)
+            var direccionesValidas = []
+            if (EsCeldaTransitable(columnaActual, filaActual - 1) and DIRECTION.UP != direccionOpuesta) then direccionesValidas.insert(DIRECTION.UP) end
+            if (EsCeldaTransitable(columnaActual, filaActual + 1) and DIRECTION.DOWN != direccionOpuesta) then direccionesValidas.insert(DIRECTION.DOWN) end
+            if (EsCeldaTransitable(columnaActual - 1, filaActual) and DIRECTION.LEFT != direccionOpuesta) then direccionesValidas.insert(DIRECTION.LEFT) end
+            if (EsCeldaTransitable(columnaActual + 1, filaActual) and DIRECTION.RIGHT != direccionOpuesta) then direccionesValidas.insert(DIRECTION.RIGHT) end
+
+            foreach (var direccion in direccionesValidas)
+                var celdaDestino = NextCellView(direccion, columnaActual, filaActual)
+                var contenidoCelda = mapa[celdaDestino[1]][celdaDestino[0]]
+                var puntuacion = 0.0
+
+                if (contenidoCelda == 2) then puntuacion = 10.0 // Bonus por punto
+                elsif (contenidoCelda == 3) then puntuacion = 50.0 // Bonus alto por píldora de poder
+                elsif (contenidoCelda == 1) then puntuacion = 1.0 // Un pasillo vacío es mejor que nada
+                end
+
+                // Bonus de persistencia para evitar dudas
+                if (direccion == this.direction) then
+                    puntuacion += 0.5
+                end
+
+                if (puntuacion > mejorPuntuacion) then
+                    mejorPuntuacion = puntuacion
+                    mejorDireccion = direccion
+                end
+            end
+
+            if (mejorDireccion == nil) then // Callejón sin salida
+                var celdaOpuesta = NextCellView(direccionOpuesta, columnaActual, filaActual)
+                if (EsCeldaTransitable(celdaOpuesta[0], celdaOpuesta[1])) then this.direction = direccionOpuesta end
+            else
+                this.direction = mejorDireccion
+            end
         end
     end
 
-    def update(direction)
+  def update(direction)
         var nuevaX = this.x;
         var nuevaY = this.y;
-        var celdaActual=CoordenadasACelda(this.x,this.y)
+        var celdaActual = CoordenadasACelda(this.x,this.y)
 
-        if (this.status==STATE.dead) then
-            return
-        end;
+        if (this.status==STATE.dead) then return end
+        if (CheckColisiones()) then this.status=STATE.dead; return end
 
-        if (CheckColisiones()) then
-            this.status=STATE.dead
-        end
-
-        // Movimiento y alineación
+        // Movimiento y alineación (sin cambios)
         if (this.direction == DIRECTION.UP or this.direction == DIRECTION.DOWN) then
             nuevaX = ((nuevaX - X_MAPINI) div CELL_SIZE) * CELL_SIZE
             nuevaY += (this.direction == DIRECTION.UP) ? -SPEED_PACMAN : SPEED_PACMAN
@@ -203,48 +267,29 @@ class ObjPacMan
             nuevaX += (this.direction == DIRECTION.LEFT) ? -SPEED_PACMAN : SPEED_PACMAN
         end
 
-        // Verificar si la nueva posición está dentro de los límites del laberinto y no es una pared
-        if (EsPosicionValida(nuevaX, nuevaY)) then
-            var nuevaCelda=CoordenadasACelda(this.x,this.y)
-            var nextCell=nuevaCelda
+        // --- LÓGICA DE DECISIÓN MEJORADA ---
+        var nextCell = CoordenadasACelda(nuevaX, nuevaY)
 
-            switch ( this.direction )
-                case DIRECTION.UP : nextCell[1]=nextCell[1]-1
-                case DIRECTION.DOWN :nextCell[1]=nextCell[1]+1
-                case DIRECTION.LEFT :nextCell[0]=nextCell[0]-1
-                case DIRECTION.RIGHT :nextCell[0]=nextCell[0]+1
-                default :
+        // Si la siguiente posición es transitable
+        if (EsCeldaTransitable(nextCell[0], nextCell[1])) then
+            // Si hemos entrado en una celda nueva, es momento de pensar.
+            if (celdaActual[0] != nextCell[0] or celdaActual[1] != nextCell[1]) then
+                this.elegirDireccion() // ¡Tomamos una decisión inteligente en CADA celda nueva!
             end
 
-            // Comprobar si es un muro la siguiente casilla
-            if (mapa[nextCell[1]][nextCell[0]]==0) then
-                var coord= CeldaACoordenadas(nuevaCelda[0],nuevaCelda[1])
-                nuevaX=coord[0]
-                nuevaY=coord[1]
-                this.elegirDireccion();
-            end
-            // Llamar a elegirDireccion si se ha cambiado de celda
-            if (celdaActual[0] != nuevaCelda[0] or celdaActual[1] != nuevaCelda[1]) then
+            this.x = nuevaX
+            this.y = nuevaY
 
-                var nuevaColumna = nuevaCelda[0]
-                var nuevaFila = nuevaCelda[1]
-                var auxCell=mapa[nuevaFila][nuevaColumna]
-                if (auxCell==2 ) then
-                    PlayerScore+=10
-                    mapa[nuevaFila][nuevaColumna]=1;
-                elsif(auxCell==3) then
-                    PlayerScore+=50
-                    mapa[nuevaFila][nuevaColumna]=1;
-                end
-                if (auxCell!=0 and auxCell!=4 ) then
-                    this.x=nuevaX
-                    this.y=nuevaY
-                end;
-            end
-        else
-            this.elegirDireccion();
+            // Lógica para comer puntos
+            var celdaContenido = mapa[nextCell[1]][nextCell[0]]
+            if (celdaContenido == 2) then PlayerScore+=10; mapa[nextCell[1]][nextCell[0]]=1; end
+            if (celdaContenido == 3) then PlayerScore+=50; mapa[nextCell[1]][nextCell[0]]=1; end
+
+        else // Si la siguiente posición es un muro
+            this.elegirDireccion() // Forzamos una decisión para girar
         end
     end
+
 
 end
 
@@ -693,6 +738,21 @@ func PlayGame()
         // Si Pac-Man no ha muerto, lo dibujamos normalmente.
         PACMAN.draw()
     end
+end
+
+// Devuelve el centro exacto del pasillo para una celda.
+func GetCentroDeCelda(columna, fila)
+    // Usamos el offset visual de +3 que sabemos que se alinea con los puntos.
+    var x = X_MAPINI + columna * CELL_SIZE + 3
+    var y = Y_MAPINI + fila * CELL_SIZE + 3
+    return [x, y]
+end
+
+// Comprueba si el personaje está en el centro de una celda para poder girar.
+func EstaEnCentro(x, y)
+    var celda = CoordenadasACelda(x, y)
+    var centro = GetCentroDeCelda(celda[0], celda[1])
+    return (x == centro[0] and y == centro[1])
 end
 
 // =================================================================
