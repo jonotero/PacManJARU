@@ -87,75 +87,26 @@ end
 
 class ObjPacMan
     def init()
-        var animSpeed=70 // Milisegundos
+        var celdaInicial = GetCentroDeCelda(X_CELDA_INICIAL_PACMAN, Y_CELDA_INICIAL_PACMAN)
+        this.x = celdaInicial[0]
+        this.y = celdaInicial[1]
 
-        this.x=X_INICIAL_PACMAN
-        this.y=Y_INICIAL_PACMAN
-        this.direction=DIRECTION.RIGHT
-        this.dying=false;
-        this.status=STATE.chase;
-        this.sprRight=Sprite.load("Sprites/PacMan/PacManR.spr")
-        this.sprRight.ping_pong=true;
-        this.sprRight.pos=[X_INICIAL_PACMAN,Y_INICIAL_PACMAN]
-        this.sprRight.pivot=[4,4]
-        this.sprRight.animation_speed=animSpeed;
+        this.direction = DIRECTION.LEFT
+        this.nextDirection = DIRECTION.LEFT
+        this.status = STATE.chase
+        this.active = true
 
-        this.sprLeft=Sprite.load("Sprites/PacMan/PacManL.spr")
-        this.sprLeft.pivot=[4,4]
-        this.sprLeft.ping_pong=true;
-        this.sprLeft.pos=[X_INICIAL_PACMAN,Y_INICIAL_PACMAN]
-        this.sprLeft.animation_speed=animSpeed;
-
-        this.sprUp=Sprite.load("Sprites/PacMan/PacManU")
-        this.sprUp.pivot=[4,4]
-        this.sprUp.ping_pong=true;
-        this.sprUp.pos=[X_INICIAL_PACMAN,Y_INICIAL_PACMAN]
-        this.sprUp.animation_speed=animSpeed;
-
-        this.sprDown=Sprite.load("Sprites/PacMan/PacManD")
-        this.sprDown.pivot=[4,4]
-        this.sprDown.ping_pong=true;
-        this.sprDown.pos=[X_INICIAL_PACMAN,Y_INICIAL_PACMAN]
-        this.sprDown.animation_speed=animSpeed;
-
-        this.sprDeath=Sprite.load("Sprites/PacMan/PacManDeath.spr")
-        this.sprDeath.pos=[X_INICIAL_PACMAN,Y_INICIAL_PACMAN]
-        this.sprDeath.anim_repeat(false)
-        this.sprDeath.pivot=[4,4]
-        this.sprDeath.animation_speed=100;
+        // --- Carga de Sprites (sin cambios, pivotes en 4,4) ---
+        var animSpeed = 70
+        this.sprRight=Sprite.load("Sprites/PacMan/PacManR.spr"); this.sprRight.ping_pong=true; this.sprRight.pivot=[4,4]; this.sprRight.animation_speed=animSpeed;
+        this.sprLeft=Sprite.load("Sprites/PacMan/PacManL.spr"); this.sprLeft.ping_pong=true; this.sprLeft.pivot=[4,4]; this.sprLeft.animation_speed=animSpeed;
+        this.sprUp=Sprite.load("Sprites/PacMan/PacManU.spr"); this.sprUp.ping_pong=true; this.sprUp.pivot=[4,4]; this.sprUp.animation_speed=animSpeed;
+        this.sprDown=Sprite.load("Sprites/PacMan/PacManD.spr"); this.sprDown.ping_pong=true; this.sprDown.pivot=[4,4]; this.sprDown.animation_speed=animSpeed;
+        this.sprDeath=Sprite.load("Sprites/PacMan/PacManDeath.spr"); this.sprDeath.anim_repeat(false); this.sprDeath.pivot=[4,4]; this.sprDeath.animation_speed=100;
     end
 
-    // Reinicia la posicion y demas parametros
-    def reset()
-        println("Reset Pacman")
-        this.status=STATE.chase
-        this.active=true
-        this.dying=false
-        this.sprDeath.active(true)
-    end
-
-    // Dibuja el pacman en pantalla
-    def draw()
-        if (this.status==STATE.dead) then
-            this.sprDeath.pos=[this.x, this.y]
-            draw.sprite(this.sprDeath);
-        elsif (this.direction==DIRECTION.RIGHT) then
-            this.sprRight.pos=[this.x, this.y]
-            draw.sprite(this.sprRight);
-        elsif (this.direction==DIRECTION.LEFT) then
-            this.sprLeft.pos=[this.x, this.y]
-            draw.sprite(this.sprLeft);
-        elsif (this.direction==DIRECTION.UP) then
-            this.sprUp.pos=[this.x, this.y]
-            draw.sprite(this.sprUp);
-        elsif (this.direction==DIRECTION.DOWN) then
-            this.sprDown.pos=[this.x, this.y]
-            draw.sprite(this.sprDown);
-        end;
-
-    end
-
-  def elegirDireccion()
+    // La IA solo establece la "próxima" dirección a tomar.
+    def elegirDireccion()
         var celdaActual = CoordenadasACelda(this.x, this.y)
         var columnaActual = celdaActual[0]
         var filaActual = celdaActual[1]
@@ -174,123 +125,129 @@ class ObjPacMan
             end
         end
 
-        // --- UMBRAL DE PELIGRO ---
-        // Si un fantasma está a 7 casillas o menos, entramos en "Modo Huida".
-        // Puedes cambiar este valor para hacerlo más valiente (un número más bajo) o más cauto.
         const UMBRAL_PELIGRO = 7
-
         if (fantasmaMasCercano != nil and distanciaMinima <= UMBRAL_PELIGRO) then
-            // =================================================
-            // MODO HUIDA: El fantasma está demasiado cerca.
-            // =================================================
-            var celdaFantasmaCercano = CoordenadasACelda(fantasmaMasCercano.x, fantasmaMasCercano.y)
-            var mejorDireccion = nil
-            var mejorDistancia = -1
-            var direccionOpuesta = ObtenerDireccionOpuesta(this.direction)
-            var direccionesValidas = []
-
-            // Buscamos la dirección que nos aleje más.
-            if (EsCeldaTransitable(columnaActual, filaActual - 1)) then direccionesValidas.insert(DIRECTION.UP) end
-            if (EsCeldaTransitable(columnaActual, filaActual + 1)) then direccionesValidas.insert(DIRECTION.DOWN) end
-            if (EsCeldaTransitable(columnaActual - 1, filaActual)) then direccionesValidas.insert(DIRECTION.LEFT) end
-            if (EsCeldaTransitable(columnaActual + 1, filaActual)) then direccionesValidas.insert(DIRECTION.RIGHT) end
-
-            foreach (var direccion in direccionesValidas)
-                var celdaDestino = NextCellView(direccion, columnaActual, filaActual)
-                var distanciaEvaluada = CalcularDistancia(celdaDestino[0], celdaDestino[1], celdaFantasmaCercano[0], celdaFantasmaCercano[1])
-                if (distanciaEvaluada > mejorDistancia) then
-                    mejorDistancia = distanciaEvaluada
-                    mejorDireccion = direccion
+            // --- MODO HUIDA: (Lógica sin cambios) ---
+            var celdaFantasma = CoordenadasACelda(fantasmaMasCercano.x, fantasmaMasCercano.y)
+            var mejorDir = nil
+            var maxPunt = -1.0
+            var dirs = [DIRECTION.UP, DIRECTION.DOWN, DIRECTION.LEFT, DIRECTION.RIGHT]
+            foreach (var dir in dirs)
+                var celdaPrueba = NextCellView(dir, columnaActual, filaActual)
+                if (EsCeldaTransitable(celdaPrueba[0], celdaPrueba[1])) then
+                    var punt = CalcularDistancia(celdaPrueba[0], celdaPrueba[1], celdaFantasma[0], celdaFantasma[1]) + 0.0
+                    if (dir == this.direction) then punt += 0.5 end
+                    if (punt > maxPunt) then
+                        maxPunt = punt
+                        mejorDir = dir
+                    end
                 end
             end
-
-            if(mejorDireccion != nil) then this.direction = mejorDireccion end
-
+            if (mejorDir != nil) then this.nextDirection = mejorDir end
         else
-            // =================================================
-            // MODO BÚSQUEDA: No hay peligro, a comer puntos.
-            // =================================================
-            var mejorDireccion = nil
-            var mejorPuntuacion = -1.0
-
+            // --- MODO BÚSQUEDA: CON SISTEMA DE PUNTUACIÓN REFINADO ---
+            var mejorDir = nil
+            var maxPunt = -1.0
             var direccionOpuesta = ObtenerDireccionOpuesta(this.direction)
-            var direccionesValidas = []
-            if (EsCeldaTransitable(columnaActual, filaActual - 1) and DIRECTION.UP != direccionOpuesta) then direccionesValidas.insert(DIRECTION.UP) end
-            if (EsCeldaTransitable(columnaActual, filaActual + 1) and DIRECTION.DOWN != direccionOpuesta) then direccionesValidas.insert(DIRECTION.DOWN) end
-            if (EsCeldaTransitable(columnaActual - 1, filaActual) and DIRECTION.LEFT != direccionOpuesta) then direccionesValidas.insert(DIRECTION.LEFT) end
-            if (EsCeldaTransitable(columnaActual + 1, filaActual) and DIRECTION.RIGHT != direccionOpuesta) then direccionesValidas.insert(DIRECTION.RIGHT) end
+            var dirs = [DIRECTION.UP, DIRECTION.DOWN, DIRECTION.LEFT, DIRECTION.RIGHT]
+            foreach (var dir in dirs)
+                if (dir == direccionOpuesta) then continue end
 
-            foreach (var direccion in direccionesValidas)
-                var celdaDestino = NextCellView(direccion, columnaActual, filaActual)
-                var contenidoCelda = mapa[celdaDestino[1]][celdaDestino[0]]
-                var puntuacion = 0.0
+                var celdaPrueba = NextCellView(dir, celdaActual[0], celdaActual[1])
+                if (EsCeldaTransitable(celdaPrueba[0], celdaPrueba[1])) then
+                    var contenido = mapa[celdaPrueba[1]][celdaPrueba[0]]
+                    var punt = 0.0
 
-                if (contenidoCelda == 2) then puntuacion = 10.0 // Bonus por punto
-                elsif (contenidoCelda == 3) then puntuacion = 50.0 // Bonus alto por píldora de poder
-                elsif (contenidoCelda == 1) then puntuacion = 1.0 // Un pasillo vacío es mejor que nada
-                end
+                    // --- INICIO DEL NUEVO SISTEMA DE PUNTUACIÓN ---
+                    if (contenido == 3) then      // 1. Píldora de poder = Máxima prioridad
+                        punt = 100.0
+                    elsif (contenido == 2) then // 2. Punto normal = Alta prioridad
+                        punt = 50.0
+                    elsif (contenido == 1) then // 3. Pasillo vacío = Baja prioridad
+                        punt = 1.0
+                    end
+                    // --- FIN DEL NUEVO SISTEMA DE PUNTUACIÓN ---
 
-                // Bonus de persistencia para evitar dudas
-                if (direccion == this.direction) then
-                    puntuacion += 0.5
-                end
+                    if (dir == this.direction) then punt += 0.5 end // Bonus de persistencia
 
-                if (puntuacion > mejorPuntuacion) then
-                    mejorPuntuacion = puntuacion
-                    mejorDireccion = direccion
+                    if (punt > maxPunt) then
+                        maxPunt = punt
+                        mejorDir = dir
+                    end
                 end
             end
 
-            if (mejorDireccion == nil) then // Callejón sin salida
-                var celdaOpuesta = NextCellView(direccionOpuesta, columnaActual, filaActual)
-                if (EsCeldaTransitable(celdaOpuesta[0], celdaOpuesta[1])) then this.direction = direccionOpuesta end
-            else
-                this.direction = mejorDireccion
+            if (mejorDir == nil) then // Callejón sin salida
+                 var celdaOpuesta = NextCellView(direccionOpuesta, columnaActual, filaActual)
+                 if (EsCeldaTransitable(celdaOpuesta[0], celdaOpuesta[1])) then
+                    mejorDir = direccionOpuesta
+                 end
             end
+            if (mejorDir != nil) then this.nextDirection = mejorDir end
         end
     end
 
-  def update(direction)
-        var nuevaX = this.x;
-        var nuevaY = this.y;
-        var celdaActual = CoordenadasACelda(this.x,this.y)
+    // El nuevo update implementa un sistema de movimiento profesional.
+    def update()
+        if (this.status == STATE.dead) then return end
+        if (CheckColisiones()) then this.status = STATE.dead; return end
 
-        if (this.status==STATE.dead) then return end
-        if (CheckColisiones()) then this.status=STATE.dead; return end
+        var celdaActual = CoordenadasACelda(this.x, this.y)
 
-        // Movimiento y alineación (sin cambios)
-        if (this.direction == DIRECTION.UP or this.direction == DIRECTION.DOWN) then
-            nuevaX = ((nuevaX - X_MAPINI) div CELL_SIZE) * CELL_SIZE
-            nuevaY += (this.direction == DIRECTION.UP) ? -SPEED_PACMAN : SPEED_PACMAN
-        elsif (this.direction == DIRECTION.LEFT or this.direction == DIRECTION.RIGHT) then
-            nuevaY = ((nuevaY - Y_MAPINI) div CELL_SIZE) * CELL_SIZE + Y_MAPINI
-            nuevaX += (this.direction == DIRECTION.LEFT) ? -SPEED_PACMAN : SPEED_PACMAN
+        // Lógica de Giro: Solo podemos girar si estamos en el centro de una celda.
+        if (EstaEnCentro(this.x, this.y)) then
+            // Primero, comemos el punto si lo hay y decidimos la próxima dirección.
+            var celda = mapa[celdaActual[1]][celdaActual[0]]
+            if (celda == 2) then PlayerScore += 10; mapa[celdaActual[1]][celdaActual[0]] = 1; end
+            if (celda == 3) then PlayerScore += 50; mapa[celdaActual[1]][celdaActual[0]] = 1; end // TODO: Activar modo huida
+
+            this.elegirDireccion()
+
+            // Ahora, intentamos tomar la "próxima dirección" deseada.
+            var celdaSiguiente = NextCellView(this.nextDirection, celdaActual[0], celdaActual[1])
+            if (EsCeldaTransitable(celdaSiguiente[0], celdaSiguiente[1])) then
+                this.direction = this.nextDirection
+            end
         end
 
-        // --- LÓGICA DE DECISIÓN MEJORADA ---
-        var nextCell = CoordenadasACelda(nuevaX, nuevaY)
-
-        // Si la siguiente posición es transitable
-        if (EsCeldaTransitable(nextCell[0], nextCell[1])) then
-            // Si hemos entrado en una celda nueva, es momento de pensar.
-            if (celdaActual[0] != nextCell[0] or celdaActual[1] != nextCell[1]) then
-                this.elegirDireccion() // ¡Tomamos una decisión inteligente en CADA celda nueva!
-            end
-
-            this.x = nuevaX
-            this.y = nuevaY
-
-            // Lógica para comer puntos
-            var celdaContenido = mapa[nextCell[1]][nextCell[0]]
-            if (celdaContenido == 2) then PlayerScore+=10; mapa[nextCell[1]][nextCell[0]]=1; end
-            if (celdaContenido == 3) then PlayerScore+=50; mapa[nextCell[1]][nextCell[0]]=1; end
-
-        else // Si la siguiente posición es un muro
-            this.elegirDireccion() // Forzamos una decisión para girar
+        // Lógica de Movimiento: Avanzamos o nos detenemos.
+        var celdaSiguiente = NextCellView(this.direction, celdaActual[0], celdaActual[1])
+        if (EstaEnCentro(this.x, this.y) and !EsCeldaTransitable(celdaSiguiente[0], celdaSiguiente[1])) then
+            // Estamos en un centro y de cara a un muro: nos detenemos.
+        else
+            // Avanzamos en la dirección actual.
+            if (this.direction == DIRECTION.UP) then this.y -= SPEED_PACMAN end
+            if (this.direction == DIRECTION.DOWN) then this.y += SPEED_PACMAN end
+            if (this.direction == DIRECTION.LEFT) then this.x -= SPEED_PACMAN end
+            if (this.direction == DIRECTION.RIGHT) then this.x += SPEED_PACMAN end
         end
     end
 
+    // Las funciones draw y reset no necesitan cambios.
+    def draw()
+        if (this.status==STATE.dead) then this.sprDeath.pos=[this.x, this.y]; draw.sprite(this.sprDeath);
+        elsif (this.direction==DIRECTION.RIGHT) then this.sprRight.pos=[this.x, this.y]; draw.sprite(this.sprRight);
+        elsif (this.direction==DIRECTION.LEFT) then this.sprLeft.pos=[this.x, this.y]; draw.sprite(this.sprLeft);
+        elsif (this.direction==DIRECTION.UP) then this.sprUp.pos=[this.x, this.y]; draw.sprite(this.sprUp);
+        elsif (this.direction==DIRECTION.DOWN) then this.sprDown.pos=[this.x, this.y]; draw.sprite(this.sprDown);
+        end;
+    end
 
+   def reset()
+        println("Reiniciando Pac-Man a su estado inicial.")
+        var celdaInicial = GetCentroDeCelda(X_CELDA_INICIAL_PACMAN, Y_CELDA_INICIAL_PACMAN)
+        this.x = celdaInicial[0]
+        this.y = celdaInicial[1]
+
+        this.direction = DIRECTION.LEFT
+        this.nextDirection = DIRECTION.LEFT
+        this.status = STATE.chase
+        this.active = true
+
+        // Reinicia el sprite de la animación de muerte
+        this.sprDeath.active(true)
+        this.sprDeath.next_frame(0)
+    end
 end
 
 class ObjGhost
@@ -725,7 +682,7 @@ func PlayGame()
     end
 
     // 2. Actualizar a Pac-Man
-    PACMAN.update(PACMAN.direction) // Aquí dentro se comprueban colisiones y se cambia PACMAN.status
+    PACMAN.update() // Aquí dentro se comprueban colisiones y se cambia PACMAN.status
 
     // 3. Comprobar si Pac-Man ha muerto en esta actualización
     if (PACMAN.status == STATE.dead) then
@@ -759,45 +716,28 @@ end
 // El pacman ha sido comido
 // =================================================================
 func LifeLost()
-    // Primero, ocultamos los fantasmas durante la animación de muerte
     foreach (var ghost in ghosts)
         ghost.active = false;
     end
 
-    // Dibujamos a Pac-Man. Esto mostrará la animación de muerte
-    // porque su estado interno (PACMAN.status) es STATE.dead.
     PACMAN.draw()
 
-    // Ahora, comprobamos si la animación de muerte ya ha terminado.
-    // El motor C++ desactiva el sprite (`active` se vuelve `false`) cuando termina.
     if (!PACMAN.sprDeath.active()) then
-
-        // La animación ha terminado. Ahora decidimos qué hacer.
+        // La animación de muerte ha terminado.
         if (PlayerLives <= 0) then
-            // No quedan vidas, fin del juego.
             println("GAME OVER !!!")
             StatusGame = GAME_STATE.gameover
         else
-            // Aún quedan vidas. Reseteamos la escena para continuar.
+            // Reseteamos el nivel para la siguiente vida.
             println("Animación de muerte terminada. Reiniciando nivel.")
 
-            // Reseteamos la posición y estado de Pac-Man
-            PACMAN.x = X_INICIAL_PACMAN
-            PACMAN.y = Y_INICIAL_PACMAN
-            PACMAN.status = STATE.chase
+            // Usamos los métodos de reset de cada objeto para un reinicio limpio.
+            PACMAN.reset()
 
-            // **LA CORRECCIÓN ESENCIAL:**
-            // Re-activamos el sprite de muerte y lo reiniciamos al primer fotograma
-            // para que esté listo para la próxima vez.
-            PACMAN.sprDeath.active(true)
-            PACMAN.sprDeath.next_frame(0)
-
-            // Reseteamos los fantasmas a sus posiciones iniciales
             foreach(var ghost in ghosts)
                 ghost.reset()
             end
 
-            // Volvemos al estado de juego normal
             StatusGame = GAME_STATE.playing
         end
     end
