@@ -48,6 +48,9 @@ var FRAMEPAUSE
 
 
 var imgPacBonus = Sprite.load("Sprites/PacBonus.spr")
+var pacmanHud =Sprite.load("Sprites/PacManHud.spr")
+pacmanHud.pivot=[0,0]
+
 imgPacBonus.animation_speed=0
 imgPacBonus.pivot=[3,3]
 
@@ -491,8 +494,8 @@ class ObjGhost
 
         // El centro matemático de un pasillo de 8 píxeles es 4.
         // Cambia estos valores de 1 en 1 para mover a los fantasmas.
-        const AJUSTE_X = 0 // Si están muy a la DERECHA, prueba con 2. Si están a la IZQUIERDA, prueba con 5.
-        const AJUSTE_Y = 0 // Si están muy ABAJO, prueba con 2. Si están muy ARRIBA, prueba con 5.
+        const AJUSTE_X = 3 // Si están muy a la DERECHA, prueba con 2. Si están a la IZQUIERDA, prueba con 5.
+        const AJUSTE_Y = 3 // Si están muy ABAJO, prueba con 2. Si están muy ARRIBA, prueba con 5.
 
         // Calculamos la esquina superior-izquierda del carril.
         var carrilX = X_MAPINI + celdaActual[0] * CELL_SIZE
@@ -810,11 +813,11 @@ end
 func DrawHUD ()
     draw.text(10,0,"Score: " ,0xffffff)
     draw.text(80,0,PlayerScore.string() ,0xffffff)
-    draw.rect_fill(0,272,32,16,0xFF0000)
-    //for (var a=0;a<PlayerLives-1;a++)
-    //    draw.sprite(
-    //    draw.bitmap(a*16+2,272,  imgPacMan[2])
-    //end
+    draw.rect_fill(0,274,32,16,0x000000)
+    for (var a=0;a<PlayerLives-1;a++)
+        pacmanHud.pos=[a*16+2,274]
+        draw.sprite(pacmanHud)
+    end
 end
 
 // Procesa la lógica del juego
