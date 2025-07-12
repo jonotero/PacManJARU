@@ -3697,2839 +3697,2842 @@ digraph{
     2073 [label="2073 Identifier\lnuevaColumna"]
     2074 -> 2076
     2076 [label="2076 Integer\l1"]
-    2042 -> 2084
-    2084 [label="2084 Block"]
-    2084 -> 2085
-    2085 [label="2085 Expression"]
-    2085 -> 2089
-    2089 [label="2089 Assign\l-------------\l="]
-    2089 -> 2087
-    2087 [label="2087 Infix Dot"]
-    2087 -> 2086
-    2086 [label="2086 this"]
-    2087 -> 2088
-    2088 [label="2088 Identifier\lx"]
-    2089 -> 2091
-    2091 [label="2091 Identifier\lnuevaX"]
-    2084 [label="2084 Block"]
-    2084 -> 2092
-    2092 [label="2092 Expression"]
-    2092 -> 2096
-    2096 [label="2096 Assign\l-------------\l="]
-    2096 -> 2094
-    2094 [label="2094 Infix Dot"]
-    2094 -> 2093
-    2093 [label="2093 this"]
-    2094 -> 2095
-    2095 [label="2095 Identifier\ly"]
-    2096 -> 2098
-    2098 [label="2098 Identifier\lnuevaY"]
+    2028 [label="2028 Block"]
+    2028 -> 2077
+    2077 [label="2077 If Then\l--------"]
+    2077 -> 2085
+    2085 [label="2085 Block"]
+    2085 -> 2086
+    2086 [label="2086 Expression"]
+    2086 -> 2090
+    2090 [label="2090 Assign\l-------------\l="]
+    2090 -> 2088
+    2088 [label="2088 Infix Dot"]
+    2088 -> 2087
+    2087 [label="2087 this"]
+    2088 -> 2089
+    2089 [label="2089 Identifier\lx"]
+    2090 -> 2092
+    2092 [label="2092 Identifier\lnuevaX"]
+    2085 [label="2085 Block"]
+    2085 -> 2093
+    2093 [label="2093 Expression"]
+    2093 -> 2097
+    2097 [label="2097 Assign\l-------------\l="]
+    2097 -> 2095
+    2095 [label="2095 Infix Dot"]
+    2095 -> 2094
+    2094 [label="2094 this"]
+    2095 -> 2096
+    2096 [label="2096 Identifier\ly"]
+    2097 -> 2099
+    2099 [label="2099 Identifier\lnuevaY"]
     0 [label="0 Root\l--------"]
-    0 -> 2105
-    2105 [label="2105 Class Declare\lObjGhost"]
-    2105 -> 2107
-    2107 [label="2107 Function Declare\l-----------------------\linit@1"]
-    2107 -> 2109
-    2109 [label="2109 Block"]
-    2109 -> 2110
-    2110 [label="2110 Var Declare\l-----------------\lanimSpeed"]
-    2111 [label ="2110 Var : animSpeed"]
+    0 -> 2106
+    2106 [label="2106 Class Declare\lObjGhost"]
+    2106 -> 2108
+    2108 [label="2108 Function Declare\l-----------------------\linit@1"]
+    2108 -> 2110
+    2110 [label="2110 Block"]
     2110 -> 2111
-    2111 [label="2111 Integer\l250"]
-    2109 [label="2109 Block"]
-    2109 -> 2112
-    2112 [label="2112 Var Declare\l-----------------\lcoordenadas"]
-    2113 [label ="2112 Var : coordenadas"]
-    2112 -> 2113
-    2113 [label="2113 Integer\l0"]
-    2109 [label="2109 Block"]
-    2109 -> 2114
-    2114 [label="2114 Expression"]
-    2114 -> 2118
-    2118 [label="2118 Assign\l-------------\l="]
-    2118 -> 2116
-    2116 [label="2116 Infix Dot"]
-    2116 -> 2115
-    2115 [label="2115 this"]
-    2116 -> 2117
-    2117 [label="2117 Identifier\lactive"]
-    2118 -> 2120
-    2120 [label="2120 Bool\l1"]
-    2109 [label="2109 Block"]
-    2109 -> 2121
-    2109 [label="2109 Block"]
-    2109 -> 2479
-    2479 [label="2479 Expression"]
-    2479 -> 2483
-    2483 [label="2483 Assign\l-------------\l="]
-    2483 -> 2481
-    2481 [label="2481 Infix Dot"]
-    2481 -> 2480
-    2480 [label="2480 this"]
-    2481 -> 2482
-    2482 [label="2482 Identifier\lx"]
-    2483 -> 2486
-    2486 [label="2486 Index Expr\l"]
-    2486 -> 2485
-    2485 [label="2485 Identifier\lcoordenadas"]
-    2486 -> 2487
-    2487 [label="2487 Integer\l0"]
-    2109 [label="2109 Block"]
-    2109 -> 2488
-    2488 [label="2488 Expression"]
-    2488 -> 2492
-    2492 [label="2492 Assign\l-------------\l="]
-    2492 -> 2490
-    2490 [label="2490 Infix Dot"]
-    2490 -> 2489
-    2489 [label="2489 this"]
-    2490 -> 2491
-    2491 [label="2491 Identifier\ly"]
-    2492 -> 2495
-    2495 [label="2495 Index Expr\l"]
-    2495 -> 2494
-    2494 [label="2494 Identifier\lcoordenadas"]
-    2495 -> 2496
-    2496 [label="2496 Integer\l1"]
-    2109 [label="2109 Block"]
-    2109 -> 2497
-    2497 [label="2497 Expression"]
-    2497 -> 2501
-    2501 [label="2501 Assign\l-------------\l="]
-    2501 -> 2499
-    2499 [label="2499 Infix Dot"]
-    2499 -> 2498
-    2498 [label="2498 this"]
-    2499 -> 2500
-    2500 [label="2500 Identifier\ldirection"]
-    2501 -> 2504
-    2504 [label="2504 Call\lrandom()"]
-    2504 -> 2505
-    2505 [label="2505 Integer\l0"]
-    2504 -> 2506
-    2506 [label="2506 Integer\l3"]
-    2109 [label="2109 Block"]
-    2109 -> 2507
-    2507 [label="2507 Expression"]
-    2507 -> 2513
-    2513 [label="2513 Assign\l-------------\l="]
-    2513 -> 2511
-    2511 [label="2511 Infix Dot"]
-    2511 -> 2509
-    2509 [label="2509 Infix Dot"]
-    2509 -> 2508
-    2508 [label="2508 this"]
-    2509 -> 2510
-    2510 [label="2510 Identifier\lsprLeft"]
-    2511 -> 2512
-    2512 [label="2512 Identifier\lpivot"]
-    2513 -> 2515
-    2515 [label="2515 List"]
-    2515 -> 2516
-    2516 [label="2516 Integer\l4"]
-    2515 -> 2517
+    2111 [label="2111 Var Declare\l-----------------\lanimSpeed"]
+    2112 [label ="2111 Var : animSpeed"]
+    2111 -> 2112
+    2112 [label="2112 Integer\l250"]
+    2110 [label="2110 Block"]
+    2110 -> 2113
+    2113 [label="2113 Var Declare\l-----------------\lcoordenadas"]
+    2114 [label ="2113 Var : coordenadas"]
+    2113 -> 2114
+    2114 [label="2114 Integer\l0"]
+    2110 [label="2110 Block"]
+    2110 -> 2115
+    2115 [label="2115 Expression"]
+    2115 -> 2119
+    2119 [label="2119 Assign\l-------------\l="]
+    2119 -> 2117
+    2117 [label="2117 Infix Dot"]
+    2117 -> 2116
+    2116 [label="2116 this"]
+    2117 -> 2118
+    2118 [label="2118 Identifier\lactive"]
+    2119 -> 2121
+    2121 [label="2121 Bool\l1"]
+    2110 [label="2110 Block"]
+    2110 -> 2122
+    2110 [label="2110 Block"]
+    2110 -> 2480
+    2480 [label="2480 Expression"]
+    2480 -> 2484
+    2484 [label="2484 Assign\l-------------\l="]
+    2484 -> 2482
+    2482 [label="2482 Infix Dot"]
+    2482 -> 2481
+    2481 [label="2481 this"]
+    2482 -> 2483
+    2483 [label="2483 Identifier\lx"]
+    2484 -> 2487
+    2487 [label="2487 Index Expr\l"]
+    2487 -> 2486
+    2486 [label="2486 Identifier\lcoordenadas"]
+    2487 -> 2488
+    2488 [label="2488 Integer\l0"]
+    2110 [label="2110 Block"]
+    2110 -> 2489
+    2489 [label="2489 Expression"]
+    2489 -> 2493
+    2493 [label="2493 Assign\l-------------\l="]
+    2493 -> 2491
+    2491 [label="2491 Infix Dot"]
+    2491 -> 2490
+    2490 [label="2490 this"]
+    2491 -> 2492
+    2492 [label="2492 Identifier\ly"]
+    2493 -> 2496
+    2496 [label="2496 Index Expr\l"]
+    2496 -> 2495
+    2495 [label="2495 Identifier\lcoordenadas"]
+    2496 -> 2497
+    2497 [label="2497 Integer\l1"]
+    2110 [label="2110 Block"]
+    2110 -> 2498
+    2498 [label="2498 Expression"]
+    2498 -> 2502
+    2502 [label="2502 Assign\l-------------\l="]
+    2502 -> 2500
+    2500 [label="2500 Infix Dot"]
+    2500 -> 2499
+    2499 [label="2499 this"]
+    2500 -> 2501
+    2501 [label="2501 Identifier\ldirection"]
+    2502 -> 2505
+    2505 [label="2505 Call\lrandom()"]
+    2505 -> 2506
+    2506 [label="2506 Integer\l0"]
+    2505 -> 2507
+    2507 [label="2507 Integer\l3"]
+    2110 [label="2110 Block"]
+    2110 -> 2508
+    2508 [label="2508 Expression"]
+    2508 -> 2514
+    2514 [label="2514 Assign\l-------------\l="]
+    2514 -> 2512
+    2512 [label="2512 Infix Dot"]
+    2512 -> 2510
+    2510 [label="2510 Infix Dot"]
+    2510 -> 2509
+    2509 [label="2509 this"]
+    2510 -> 2511
+    2511 [label="2511 Identifier\lsprLeft"]
+    2512 -> 2513
+    2513 [label="2513 Identifier\lpivot"]
+    2514 -> 2516
+    2516 [label="2516 List"]
+    2516 -> 2517
     2517 [label="2517 Integer\l4"]
-    2109 [label="2109 Block"]
-    2109 -> 2518
-    2518 [label="2518 Expression"]
-    2518 -> 2524
-    2524 [label="2524 Assign\l-------------\l="]
-    2524 -> 2522
-    2522 [label="2522 Infix Dot"]
-    2522 -> 2520
-    2520 [label="2520 Infix Dot"]
-    2520 -> 2519
-    2519 [label="2519 this"]
-    2520 -> 2521
-    2521 [label="2521 Identifier\lsprLeft"]
-    2522 -> 2523
-    2523 [label="2523 Identifier\lanimation_speed"]
-    2524 -> 2526
-    2526 [label="2526 Identifier\lanimSpeed"]
-    2109 [label="2109 Block"]
-    2109 -> 2527
-    2527 [label="2527 Expression"]
-    2527 -> 2533
-    2533 [label="2533 Assign\l-------------\l="]
-    2533 -> 2531
-    2531 [label="2531 Infix Dot"]
-    2531 -> 2529
-    2529 [label="2529 Infix Dot"]
-    2529 -> 2528
-    2528 [label="2528 this"]
-    2529 -> 2530
-    2530 [label="2530 Identifier\lsprRight"]
-    2531 -> 2532
-    2532 [label="2532 Identifier\lpivot"]
-    2533 -> 2535
-    2535 [label="2535 List"]
-    2535 -> 2536
-    2536 [label="2536 Integer\l4"]
-    2535 -> 2537
+    2516 -> 2518
+    2518 [label="2518 Integer\l4"]
+    2110 [label="2110 Block"]
+    2110 -> 2519
+    2519 [label="2519 Expression"]
+    2519 -> 2525
+    2525 [label="2525 Assign\l-------------\l="]
+    2525 -> 2523
+    2523 [label="2523 Infix Dot"]
+    2523 -> 2521
+    2521 [label="2521 Infix Dot"]
+    2521 -> 2520
+    2520 [label="2520 this"]
+    2521 -> 2522
+    2522 [label="2522 Identifier\lsprLeft"]
+    2523 -> 2524
+    2524 [label="2524 Identifier\lanimation_speed"]
+    2525 -> 2527
+    2527 [label="2527 Identifier\lanimSpeed"]
+    2110 [label="2110 Block"]
+    2110 -> 2528
+    2528 [label="2528 Expression"]
+    2528 -> 2534
+    2534 [label="2534 Assign\l-------------\l="]
+    2534 -> 2532
+    2532 [label="2532 Infix Dot"]
+    2532 -> 2530
+    2530 [label="2530 Infix Dot"]
+    2530 -> 2529
+    2529 [label="2529 this"]
+    2530 -> 2531
+    2531 [label="2531 Identifier\lsprRight"]
+    2532 -> 2533
+    2533 [label="2533 Identifier\lpivot"]
+    2534 -> 2536
+    2536 [label="2536 List"]
+    2536 -> 2537
     2537 [label="2537 Integer\l4"]
-    2109 [label="2109 Block"]
-    2109 -> 2538
-    2538 [label="2538 Expression"]
-    2538 -> 2544
-    2544 [label="2544 Assign\l-------------\l="]
-    2544 -> 2542
-    2542 [label="2542 Infix Dot"]
-    2542 -> 2540
-    2540 [label="2540 Infix Dot"]
-    2540 -> 2539
-    2539 [label="2539 this"]
-    2540 -> 2541
-    2541 [label="2541 Identifier\lsprRight"]
-    2542 -> 2543
-    2543 [label="2543 Identifier\lanimation_speed"]
-    2544 -> 2546
-    2546 [label="2546 Identifier\lanimSpeed"]
-    2109 [label="2109 Block"]
-    2109 -> 2547
-    2547 [label="2547 Expression"]
-    2547 -> 2553
-    2553 [label="2553 Assign\l-------------\l="]
-    2553 -> 2551
-    2551 [label="2551 Infix Dot"]
-    2551 -> 2549
-    2549 [label="2549 Infix Dot"]
-    2549 -> 2548
-    2548 [label="2548 this"]
-    2549 -> 2550
-    2550 [label="2550 Identifier\lsprUp"]
-    2551 -> 2552
-    2552 [label="2552 Identifier\lpivot"]
-    2553 -> 2555
-    2555 [label="2555 List"]
-    2555 -> 2556
-    2556 [label="2556 Integer\l4"]
-    2555 -> 2557
+    2536 -> 2538
+    2538 [label="2538 Integer\l4"]
+    2110 [label="2110 Block"]
+    2110 -> 2539
+    2539 [label="2539 Expression"]
+    2539 -> 2545
+    2545 [label="2545 Assign\l-------------\l="]
+    2545 -> 2543
+    2543 [label="2543 Infix Dot"]
+    2543 -> 2541
+    2541 [label="2541 Infix Dot"]
+    2541 -> 2540
+    2540 [label="2540 this"]
+    2541 -> 2542
+    2542 [label="2542 Identifier\lsprRight"]
+    2543 -> 2544
+    2544 [label="2544 Identifier\lanimation_speed"]
+    2545 -> 2547
+    2547 [label="2547 Identifier\lanimSpeed"]
+    2110 [label="2110 Block"]
+    2110 -> 2548
+    2548 [label="2548 Expression"]
+    2548 -> 2554
+    2554 [label="2554 Assign\l-------------\l="]
+    2554 -> 2552
+    2552 [label="2552 Infix Dot"]
+    2552 -> 2550
+    2550 [label="2550 Infix Dot"]
+    2550 -> 2549
+    2549 [label="2549 this"]
+    2550 -> 2551
+    2551 [label="2551 Identifier\lsprUp"]
+    2552 -> 2553
+    2553 [label="2553 Identifier\lpivot"]
+    2554 -> 2556
+    2556 [label="2556 List"]
+    2556 -> 2557
     2557 [label="2557 Integer\l4"]
-    2109 [label="2109 Block"]
-    2109 -> 2558
-    2558 [label="2558 Expression"]
-    2558 -> 2564
-    2564 [label="2564 Assign\l-------------\l="]
-    2564 -> 2562
-    2562 [label="2562 Infix Dot"]
-    2562 -> 2560
-    2560 [label="2560 Infix Dot"]
-    2560 -> 2559
-    2559 [label="2559 this"]
-    2560 -> 2561
-    2561 [label="2561 Identifier\lsprUp"]
-    2562 -> 2563
-    2563 [label="2563 Identifier\lanimation_speed"]
-    2564 -> 2566
-    2566 [label="2566 Identifier\lanimSpeed"]
-    2109 [label="2109 Block"]
-    2109 -> 2567
-    2567 [label="2567 Expression"]
-    2567 -> 2573
-    2573 [label="2573 Assign\l-------------\l="]
-    2573 -> 2571
-    2571 [label="2571 Infix Dot"]
-    2571 -> 2569
-    2569 [label="2569 Infix Dot"]
-    2569 -> 2568
-    2568 [label="2568 this"]
-    2569 -> 2570
-    2570 [label="2570 Identifier\lsprDown"]
-    2571 -> 2572
-    2572 [label="2572 Identifier\lpivot"]
-    2573 -> 2575
-    2575 [label="2575 List"]
-    2575 -> 2576
-    2576 [label="2576 Integer\l4"]
-    2575 -> 2577
+    2556 -> 2558
+    2558 [label="2558 Integer\l4"]
+    2110 [label="2110 Block"]
+    2110 -> 2559
+    2559 [label="2559 Expression"]
+    2559 -> 2565
+    2565 [label="2565 Assign\l-------------\l="]
+    2565 -> 2563
+    2563 [label="2563 Infix Dot"]
+    2563 -> 2561
+    2561 [label="2561 Infix Dot"]
+    2561 -> 2560
+    2560 [label="2560 this"]
+    2561 -> 2562
+    2562 [label="2562 Identifier\lsprUp"]
+    2563 -> 2564
+    2564 [label="2564 Identifier\lanimation_speed"]
+    2565 -> 2567
+    2567 [label="2567 Identifier\lanimSpeed"]
+    2110 [label="2110 Block"]
+    2110 -> 2568
+    2568 [label="2568 Expression"]
+    2568 -> 2574
+    2574 [label="2574 Assign\l-------------\l="]
+    2574 -> 2572
+    2572 [label="2572 Infix Dot"]
+    2572 -> 2570
+    2570 [label="2570 Infix Dot"]
+    2570 -> 2569
+    2569 [label="2569 this"]
+    2570 -> 2571
+    2571 [label="2571 Identifier\lsprDown"]
+    2572 -> 2573
+    2573 [label="2573 Identifier\lpivot"]
+    2574 -> 2576
+    2576 [label="2576 List"]
+    2576 -> 2577
     2577 [label="2577 Integer\l4"]
-    2109 [label="2109 Block"]
-    2109 -> 2578
-    2578 [label="2578 Expression"]
-    2578 -> 2584
-    2584 [label="2584 Assign\l-------------\l="]
-    2584 -> 2582
-    2582 [label="2582 Infix Dot"]
-    2582 -> 2580
-    2580 [label="2580 Infix Dot"]
-    2580 -> 2579
-    2579 [label="2579 this"]
-    2580 -> 2581
-    2581 [label="2581 Identifier\lsprDown"]
-    2582 -> 2583
-    2583 [label="2583 Identifier\lanimation_speed"]
-    2584 -> 2586
-    2586 [label="2586 Identifier\lanimSpeed"]
-    2105 -> 2587
-    2587 [label="2587 Function Declare\l-----------------------\lreset"]
-    2587 -> 2588
-    2588 [label="2588 Block"]
+    2576 -> 2578
+    2578 [label="2578 Integer\l4"]
+    2110 [label="2110 Block"]
+    2110 -> 2579
+    2579 [label="2579 Expression"]
+    2579 -> 2585
+    2585 [label="2585 Assign\l-------------\l="]
+    2585 -> 2583
+    2583 [label="2583 Infix Dot"]
+    2583 -> 2581
+    2581 [label="2581 Infix Dot"]
+    2581 -> 2580
+    2580 [label="2580 this"]
+    2581 -> 2582
+    2582 [label="2582 Identifier\lsprDown"]
+    2583 -> 2584
+    2584 [label="2584 Identifier\lanimation_speed"]
+    2585 -> 2587
+    2587 [label="2587 Identifier\lanimSpeed"]
+    2106 -> 2588
+    2588 [label="2588 Function Declare\l-----------------------\lreset"]
     2588 -> 2589
-    2589 [label="2589 Expression"]
-    2589 -> 2591
-    2591 [label="2591 Call\lprintln()"]
-    2591 -> 2592
-    2592 [label="2592 String\lReset Ghost"]
-    2588 [label="2588 Block"]
-    2588 -> 2593
-    2593 [label="2593 Var Declare\l-----------------\lcoordenadas"]
-    2594 [label ="2593 Var : coordenadas"]
-    2593 -> 2594
-    2594 [label="2594 Integer\l0"]
-    2588 [label="2588 Block"]
-    2588 -> 2595
-    2595 [label="2595 Expression"]
-    2595 -> 2599
-    2599 [label="2599 Assign\l-------------\l="]
-    2599 -> 2597
-    2597 [label="2597 Infix Dot"]
-    2597 -> 2596
-    2596 [label="2596 this"]
-    2597 -> 2598
-    2598 [label="2598 Identifier\lactive"]
-    2599 -> 2601
-    2601 [label="2601 Bool\l1"]
-    2588 [label="2588 Block"]
-    2588 -> 2602
-    2588 [label="2588 Block"]
-    2588 -> 2786
-    2786 [label="2786 Expression"]
-    2786 -> 2790
-    2790 [label="2790 Assign\l-------------\l="]
-    2790 -> 2788
-    2788 [label="2788 Infix Dot"]
-    2788 -> 2787
-    2787 [label="2787 this"]
-    2788 -> 2789
-    2789 [label="2789 Identifier\lx"]
-    2790 -> 2793
-    2793 [label="2793 Index Expr\l"]
-    2793 -> 2792
-    2792 [label="2792 Identifier\lcoordenadas"]
-    2793 -> 2794
-    2794 [label="2794 Integer\l0"]
-    2588 [label="2588 Block"]
-    2588 -> 2795
-    2795 [label="2795 Expression"]
-    2795 -> 2799
-    2799 [label="2799 Assign\l-------------\l="]
-    2799 -> 2797
-    2797 [label="2797 Infix Dot"]
-    2797 -> 2796
-    2796 [label="2796 this"]
-    2797 -> 2798
-    2798 [label="2798 Identifier\ly"]
-    2799 -> 2802
-    2802 [label="2802 Index Expr\l"]
-    2802 -> 2801
-    2801 [label="2801 Identifier\lcoordenadas"]
-    2802 -> 2803
-    2803 [label="2803 Integer\l1"]
-    2588 [label="2588 Block"]
-    2588 -> 2804
-    2804 [label="2804 Expression"]
-    2804 -> 2808
-    2808 [label="2808 Assign\l-------------\l="]
-    2808 -> 2806
-    2806 [label="2806 Infix Dot"]
-    2806 -> 2805
-    2805 [label="2805 this"]
-    2806 -> 2807
-    2807 [label="2807 Identifier\ldirection"]
-    2808 -> 2811
-    2811 [label="2811 Call\lrandom()"]
-    2811 -> 2812
-    2812 [label="2812 Integer\l0"]
-    2811 -> 2813
-    2813 [label="2813 Integer\l3"]
-    2105 -> 2814
-    2814 [label="2814 Function Declare\l-----------------------\ldraw"]
-    2814 -> 2815
-    2815 [label="2815 Block"]
+    2589 [label="2589 Block"]
+    2589 -> 2590
+    2590 [label="2590 Expression"]
+    2590 -> 2592
+    2592 [label="2592 Call\lprintln()"]
+    2592 -> 2593
+    2593 [label="2593 String\lReset Ghost"]
+    2589 [label="2589 Block"]
+    2589 -> 2594
+    2594 [label="2594 Var Declare\l-----------------\lcoordenadas"]
+    2595 [label ="2594 Var : coordenadas"]
+    2594 -> 2595
+    2595 [label="2595 Integer\l0"]
+    2589 [label="2589 Block"]
+    2589 -> 2596
+    2596 [label="2596 Expression"]
+    2596 -> 2600
+    2600 [label="2600 Assign\l-------------\l="]
+    2600 -> 2598
+    2598 [label="2598 Infix Dot"]
+    2598 -> 2597
+    2597 [label="2597 this"]
+    2598 -> 2599
+    2599 [label="2599 Identifier\lactive"]
+    2600 -> 2602
+    2602 [label="2602 Bool\l1"]
+    2589 [label="2589 Block"]
+    2589 -> 2603
+    2589 [label="2589 Block"]
+    2589 -> 2787
+    2787 [label="2787 Expression"]
+    2787 -> 2791
+    2791 [label="2791 Assign\l-------------\l="]
+    2791 -> 2789
+    2789 [label="2789 Infix Dot"]
+    2789 -> 2788
+    2788 [label="2788 this"]
+    2789 -> 2790
+    2790 [label="2790 Identifier\lx"]
+    2791 -> 2794
+    2794 [label="2794 Index Expr\l"]
+    2794 -> 2793
+    2793 [label="2793 Identifier\lcoordenadas"]
+    2794 -> 2795
+    2795 [label="2795 Integer\l0"]
+    2589 [label="2589 Block"]
+    2589 -> 2796
+    2796 [label="2796 Expression"]
+    2796 -> 2800
+    2800 [label="2800 Assign\l-------------\l="]
+    2800 -> 2798
+    2798 [label="2798 Infix Dot"]
+    2798 -> 2797
+    2797 [label="2797 this"]
+    2798 -> 2799
+    2799 [label="2799 Identifier\ly"]
+    2800 -> 2803
+    2803 [label="2803 Index Expr\l"]
+    2803 -> 2802
+    2802 [label="2802 Identifier\lcoordenadas"]
+    2803 -> 2804
+    2804 [label="2804 Integer\l1"]
+    2589 [label="2589 Block"]
+    2589 -> 2805
+    2805 [label="2805 Expression"]
+    2805 -> 2809
+    2809 [label="2809 Assign\l-------------\l="]
+    2809 -> 2807
+    2807 [label="2807 Infix Dot"]
+    2807 -> 2806
+    2806 [label="2806 this"]
+    2807 -> 2808
+    2808 [label="2808 Identifier\ldirection"]
+    2809 -> 2812
+    2812 [label="2812 Call\lrandom()"]
+    2812 -> 2813
+    2813 [label="2813 Integer\l0"]
+    2812 -> 2814
+    2814 [label="2814 Integer\l3"]
+    2106 -> 2815
+    2815 [label="2815 Function Declare\l-----------------------\ldraw"]
     2815 -> 2816
-    2816 [label="2816 If Then\l--------"]
-    2816 -> 2822
-    2822 [label="2822 Block"]
-    2822 -> 2823
-    2823 [label="2823 If Then\l--------"]
-    2823 -> 2831
-    2831 [label="2831 Block"]
-    2831 -> 2832
-    2832 [label="2832 Expression"]
-    2832 -> 2838
-    2838 [label="2838 Assign\l-------------\l="]
-    2838 -> 2836
-    2836 [label="2836 Infix Dot"]
-    2836 -> 2834
-    2834 [label="2834 Infix Dot"]
-    2834 -> 2833
-    2833 [label="2833 this"]
-    2834 -> 2835
-    2835 [label="2835 Identifier\lsprRight"]
-    2836 -> 2837
-    2837 [label="2837 Identifier\lpos"]
-    2838 -> 2840
-    2840 [label="2840 List"]
-    2840 -> 2842
-    2842 [label="2842 Infix Dot"]
-    2842 -> 2841
-    2841 [label="2841 this"]
-    2842 -> 2843
-    2843 [label="2843 Identifier\lx"]
-    2840 -> 2845
-    2845 [label="2845 Infix Dot"]
-    2845 -> 2844
-    2844 [label="2844 this"]
-    2845 -> 2846
-    2846 [label="2846 Identifier\ly"]
-    2831 [label="2831 Block"]
-    2831 -> 2847
-    2847 [label="2847 Expression"]
-    2847 -> 2849
-    2849 [label="2849 Infix Dot"]
-    2849 -> 2848
-    2848 [label="2848 Identifier\ldraw"]
-    2849 -> 2851
-    2851 [label="2851 Call\lsprite()"]
-    2851 -> 2853
-    2853 [label="2853 Infix Dot"]
-    2853 -> 2852
-    2852 [label="2852 this"]
-    2853 -> 2854
-    2854 [label="2854 Identifier\lsprRight"]
-    2823 -> 2862
-    2862 [label="2862 Block"]
-    2862 -> 2863
-    2863 [label="2863 Expression"]
-    2863 -> 2869
-    2869 [label="2869 Assign\l-------------\l="]
-    2869 -> 2867
-    2867 [label="2867 Infix Dot"]
-    2867 -> 2865
-    2865 [label="2865 Infix Dot"]
-    2865 -> 2864
-    2864 [label="2864 this"]
-    2865 -> 2866
-    2866 [label="2866 Identifier\lsprLeft"]
-    2867 -> 2868
-    2868 [label="2868 Identifier\lpos"]
-    2869 -> 2871
-    2871 [label="2871 List"]
-    2871 -> 2873
-    2873 [label="2873 Infix Dot"]
-    2873 -> 2872
-    2872 [label="2872 this"]
-    2873 -> 2874
-    2874 [label="2874 Identifier\lx"]
-    2871 -> 2876
-    2876 [label="2876 Infix Dot"]
-    2876 -> 2875
-    2875 [label="2875 this"]
-    2876 -> 2877
-    2877 [label="2877 Identifier\ly"]
-    2862 [label="2862 Block"]
-    2862 -> 2878
-    2878 [label="2878 Expression"]
-    2878 -> 2880
-    2880 [label="2880 Infix Dot"]
-    2880 -> 2879
-    2879 [label="2879 Identifier\ldraw"]
-    2880 -> 2882
-    2882 [label="2882 Call\lsprite()"]
-    2882 -> 2884
-    2884 [label="2884 Infix Dot"]
-    2884 -> 2883
-    2883 [label="2883 this"]
-    2884 -> 2885
-    2885 [label="2885 Identifier\lsprLeft"]
-    2823 -> 2893
-    2893 [label="2893 Block"]
-    2893 -> 2894
-    2894 [label="2894 Expression"]
-    2894 -> 2900
-    2900 [label="2900 Assign\l-------------\l="]
-    2900 -> 2898
-    2898 [label="2898 Infix Dot"]
-    2898 -> 2896
-    2896 [label="2896 Infix Dot"]
-    2896 -> 2895
-    2895 [label="2895 this"]
-    2896 -> 2897
-    2897 [label="2897 Identifier\lsprUp"]
-    2898 -> 2899
-    2899 [label="2899 Identifier\lpos"]
-    2900 -> 2902
-    2902 [label="2902 List"]
-    2902 -> 2904
-    2904 [label="2904 Infix Dot"]
-    2904 -> 2903
-    2903 [label="2903 this"]
-    2904 -> 2905
-    2905 [label="2905 Identifier\lx"]
-    2902 -> 2907
-    2907 [label="2907 Infix Dot"]
-    2907 -> 2906
-    2906 [label="2906 this"]
-    2907 -> 2908
-    2908 [label="2908 Identifier\ly"]
-    2893 [label="2893 Block"]
-    2893 -> 2909
-    2909 [label="2909 Expression"]
-    2909 -> 2911
-    2911 [label="2911 Infix Dot"]
-    2911 -> 2910
-    2910 [label="2910 Identifier\ldraw"]
-    2911 -> 2913
-    2913 [label="2913 Call\lsprite()"]
-    2913 -> 2915
-    2915 [label="2915 Infix Dot"]
-    2915 -> 2914
-    2914 [label="2914 this"]
-    2915 -> 2916
-    2916 [label="2916 Identifier\lsprUp"]
-    2823 -> 2924
-    2924 [label="2924 Block"]
-    2924 -> 2925
-    2925 [label="2925 Expression"]
-    2925 -> 2931
-    2931 [label="2931 Assign\l-------------\l="]
-    2931 -> 2929
-    2929 [label="2929 Infix Dot"]
-    2929 -> 2927
-    2927 [label="2927 Infix Dot"]
-    2927 -> 2926
-    2926 [label="2926 this"]
-    2927 -> 2928
-    2928 [label="2928 Identifier\lsprDown"]
-    2929 -> 2930
-    2930 [label="2930 Identifier\lpos"]
-    2931 -> 2933
-    2933 [label="2933 List"]
-    2933 -> 2935
-    2935 [label="2935 Infix Dot"]
-    2935 -> 2934
-    2934 [label="2934 this"]
-    2935 -> 2936
-    2936 [label="2936 Identifier\lx"]
-    2933 -> 2938
-    2938 [label="2938 Infix Dot"]
-    2938 -> 2937
-    2937 [label="2937 this"]
-    2938 -> 2939
-    2939 [label="2939 Identifier\ly"]
-    2924 [label="2924 Block"]
-    2924 -> 2940
-    2940 [label="2940 Expression"]
-    2940 -> 2942
-    2942 [label="2942 Infix Dot"]
-    2942 -> 2941
-    2941 [label="2941 Identifier\ldraw"]
-    2942 -> 2944
-    2944 [label="2944 Call\lsprite()"]
-    2944 -> 2946
-    2946 [label="2946 Infix Dot"]
-    2946 -> 2945
-    2945 [label="2945 this"]
-    2946 -> 2947
-    2947 [label="2947 Identifier\lsprDown"]
-    2105 -> 2948
-    2948 [label="2948 Function Declare\l-----------------------\lestaEnCasa"]
-    2948 -> 2951
-    2951 [label="2951 Block"]
-    2951 -> 2952
-    2952 [label="2952 If Then\l--------"]
-    2952 -> 2959
-    2959 [label="2959 Block"]
-    2959 -> 2960
-    2960 [label="2960 Var Declare\l-----------------\ldireccionesValidas"]
-    2962 [label ="2960 Var : direccionesValidas"]
-    2960 -> 2962
-    2962 [label="2962 Call\lObtenerDireccionesValidas()"]
-    2962 -> 2963
-    2963 [label="2963 Identifier\lcolumnaActual"]
-    2962 -> 2964
-    2964 [label="2964 Identifier\lfilaActual"]
-    2962 -> 2966
-    2966 [label="2966 Infix Dot"]
-    2966 -> 2965
-    2965 [label="2965 this"]
-    2966 -> 2967
-    2967 [label="2967 Identifier\ldirection"]
-    2959 [label="2959 Block"]
-    2959 -> 2968
-    2968 [label="2968 Expression"]
-    2968 -> 2970
-    2970 [label="2970 Infix Dot"]
-    2970 -> 2969
-    2969 [label="2969 this"]
-    2970 -> 2972
-    2972 [label="2972 Call\ldeterminarDireccionObjetivo()"]
-    2972 -> 2973
-    2973 [label="2973 Integer\l13"]
-    2972 -> 2974
-    2974 [label="2974 Integer\l11"]
-    2972 -> 2975
-    2975 [label="2975 Identifier\ldireccionesValidas"]
-    2959 [label="2959 Block"]
-    2959 -> 2976
-    2976 [label="2976 Return"]
-    2976 -> 2977
-    2977 [label="2977 Bool\l1"]
-    2951 [label="2951 Block"]
-    2951 -> 2978
-    2978 [label="2978 Return"]
-    2978 -> 2979
-    2979 [label="2979 Bool\l0"]
-    2105 -> 2980
-    2980 [label="2980 Function Declare\l-----------------------\ldeterminarDireccionObjetivo"]
-    2980 -> 2984
-    2984 [label="2984 Block"]
-    2984 -> 2985
-    2985 [label="2985 Var Declare\l-----------------\lceldaActual"]
-    2987 [label ="2985 Var : celdaActual"]
-    2985 -> 2987
-    2987 [label="2987 Call\lCoordenadasACelda()"]
-    2987 -> 2989
-    2989 [label="2989 Infix Dot"]
-    2989 -> 2988
-    2988 [label="2988 this"]
-    2989 -> 2990
-    2990 [label="2990 Identifier\lx"]
-    2987 -> 2992
-    2992 [label="2992 Infix Dot"]
-    2992 -> 2991
-    2991 [label="2991 this"]
-    2992 -> 2993
-    2993 [label="2993 Identifier\ly"]
-    2984 [label="2984 Block"]
-    2984 -> 2994
-    2994 [label="2994 Var Declare\l-----------------\lcolumnaActual"]
-    2996 [label ="2994 Var : columnaActual"]
-    2994 -> 2996
-    2996 [label="2996 Index Expr\l"]
-    2996 -> 2995
-    2995 [label="2995 Identifier\lceldaActual"]
-    2996 -> 2997
-    2997 [label="2997 Integer\l0"]
-    2984 [label="2984 Block"]
-    2984 -> 2998
-    2998 [label="2998 Var Declare\l-----------------\lfilaActual"]
-    3000 [label ="2998 Var : filaActual"]
-    2998 -> 3000
-    3000 [label="3000 Index Expr\l"]
-    3000 -> 2999
-    2999 [label="2999 Identifier\lceldaActual"]
-    3000 -> 3001
-    3001 [label="3001 Integer\l1"]
-    2984 [label="2984 Block"]
-    2984 -> 3002
-    3002 [label="3002 If Then\l--------"]
-    3002 -> 3009
-    3009 [label="3009 Block"]
-    3009 -> 3010
-    3010 [label="3010 Return"]
-    3010 ->     2984 [label="2984 Block"]
-    2984 -> 3011
-    3011 [label="3011 Var Declare\l-----------------\lmejorDireccion"]
-    3012 [label ="3011 Var : mejorDireccion"]
-    3011 -> 3012
-    3012 [label="3012 nil"]
-    2984 [label="2984 Block"]
-    2984 -> 3013
-    3013 [label="3013 Var Declare\l-----------------\ldistanciaMinima"]
-    3014 [label ="3013 Var : distanciaMinima"]
-    3013 -> 3014
-    3014 [label="3014 Integer\l999999"]
-    2984 [label="2984 Block"]
-    2984 -> 3015
-    3015 [label="3015 Foreach"]
-    3015 -> 3016
-    3016 [label="3016 Var Declare\l-----------------\ldireccion"]
-    3017 [label ="3016 Var : direccion"]
+    2816 [label="2816 Block"]
+    2816 -> 2817
+    2817 [label="2817 If Then\l--------"]
+    2817 -> 2823
+    2823 [label="2823 Block"]
+    2823 -> 2824
+    2824 [label="2824 If Then\l--------"]
+    2824 -> 2832
+    2832 [label="2832 Block"]
+    2832 -> 2833
+    2833 [label="2833 Expression"]
+    2833 -> 2839
+    2839 [label="2839 Assign\l-------------\l="]
+    2839 -> 2837
+    2837 [label="2837 Infix Dot"]
+    2837 -> 2835
+    2835 [label="2835 Infix Dot"]
+    2835 -> 2834
+    2834 [label="2834 this"]
+    2835 -> 2836
+    2836 [label="2836 Identifier\lsprRight"]
+    2837 -> 2838
+    2838 [label="2838 Identifier\lpos"]
+    2839 -> 2841
+    2841 [label="2841 List"]
+    2841 -> 2843
+    2843 [label="2843 Infix Dot"]
+    2843 -> 2842
+    2842 [label="2842 this"]
+    2843 -> 2844
+    2844 [label="2844 Identifier\lx"]
+    2841 -> 2846
+    2846 [label="2846 Infix Dot"]
+    2846 -> 2845
+    2845 [label="2845 this"]
+    2846 -> 2847
+    2847 [label="2847 Identifier\ly"]
+    2832 [label="2832 Block"]
+    2832 -> 2848
+    2848 [label="2848 Expression"]
+    2848 -> 2850
+    2850 [label="2850 Infix Dot"]
+    2850 -> 2849
+    2849 [label="2849 Identifier\ldraw"]
+    2850 -> 2852
+    2852 [label="2852 Call\lsprite()"]
+    2852 -> 2854
+    2854 [label="2854 Infix Dot"]
+    2854 -> 2853
+    2853 [label="2853 this"]
+    2854 -> 2855
+    2855 [label="2855 Identifier\lsprRight"]
+    2824 -> 2863
+    2863 [label="2863 Block"]
+    2863 -> 2864
+    2864 [label="2864 Expression"]
+    2864 -> 2870
+    2870 [label="2870 Assign\l-------------\l="]
+    2870 -> 2868
+    2868 [label="2868 Infix Dot"]
+    2868 -> 2866
+    2866 [label="2866 Infix Dot"]
+    2866 -> 2865
+    2865 [label="2865 this"]
+    2866 -> 2867
+    2867 [label="2867 Identifier\lsprLeft"]
+    2868 -> 2869
+    2869 [label="2869 Identifier\lpos"]
+    2870 -> 2872
+    2872 [label="2872 List"]
+    2872 -> 2874
+    2874 [label="2874 Infix Dot"]
+    2874 -> 2873
+    2873 [label="2873 this"]
+    2874 -> 2875
+    2875 [label="2875 Identifier\lx"]
+    2872 -> 2877
+    2877 [label="2877 Infix Dot"]
+    2877 -> 2876
+    2876 [label="2876 this"]
+    2877 -> 2878
+    2878 [label="2878 Identifier\ly"]
+    2863 [label="2863 Block"]
+    2863 -> 2879
+    2879 [label="2879 Expression"]
+    2879 -> 2881
+    2881 [label="2881 Infix Dot"]
+    2881 -> 2880
+    2880 [label="2880 Identifier\ldraw"]
+    2881 -> 2883
+    2883 [label="2883 Call\lsprite()"]
+    2883 -> 2885
+    2885 [label="2885 Infix Dot"]
+    2885 -> 2884
+    2884 [label="2884 this"]
+    2885 -> 2886
+    2886 [label="2886 Identifier\lsprLeft"]
+    2824 -> 2894
+    2894 [label="2894 Block"]
+    2894 -> 2895
+    2895 [label="2895 Expression"]
+    2895 -> 2901
+    2901 [label="2901 Assign\l-------------\l="]
+    2901 -> 2899
+    2899 [label="2899 Infix Dot"]
+    2899 -> 2897
+    2897 [label="2897 Infix Dot"]
+    2897 -> 2896
+    2896 [label="2896 this"]
+    2897 -> 2898
+    2898 [label="2898 Identifier\lsprUp"]
+    2899 -> 2900
+    2900 [label="2900 Identifier\lpos"]
+    2901 -> 2903
+    2903 [label="2903 List"]
+    2903 -> 2905
+    2905 [label="2905 Infix Dot"]
+    2905 -> 2904
+    2904 [label="2904 this"]
+    2905 -> 2906
+    2906 [label="2906 Identifier\lx"]
+    2903 -> 2908
+    2908 [label="2908 Infix Dot"]
+    2908 -> 2907
+    2907 [label="2907 this"]
+    2908 -> 2909
+    2909 [label="2909 Identifier\ly"]
+    2894 [label="2894 Block"]
+    2894 -> 2910
+    2910 [label="2910 Expression"]
+    2910 -> 2912
+    2912 [label="2912 Infix Dot"]
+    2912 -> 2911
+    2911 [label="2911 Identifier\ldraw"]
+    2912 -> 2914
+    2914 [label="2914 Call\lsprite()"]
+    2914 -> 2916
+    2916 [label="2916 Infix Dot"]
+    2916 -> 2915
+    2915 [label="2915 this"]
+    2916 -> 2917
+    2917 [label="2917 Identifier\lsprUp"]
+    2824 -> 2925
+    2925 [label="2925 Block"]
+    2925 -> 2926
+    2926 [label="2926 Expression"]
+    2926 -> 2932
+    2932 [label="2932 Assign\l-------------\l="]
+    2932 -> 2930
+    2930 [label="2930 Infix Dot"]
+    2930 -> 2928
+    2928 [label="2928 Infix Dot"]
+    2928 -> 2927
+    2927 [label="2927 this"]
+    2928 -> 2929
+    2929 [label="2929 Identifier\lsprDown"]
+    2930 -> 2931
+    2931 [label="2931 Identifier\lpos"]
+    2932 -> 2934
+    2934 [label="2934 List"]
+    2934 -> 2936
+    2936 [label="2936 Infix Dot"]
+    2936 -> 2935
+    2935 [label="2935 this"]
+    2936 -> 2937
+    2937 [label="2937 Identifier\lx"]
+    2934 -> 2939
+    2939 [label="2939 Infix Dot"]
+    2939 -> 2938
+    2938 [label="2938 this"]
+    2939 -> 2940
+    2940 [label="2940 Identifier\ly"]
+    2925 [label="2925 Block"]
+    2925 -> 2941
+    2941 [label="2941 Expression"]
+    2941 -> 2943
+    2943 [label="2943 Infix Dot"]
+    2943 -> 2942
+    2942 [label="2942 Identifier\ldraw"]
+    2943 -> 2945
+    2945 [label="2945 Call\lsprite()"]
+    2945 -> 2947
+    2947 [label="2947 Infix Dot"]
+    2947 -> 2946
+    2946 [label="2946 this"]
+    2947 -> 2948
+    2948 [label="2948 Identifier\lsprDown"]
+    2106 -> 2949
+    2949 [label="2949 Function Declare\l-----------------------\lestaEnCasa"]
+    2949 -> 2952
+    2952 [label="2952 Block"]
+    2952 -> 2953
+    2953 [label="2953 If Then\l--------"]
+    2953 -> 2960
+    2960 [label="2960 Block"]
+    2960 -> 2961
+    2961 [label="2961 Var Declare\l-----------------\ldireccionesValidas"]
+    2963 [label ="2961 Var : direccionesValidas"]
+    2961 -> 2963
+    2963 [label="2963 Call\lObtenerDireccionesValidas()"]
+    2963 -> 2964
+    2964 [label="2964 Identifier\lcolumnaActual"]
+    2963 -> 2965
+    2965 [label="2965 Identifier\lfilaActual"]
+    2963 -> 2967
+    2967 [label="2967 Infix Dot"]
+    2967 -> 2966
+    2966 [label="2966 this"]
+    2967 -> 2968
+    2968 [label="2968 Identifier\ldirection"]
+    2960 [label="2960 Block"]
+    2960 -> 2969
+    2969 [label="2969 Expression"]
+    2969 -> 2971
+    2971 [label="2971 Infix Dot"]
+    2971 -> 2970
+    2970 [label="2970 this"]
+    2971 -> 2973
+    2973 [label="2973 Call\ldeterminarDireccionObjetivo()"]
+    2973 -> 2974
+    2974 [label="2974 Integer\l13"]
+    2973 -> 2975
+    2975 [label="2975 Integer\l11"]
+    2973 -> 2976
+    2976 [label="2976 Identifier\ldireccionesValidas"]
+    2960 [label="2960 Block"]
+    2960 -> 2977
+    2977 [label="2977 Return"]
+    2977 -> 2978
+    2978 [label="2978 Bool\l1"]
+    2952 [label="2952 Block"]
+    2952 -> 2979
+    2979 [label="2979 Return"]
+    2979 -> 2980
+    2980 [label="2980 Bool\l0"]
+    2106 -> 2981
+    2981 [label="2981 Function Declare\l-----------------------\ldeterminarDireccionObjetivo"]
+    2981 -> 2985
+    2985 [label="2985 Block"]
+    2985 -> 2986
+    2986 [label="2986 Var Declare\l-----------------\lceldaActual"]
+    2988 [label ="2986 Var : celdaActual"]
+    2986 -> 2988
+    2988 [label="2988 Call\lCoordenadasACelda()"]
+    2988 -> 2990
+    2990 [label="2990 Infix Dot"]
+    2990 -> 2989
+    2989 [label="2989 this"]
+    2990 -> 2991
+    2991 [label="2991 Identifier\lx"]
+    2988 -> 2993
+    2993 [label="2993 Infix Dot"]
+    2993 -> 2992
+    2992 [label="2992 this"]
+    2993 -> 2994
+    2994 [label="2994 Identifier\ly"]
+    2985 [label="2985 Block"]
+    2985 -> 2995
+    2995 [label="2995 Var Declare\l-----------------\lcolumnaActual"]
+    2997 [label ="2995 Var : columnaActual"]
+    2995 -> 2997
+    2997 [label="2997 Index Expr\l"]
+    2997 -> 2996
+    2996 [label="2996 Identifier\lceldaActual"]
+    2997 -> 2998
+    2998 [label="2998 Integer\l0"]
+    2985 [label="2985 Block"]
+    2985 -> 2999
+    2999 [label="2999 Var Declare\l-----------------\lfilaActual"]
+    3001 [label ="2999 Var : filaActual"]
+    2999 -> 3001
+    3001 [label="3001 Index Expr\l"]
+    3001 -> 3000
+    3000 [label="3000 Identifier\lceldaActual"]
+    3001 -> 3002
+    3002 [label="3002 Integer\l1"]
+    2985 [label="2985 Block"]
+    2985 -> 3003
+    3003 [label="3003 If Then\l--------"]
+    3003 -> 3010
+    3010 [label="3010 Block"]
+    3010 -> 3011
+    3011 [label="3011 Return"]
+    3011 ->     2985 [label="2985 Block"]
+    2985 -> 3012
+    3012 [label="3012 Var Declare\l-----------------\lmejorDireccion"]
+    3013 [label ="3012 Var : mejorDireccion"]
+    3012 -> 3013
+    3013 [label="3013 nil"]
+    2985 [label="2985 Block"]
+    2985 -> 3014
+    3014 [label="3014 Var Declare\l-----------------\ldistanciaMinima"]
+    3015 [label ="3014 Var : distanciaMinima"]
+    3014 -> 3015
+    3015 [label="3015 Integer\l999999"]
+    2985 [label="2985 Block"]
+    2985 -> 3016
+    3016 [label="3016 Foreach"]
     3016 -> 3017
-    3017 [label="3017 Iterator"]
+    3017 [label="3017 Var Declare\l-----------------\ldireccion"]
+    3018 [label ="3017 Var : direccion"]
     3017 -> 3018
-    3018 [label="3018 Identifier\ldireccionesValidas"]
-    3017 -> 3019
-    3019 [label="3019 Var Declare\l-----------------\l@index_3019"]
-    3020 [label ="3019 Var : @index_3019"]
-    3019 -> 3020
-    3020 [label="3020 Integer\l0"]
-    3015 ->     3015 -> 3024
-    3024 [label="3024 Block"]
-    3024 -> 3025
-    3025 [label="3025 Var Declare\l-----------------\lnuevaCelda"]
-    3027 [label ="3025 Var : nuevaCelda"]
-    3025 -> 3027
-    3027 [label="3027 Call\lNextCellView()"]
-    3027 -> 3028
-    3028 [label="3028 Identifier\ldireccion"]
-    3027 -> 3029
-    3029 [label="3029 Identifier\lcolumnaActual"]
-    3027 -> 3030
-    3030 [label="3030 Identifier\lfilaActual"]
-    3024 [label="3024 Block"]
-    3024 -> 3031
-    3031 [label="3031 Var Declare\l-----------------\ldistancia"]
-    3033 [label ="3031 Var : distancia"]
-    3031 -> 3033
-    3033 [label="3033 Call\lCalcularDistancia()"]
-    3033 -> 3035
-    3035 [label="3035 Index Expr\l"]
-    3035 -> 3034
-    3034 [label="3034 Identifier\lnuevaCelda"]
-    3035 -> 3036
-    3036 [label="3036 Integer\l0"]
-    3033 -> 3038
-    3038 [label="3038 Index Expr\l"]
-    3038 -> 3037
-    3037 [label="3037 Identifier\lnuevaCelda"]
-    3038 -> 3039
-    3039 [label="3039 Integer\l1"]
-    3033 -> 3040
-    3040 [label="3040 Identifier\lcell_target_x"]
-    3033 -> 3041
-    3041 [label="3041 Identifier\lcell_target_y"]
-    3024 [label="3024 Block"]
-    3024 -> 3042
-    3042 [label="3042 If Then\l--------"]
-    3042 -> 3046
-    3046 [label="3046 Block"]
-    3046 -> 3047
-    3047 [label="3047 Expression"]
-    3047 -> 3049
-    3049 [label="3049 Assign\l-------------\l="]
-    3049 -> 3048
-    3048 [label="3048 Identifier\ldistanciaMinima"]
-    3049 -> 3051
-    3051 [label="3051 Identifier\ldistancia"]
-    3046 [label="3046 Block"]
-    3046 -> 3052
-    3052 [label="3052 Expression"]
-    3052 -> 3054
-    3054 [label="3054 Assign\l-------------\l="]
-    3054 -> 3053
-    3053 [label="3053 Identifier\lmejorDireccion"]
-    3054 -> 3056
-    3056 [label="3056 Identifier\ldireccion"]
-    2984 [label="2984 Block"]
-    2984 -> 3057
-    3057 [label="3057 If Then\l--------"]
-    3057 -> 3061
-    3061 [label="3061 Block"]
-    3061 -> 3062
-    3062 [label="3062 Expression"]
-    3062 -> 3066
-    3066 [label="3066 Assign\l-------------\l="]
-    3066 -> 3064
-    3064 [label="3064 Infix Dot"]
-    3064 -> 3063
-    3063 [label="3063 this"]
-    3064 -> 3065
-    3065 [label="3065 Identifier\ldirection"]
-    3066 -> 3068
-    3068 [label="3068 Identifier\lmejorDireccion"]
-    2105 -> 3069
-    3069 [label="3069 Function Declare\l-----------------------\lelegirDireccion"]
-    3069 -> 3070
-    3070 [label="3070 Block"]
+    3018 [label="3018 Iterator"]
+    3018 -> 3019
+    3019 [label="3019 Identifier\ldireccionesValidas"]
+    3018 -> 3020
+    3020 [label="3020 Var Declare\l-----------------\l@index_3020"]
+    3021 [label ="3020 Var : @index_3020"]
+    3020 -> 3021
+    3021 [label="3021 Integer\l0"]
+    3016 ->     3016 -> 3025
+    3025 [label="3025 Block"]
+    3025 -> 3026
+    3026 [label="3026 Var Declare\l-----------------\lnuevaCelda"]
+    3028 [label ="3026 Var : nuevaCelda"]
+    3026 -> 3028
+    3028 [label="3028 Call\lNextCellView()"]
+    3028 -> 3029
+    3029 [label="3029 Identifier\ldireccion"]
+    3028 -> 3030
+    3030 [label="3030 Identifier\lcolumnaActual"]
+    3028 -> 3031
+    3031 [label="3031 Identifier\lfilaActual"]
+    3025 [label="3025 Block"]
+    3025 -> 3032
+    3032 [label="3032 Var Declare\l-----------------\ldistancia"]
+    3034 [label ="3032 Var : distancia"]
+    3032 -> 3034
+    3034 [label="3034 Call\lCalcularDistancia()"]
+    3034 -> 3036
+    3036 [label="3036 Index Expr\l"]
+    3036 -> 3035
+    3035 [label="3035 Identifier\lnuevaCelda"]
+    3036 -> 3037
+    3037 [label="3037 Integer\l0"]
+    3034 -> 3039
+    3039 [label="3039 Index Expr\l"]
+    3039 -> 3038
+    3038 [label="3038 Identifier\lnuevaCelda"]
+    3039 -> 3040
+    3040 [label="3040 Integer\l1"]
+    3034 -> 3041
+    3041 [label="3041 Identifier\lcell_target_x"]
+    3034 -> 3042
+    3042 [label="3042 Identifier\lcell_target_y"]
+    3025 [label="3025 Block"]
+    3025 -> 3043
+    3043 [label="3043 If Then\l--------"]
+    3043 -> 3047
+    3047 [label="3047 Block"]
+    3047 -> 3048
+    3048 [label="3048 Expression"]
+    3048 -> 3050
+    3050 [label="3050 Assign\l-------------\l="]
+    3050 -> 3049
+    3049 [label="3049 Identifier\ldistanciaMinima"]
+    3050 -> 3052
+    3052 [label="3052 Identifier\ldistancia"]
+    3047 [label="3047 Block"]
+    3047 -> 3053
+    3053 [label="3053 Expression"]
+    3053 -> 3055
+    3055 [label="3055 Assign\l-------------\l="]
+    3055 -> 3054
+    3054 [label="3054 Identifier\lmejorDireccion"]
+    3055 -> 3057
+    3057 [label="3057 Identifier\ldireccion"]
+    2985 [label="2985 Block"]
+    2985 -> 3058
+    3058 [label="3058 If Then\l--------"]
+    3058 -> 3062
+    3062 [label="3062 Block"]
+    3062 -> 3063
+    3063 [label="3063 Expression"]
+    3063 -> 3067
+    3067 [label="3067 Assign\l-------------\l="]
+    3067 -> 3065
+    3065 [label="3065 Infix Dot"]
+    3065 -> 3064
+    3064 [label="3064 this"]
+    3065 -> 3066
+    3066 [label="3066 Identifier\ldirection"]
+    3067 -> 3069
+    3069 [label="3069 Identifier\lmejorDireccion"]
+    2106 -> 3070
+    3070 [label="3070 Function Declare\l-----------------------\lelegirDireccion"]
     3070 -> 3071
-    3071 [label="3071 Var Declare\l-----------------\lceldaActual"]
-    3073 [label ="3071 Var : celdaActual"]
-    3071 -> 3073
-    3073 [label="3073 Call\lCoordenadasACelda()"]
-    3073 -> 3075
-    3075 [label="3075 Infix Dot"]
-    3075 -> 3074
-    3074 [label="3074 this"]
-    3075 -> 3076
-    3076 [label="3076 Identifier\lx"]
-    3073 -> 3078
-    3078 [label="3078 Infix Dot"]
-    3078 -> 3077
-    3077 [label="3077 this"]
-    3078 -> 3079
-    3079 [label="3079 Identifier\ly"]
-    3070 [label="3070 Block"]
-    3070 -> 3080
-    3080 [label="3080 Var Declare\l-----------------\lcolumnaActual"]
-    3082 [label ="3080 Var : columnaActual"]
-    3080 -> 3082
-    3082 [label="3082 Index Expr\l"]
-    3082 -> 3081
-    3081 [label="3081 Identifier\lceldaActual"]
-    3082 -> 3083
-    3083 [label="3083 Integer\l0"]
-    3070 [label="3070 Block"]
-    3070 -> 3084
-    3084 [label="3084 Var Declare\l-----------------\lfilaActual"]
-    3086 [label ="3084 Var : filaActual"]
-    3084 -> 3086
-    3086 [label="3086 Index Expr\l"]
-    3086 -> 3085
-    3085 [label="3085 Identifier\lceldaActual"]
-    3086 -> 3087
-    3087 [label="3087 Integer\l1"]
-    3070 [label="3070 Block"]
-    3070 -> 3088
-    3088 [label="3088 Var Declare\l-----------------\ldireccionesValidas"]
-    3089 [label ="3088 Var : direccionesValidas"]
-    3088 -> 3089
-    3089 [label="3089 List"]
-    3070 [label="3070 Block"]
-    3070 -> 3090
-    3090 [label="3090 If Then\l--------"]
-    3090 -> 3097
-    3097 [label="3097 Block"]
-    3097 -> 3098
-    3098 [label="3098 Return"]
-    3098 ->     3070 [label="3070 Block"]
-    3070 -> 3099
-    3099 [label="3099 Expression"]
-    3099 -> 3101
-    3101 [label="3101 Assign\l-------------\l="]
-    3101 -> 3100
-    3100 [label="3100 Identifier\ldireccionesValidas"]
-    3101 -> 3104
-    3104 [label="3104 Call\lObtenerDireccionesValidas()"]
-    3104 -> 3105
-    3105 [label="3105 Identifier\lcolumnaActual"]
-    3104 -> 3106
-    3106 [label="3106 Identifier\lfilaActual"]
-    3104 -> 3108
-    3108 [label="3108 Infix Dot"]
-    3108 -> 3107
-    3107 [label="3107 this"]
-    3108 -> 3109
-    3109 [label="3109 Identifier\ldirection"]
-    3070 [label="3070 Block"]
-    3070 -> 3110
-    3110 [label="3110 If Then\l--------"]
-    3110 -> 3118
-    3118 [label="3118 Block"]
-    3118 -> 3119
-    3119 [label="3119 Var Declare\l-----------------\lceldaPacman"]
-    3121 [label ="3119 Var : celdaPacman"]
-    3119 -> 3121
-    3121 [label="3121 Call\lCoordenadasACelda()"]
-    3121 -> 3123
-    3123 [label="3123 Infix Dot"]
-    3123 -> 3122
-    3122 [label="3122 Identifier\lPACMAN"]
-    3123 -> 3124
-    3124 [label="3124 Identifier\lx"]
-    3121 -> 3126
-    3126 [label="3126 Infix Dot"]
-    3126 -> 3125
-    3125 [label="3125 Identifier\lPACMAN"]
-    3126 -> 3127
-    3127 [label="3127 Identifier\ly"]
-    3118 [label="3118 Block"]
-    3118 -> 3128
-    3128 [label="3128 Expression"]
-    3128 -> 3130
-    3130 [label="3130 Infix Dot"]
-    3130 -> 3129
-    3129 [label="3129 this"]
-    3130 -> 3132
-    3132 [label="3132 Call\ldeterminarDireccionObjetivo()"]
-    3132 -> 3134
-    3134 [label="3134 Index Expr\l"]
-    3134 -> 3133
-    3133 [label="3133 Identifier\lceldaPacman"]
-    3134 -> 3135
-    3135 [label="3135 Integer\l0"]
-    3132 -> 3137
-    3137 [label="3137 Index Expr\l"]
-    3137 -> 3136
-    3136 [label="3136 Identifier\lceldaPacman"]
-    3137 -> 3138
-    3138 [label="3138 Integer\l1"]
-    3132 -> 3139
-    3139 [label="3139 Identifier\ldireccionesValidas"]
-    3110 -> 3147
-    3147 [label="3147 Block"]
-    3147 -> 3148
-    3148 [label="3148 Var Declare\l-----------------\lceldaPacman"]
-    3150 [label ="3148 Var : celdaPacman"]
-    3148 -> 3150
-    3150 [label="3150 Call\lCoordenadasACelda()"]
-    3150 -> 3152
-    3152 [label="3152 Infix Dot"]
-    3152 -> 3151
-    3151 [label="3151 Identifier\lPACMAN"]
-    3152 -> 3153
-    3153 [label="3153 Identifier\lx"]
-    3150 -> 3155
-    3155 [label="3155 Infix Dot"]
-    3155 -> 3154
-    3154 [label="3154 Identifier\lPACMAN"]
-    3155 -> 3156
-    3156 [label="3156 Identifier\ly"]
-    3147 [label="3147 Block"]
-    3147 -> 3157
-    3110 -> 3244
-    3244 [label="3244 Block"]
-    3244 -> 3245
-    3245 [label="3245 Var Declare\l-----------------\ltargetX"]
-    3246 [label ="3245 Var : targetX"]
+    3071 [label="3071 Block"]
+    3071 -> 3072
+    3072 [label="3072 Var Declare\l-----------------\lceldaActual"]
+    3074 [label ="3072 Var : celdaActual"]
+    3072 -> 3074
+    3074 [label="3074 Call\lCoordenadasACelda()"]
+    3074 -> 3076
+    3076 [label="3076 Infix Dot"]
+    3076 -> 3075
+    3075 [label="3075 this"]
+    3076 -> 3077
+    3077 [label="3077 Identifier\lx"]
+    3074 -> 3079
+    3079 [label="3079 Infix Dot"]
+    3079 -> 3078
+    3078 [label="3078 this"]
+    3079 -> 3080
+    3080 [label="3080 Identifier\ly"]
+    3071 [label="3071 Block"]
+    3071 -> 3081
+    3081 [label="3081 Var Declare\l-----------------\lcolumnaActual"]
+    3083 [label ="3081 Var : columnaActual"]
+    3081 -> 3083
+    3083 [label="3083 Index Expr\l"]
+    3083 -> 3082
+    3082 [label="3082 Identifier\lceldaActual"]
+    3083 -> 3084
+    3084 [label="3084 Integer\l0"]
+    3071 [label="3071 Block"]
+    3071 -> 3085
+    3085 [label="3085 Var Declare\l-----------------\lfilaActual"]
+    3087 [label ="3085 Var : filaActual"]
+    3085 -> 3087
+    3087 [label="3087 Index Expr\l"]
+    3087 -> 3086
+    3086 [label="3086 Identifier\lceldaActual"]
+    3087 -> 3088
+    3088 [label="3088 Integer\l1"]
+    3071 [label="3071 Block"]
+    3071 -> 3089
+    3089 [label="3089 Var Declare\l-----------------\ldireccionesValidas"]
+    3090 [label ="3089 Var : direccionesValidas"]
+    3089 -> 3090
+    3090 [label="3090 List"]
+    3071 [label="3071 Block"]
+    3071 -> 3091
+    3091 [label="3091 If Then\l--------"]
+    3091 -> 3098
+    3098 [label="3098 Block"]
+    3098 -> 3099
+    3099 [label="3099 Return"]
+    3099 ->     3071 [label="3071 Block"]
+    3071 -> 3100
+    3100 [label="3100 Expression"]
+    3100 -> 3102
+    3102 [label="3102 Assign\l-------------\l="]
+    3102 -> 3101
+    3101 [label="3101 Identifier\ldireccionesValidas"]
+    3102 -> 3105
+    3105 [label="3105 Call\lObtenerDireccionesValidas()"]
+    3105 -> 3106
+    3106 [label="3106 Identifier\lcolumnaActual"]
+    3105 -> 3107
+    3107 [label="3107 Identifier\lfilaActual"]
+    3105 -> 3109
+    3109 [label="3109 Infix Dot"]
+    3109 -> 3108
+    3108 [label="3108 this"]
+    3109 -> 3110
+    3110 [label="3110 Identifier\ldirection"]
+    3071 [label="3071 Block"]
+    3071 -> 3111
+    3111 [label="3111 If Then\l--------"]
+    3111 -> 3119
+    3119 [label="3119 Block"]
+    3119 -> 3120
+    3120 [label="3120 Var Declare\l-----------------\lceldaPacman"]
+    3122 [label ="3120 Var : celdaPacman"]
+    3120 -> 3122
+    3122 [label="3122 Call\lCoordenadasACelda()"]
+    3122 -> 3124
+    3124 [label="3124 Infix Dot"]
+    3124 -> 3123
+    3123 [label="3123 Identifier\lPACMAN"]
+    3124 -> 3125
+    3125 [label="3125 Identifier\lx"]
+    3122 -> 3127
+    3127 [label="3127 Infix Dot"]
+    3127 -> 3126
+    3126 [label="3126 Identifier\lPACMAN"]
+    3127 -> 3128
+    3128 [label="3128 Identifier\ly"]
+    3119 [label="3119 Block"]
+    3119 -> 3129
+    3129 [label="3129 Expression"]
+    3129 -> 3131
+    3131 [label="3131 Infix Dot"]
+    3131 -> 3130
+    3130 [label="3130 this"]
+    3131 -> 3133
+    3133 [label="3133 Call\ldeterminarDireccionObjetivo()"]
+    3133 -> 3135
+    3135 [label="3135 Index Expr\l"]
+    3135 -> 3134
+    3134 [label="3134 Identifier\lceldaPacman"]
+    3135 -> 3136
+    3136 [label="3136 Integer\l0"]
+    3133 -> 3138
+    3138 [label="3138 Index Expr\l"]
+    3138 -> 3137
+    3137 [label="3137 Identifier\lceldaPacman"]
+    3138 -> 3139
+    3139 [label="3139 Integer\l1"]
+    3133 -> 3140
+    3140 [label="3140 Identifier\ldireccionesValidas"]
+    3111 -> 3148
+    3148 [label="3148 Block"]
+    3148 -> 3149
+    3149 [label="3149 Var Declare\l-----------------\lceldaPacman"]
+    3151 [label ="3149 Var : celdaPacman"]
+    3149 -> 3151
+    3151 [label="3151 Call\lCoordenadasACelda()"]
+    3151 -> 3153
+    3153 [label="3153 Infix Dot"]
+    3153 -> 3152
+    3152 [label="3152 Identifier\lPACMAN"]
+    3153 -> 3154
+    3154 [label="3154 Identifier\lx"]
+    3151 -> 3156
+    3156 [label="3156 Infix Dot"]
+    3156 -> 3155
+    3155 [label="3155 Identifier\lPACMAN"]
+    3156 -> 3157
+    3157 [label="3157 Identifier\ly"]
+    3148 [label="3148 Block"]
+    3148 -> 3158
+    3111 -> 3245
+    3245 [label="3245 Block"]
     3245 -> 3246
-    3246 [label="3246 Integer\l0"]
-    3245 [label="3245 Var Declare\l-----------------\ltargetY"]
-    3247 [label ="3245 Var : targetY"]
-    3245 -> 3247
+    3246 [label="3246 Var Declare\l-----------------\ltargetX"]
+    3247 [label ="3246 Var : targetX"]
+    3246 -> 3247
     3247 [label="3247 Integer\l0"]
-    3244 [label="3244 Block"]
-    3244 -> 3248
-    3248 [label="3248 Var Declare\l-----------------\lceldaPacman"]
-    3250 [label ="3248 Var : celdaPacman"]
-    3248 -> 3250
-    3250 [label="3250 Call\lCoordenadasACelda()"]
-    3250 -> 3252
-    3252 [label="3252 Infix Dot"]
-    3252 -> 3251
-    3251 [label="3251 Identifier\lPACMAN"]
-    3252 -> 3253
-    3253 [label="3253 Identifier\lx"]
-    3250 -> 3255
-    3255 [label="3255 Infix Dot"]
-    3255 -> 3254
-    3254 [label="3254 Identifier\lPACMAN"]
-    3255 -> 3256
-    3256 [label="3256 Identifier\ly"]
-    3244 [label="3244 Block"]
-    3244 -> 3257
-    3244 [label="3244 Block"]
-    3244 -> 3345
-    3345 [label="3345 Var Declare\l-----------------\lblinky"]
-    3347 [label ="3345 Var : blinky"]
-    3345 -> 3347
-    3347 [label="3347 Index Expr\l"]
-    3347 -> 3346
-    3346 [label="3346 Identifier\lghosts"]
-    3347 -> 3349
-    3349 [label="3349 Infix Dot"]
-    3349 -> 3348
-    3348 [label="3348 Identifier\lGHOST"]
-    3349 -> 3350
-    3350 [label="3350 Identifier\lblinky"]
-    3244 [label="3244 Block"]
-    3244 -> 3351
-    3351 [label="3351 Var Declare\l-----------------\lceldaBlinky"]
-    3353 [label ="3351 Var : celdaBlinky"]
-    3351 -> 3353
-    3353 [label="3353 Call\lCoordenadasACelda()"]
-    3353 -> 3355
-    3355 [label="3355 Infix Dot"]
-    3355 -> 3354
-    3354 [label="3354 Identifier\lblinky"]
-    3355 -> 3356
-    3356 [label="3356 Identifier\lx"]
-    3353 -> 3358
-    3358 [label="3358 Infix Dot"]
-    3358 -> 3357
-    3357 [label="3357 Identifier\lblinky"]
-    3358 -> 3359
-    3359 [label="3359 Identifier\ly"]
-    3244 [label="3244 Block"]
-    3244 -> 3360
-    3360 [label="3360 Expression"]
-    3360 -> 3362
-    3362 [label="3362 Assign\l-------------\l="]
-    3362 -> 3361
-    3361 [label="3361 Identifier\ltargetX"]
-    3362 -> 3365
-    3365 [label="3365 Infix Expr\l+"]
-    3365 -> 3364
-    3364 [label="3364 Identifier\ltargetX"]
-    3365 [label="3365 Infix Expr\l+"]
-    3365 -> 3367
-    3367 [label="3367 Infix Expr\l-"]
-    3367 -> 3366
-    3366 [label="3366 Identifier\ltargetX"]
-    3367 [label="3367 Infix Expr\l-"]
-    3367 -> 3369
-    3369 [label="3369 Index Expr\l"]
-    3369 -> 3368
-    3368 [label="3368 Identifier\lceldaBlinky"]
-    3369 -> 3370
-    3370 [label="3370 Integer\l0"]
-    3244 [label="3244 Block"]
-    3244 -> 3371
-    3371 [label="3371 Expression"]
-    3371 -> 3373
-    3373 [label="3373 Assign\l-------------\l="]
-    3373 -> 3372
-    3372 [label="3372 Identifier\ltargetY"]
-    3373 -> 3376
-    3376 [label="3376 Infix Expr\l+"]
-    3376 -> 3375
-    3375 [label="3375 Identifier\ltargetY"]
-    3376 [label="3376 Infix Expr\l+"]
-    3376 -> 3378
-    3378 [label="3378 Infix Expr\l-"]
-    3378 -> 3377
-    3377 [label="3377 Identifier\ltargetY"]
-    3378 [label="3378 Infix Expr\l-"]
-    3378 -> 3380
-    3380 [label="3380 Index Expr\l"]
-    3380 -> 3379
-    3379 [label="3379 Identifier\lceldaBlinky"]
-    3380 -> 3381
-    3381 [label="3381 Integer\l1"]
-    3244 [label="3244 Block"]
-    3244 -> 3382
-    3382 [label="3382 Expression"]
-    3382 -> 3384
-    3384 [label="3384 Infix Dot"]
-    3384 -> 3383
-    3383 [label="3383 this"]
-    3384 -> 3386
-    3386 [label="3386 Call\ldeterminarDireccionObjetivo()"]
-    3386 -> 3387
-    3387 [label="3387 Identifier\ltargetX"]
-    3386 -> 3388
-    3388 [label="3388 Identifier\ltargetY"]
-    3386 -> 3389
-    3389 [label="3389 Identifier\ldireccionesValidas"]
-    3110 -> 3397
-    3397 [label="3397 Block"]
-    3397 -> 3398
-    3398 [label="3398 Var Declare\l-----------------\lceldaActual"]
-    3400 [label ="3398 Var : celdaActual"]
-    3398 -> 3400
-    3400 [label="3400 Call\lCoordenadasACelda()"]
-    3400 -> 3402
-    3402 [label="3402 Infix Dot"]
-    3402 -> 3401
-    3401 [label="3401 this"]
-    3402 -> 3403
-    3403 [label="3403 Identifier\lx"]
-    3400 -> 3405
-    3405 [label="3405 Infix Dot"]
-    3405 -> 3404
-    3404 [label="3404 this"]
-    3405 -> 3406
-    3406 [label="3406 Identifier\ly"]
-    3397 [label="3397 Block"]
-    3397 -> 3407
-    3407 [label="3407 Var Declare\l-----------------\lceldaPacman"]
-    3409 [label ="3407 Var : celdaPacman"]
-    3407 -> 3409
-    3409 [label="3409 Call\lCoordenadasACelda()"]
-    3409 -> 3411
-    3411 [label="3411 Infix Dot"]
-    3411 -> 3410
-    3410 [label="3410 Identifier\lPACMAN"]
-    3411 -> 3412
-    3412 [label="3412 Identifier\lx"]
-    3409 -> 3414
-    3414 [label="3414 Infix Dot"]
-    3414 -> 3413
-    3413 [label="3413 Identifier\lPACMAN"]
-    3414 -> 3415
-    3415 [label="3415 Identifier\ly"]
-    3397 [label="3397 Block"]
-    3397 -> 3416
-    3416 [label="3416 Var Declare\l-----------------\ldistancia"]
-    3418 [label ="3416 Var : distancia"]
-    3416 -> 3418
-    3418 [label="3418 Call\lCalcularDistancia()"]
-    3418 -> 3420
-    3420 [label="3420 Index Expr\l"]
-    3420 -> 3419
-    3419 [label="3419 Identifier\lceldaActual"]
-    3420 -> 3421
-    3421 [label="3421 Integer\l0"]
-    3418 -> 3423
-    3423 [label="3423 Index Expr\l"]
-    3423 -> 3422
-    3422 [label="3422 Identifier\lceldaActual"]
-    3423 -> 3424
-    3424 [label="3424 Integer\l1"]
-    3418 -> 3426
-    3426 [label="3426 Index Expr\l"]
-    3426 -> 3425
-    3425 [label="3425 Identifier\lceldaPacman"]
-    3426 -> 3427
-    3427 [label="3427 Integer\l0"]
-    3418 -> 3429
-    3429 [label="3429 Index Expr\l"]
-    3429 -> 3428
-    3428 [label="3428 Identifier\lceldaPacman"]
-    3429 -> 3430
-    3430 [label="3430 Integer\l1"]
-    3397 [label="3397 Block"]
-    3397 -> 3431
-    3431 [label="3431 If Then\l--------"]
-    3431 -> 3435
-    3435 [label="3435 Block"]
-    3435 -> 3436
-    3436 [label="3436 Expression"]
-    3436 -> 3438
-    3438 [label="3438 Call\lprintln()"]
-    3438 -> 3439
-    3439 [label="3439 String\lDistancia mayor de 8"]
-    3435 [label="3435 Block"]
-    3435 -> 3440
-    3440 [label="3440 Expression"]
-    3440 -> 3442
-    3442 [label="3442 Infix Dot"]
-    3442 -> 3441
-    3441 [label="3441 this"]
-    3442 -> 3444
-    3444 [label="3444 Call\ldeterminarDireccionObjetivo()"]
-    3444 -> 3446
-    3446 [label="3446 Index Expr\l"]
-    3446 -> 3445
-    3445 [label="3445 Identifier\lceldaPacman"]
-    3446 -> 3447
-    3447 [label="3447 Integer\l0"]
-    3444 -> 3449
-    3449 [label="3449 Index Expr\l"]
-    3449 -> 3448
-    3448 [label="3448 Identifier\lceldaPacman"]
-    3449 -> 3450
-    3450 [label="3450 Integer\l1"]
-    3444 -> 3451
-    3451 [label="3451 Identifier\ldireccionesValidas"]
-    3110 -> 3470
-    3470 [label="3470 Block"]
-    3470 -> 3471
-    3471 [label="3471 Var Declare\l-----------------\lindiceAleatorio"]
-    3473 [label ="3471 Var : indiceAleatorio"]
-    3471 -> 3473
-    3473 [label="3473 Call\lrandom()"]
-    3473 -> 3474
-    3474 [label="3474 Integer\l0"]
-    3473 -> 3479
-    3479 [label="3479 Infix Expr\l-"]
-    3479 -> 3476
-    3476 [label="3476 Infix Dot"]
-    3476 -> 3475
-    3475 [label="3475 Identifier\ldireccionesValidas"]
-    3476 -> 3478
-    3478 [label="3478 Call\lsize()"]
-    3479 [label="3479 Infix Expr\l-"]
-    3479 -> 3480
-    3480 [label="3480 Integer\l1"]
-    3470 [label="3470 Block"]
-    3470 -> 3481
-    3481 [label="3481 Expression"]
-    3481 -> 3485
-    3485 [label="3485 Assign\l-------------\l="]
-    3485 -> 3483
-    3483 [label="3483 Infix Dot"]
-    3483 -> 3482
-    3482 [label="3482 this"]
-    3483 -> 3484
-    3484 [label="3484 Identifier\ldirection"]
-    3485 -> 3488
-    3488 [label="3488 Index Expr\l"]
-    3488 -> 3487
-    3487 [label="3487 Identifier\ldireccionesValidas"]
-    3488 -> 3489
-    3489 [label="3489 Identifier\lindiceAleatorio"]
-    2105 -> 3490
-    3490 [label="3490 Function Declare\l-----------------------\lupdate"]
-    3490 -> 3491
-    3491 [label="3491 Block"]
+    3246 [label="3246 Var Declare\l-----------------\ltargetY"]
+    3248 [label ="3246 Var : targetY"]
+    3246 -> 3248
+    3248 [label="3248 Integer\l0"]
+    3245 [label="3245 Block"]
+    3245 -> 3249
+    3249 [label="3249 Var Declare\l-----------------\lceldaPacman"]
+    3251 [label ="3249 Var : celdaPacman"]
+    3249 -> 3251
+    3251 [label="3251 Call\lCoordenadasACelda()"]
+    3251 -> 3253
+    3253 [label="3253 Infix Dot"]
+    3253 -> 3252
+    3252 [label="3252 Identifier\lPACMAN"]
+    3253 -> 3254
+    3254 [label="3254 Identifier\lx"]
+    3251 -> 3256
+    3256 [label="3256 Infix Dot"]
+    3256 -> 3255
+    3255 [label="3255 Identifier\lPACMAN"]
+    3256 -> 3257
+    3257 [label="3257 Identifier\ly"]
+    3245 [label="3245 Block"]
+    3245 -> 3258
+    3245 [label="3245 Block"]
+    3245 -> 3346
+    3346 [label="3346 Var Declare\l-----------------\lblinky"]
+    3348 [label ="3346 Var : blinky"]
+    3346 -> 3348
+    3348 [label="3348 Index Expr\l"]
+    3348 -> 3347
+    3347 [label="3347 Identifier\lghosts"]
+    3348 -> 3350
+    3350 [label="3350 Infix Dot"]
+    3350 -> 3349
+    3349 [label="3349 Identifier\lGHOST"]
+    3350 -> 3351
+    3351 [label="3351 Identifier\lblinky"]
+    3245 [label="3245 Block"]
+    3245 -> 3352
+    3352 [label="3352 Var Declare\l-----------------\lceldaBlinky"]
+    3354 [label ="3352 Var : celdaBlinky"]
+    3352 -> 3354
+    3354 [label="3354 Call\lCoordenadasACelda()"]
+    3354 -> 3356
+    3356 [label="3356 Infix Dot"]
+    3356 -> 3355
+    3355 [label="3355 Identifier\lblinky"]
+    3356 -> 3357
+    3357 [label="3357 Identifier\lx"]
+    3354 -> 3359
+    3359 [label="3359 Infix Dot"]
+    3359 -> 3358
+    3358 [label="3358 Identifier\lblinky"]
+    3359 -> 3360
+    3360 [label="3360 Identifier\ly"]
+    3245 [label="3245 Block"]
+    3245 -> 3361
+    3361 [label="3361 Expression"]
+    3361 -> 3363
+    3363 [label="3363 Assign\l-------------\l="]
+    3363 -> 3362
+    3362 [label="3362 Identifier\ltargetX"]
+    3363 -> 3366
+    3366 [label="3366 Infix Expr\l+"]
+    3366 -> 3365
+    3365 [label="3365 Identifier\ltargetX"]
+    3366 [label="3366 Infix Expr\l+"]
+    3366 -> 3368
+    3368 [label="3368 Infix Expr\l-"]
+    3368 -> 3367
+    3367 [label="3367 Identifier\ltargetX"]
+    3368 [label="3368 Infix Expr\l-"]
+    3368 -> 3370
+    3370 [label="3370 Index Expr\l"]
+    3370 -> 3369
+    3369 [label="3369 Identifier\lceldaBlinky"]
+    3370 -> 3371
+    3371 [label="3371 Integer\l0"]
+    3245 [label="3245 Block"]
+    3245 -> 3372
+    3372 [label="3372 Expression"]
+    3372 -> 3374
+    3374 [label="3374 Assign\l-------------\l="]
+    3374 -> 3373
+    3373 [label="3373 Identifier\ltargetY"]
+    3374 -> 3377
+    3377 [label="3377 Infix Expr\l+"]
+    3377 -> 3376
+    3376 [label="3376 Identifier\ltargetY"]
+    3377 [label="3377 Infix Expr\l+"]
+    3377 -> 3379
+    3379 [label="3379 Infix Expr\l-"]
+    3379 -> 3378
+    3378 [label="3378 Identifier\ltargetY"]
+    3379 [label="3379 Infix Expr\l-"]
+    3379 -> 3381
+    3381 [label="3381 Index Expr\l"]
+    3381 -> 3380
+    3380 [label="3380 Identifier\lceldaBlinky"]
+    3381 -> 3382
+    3382 [label="3382 Integer\l1"]
+    3245 [label="3245 Block"]
+    3245 -> 3383
+    3383 [label="3383 Expression"]
+    3383 -> 3385
+    3385 [label="3385 Infix Dot"]
+    3385 -> 3384
+    3384 [label="3384 this"]
+    3385 -> 3387
+    3387 [label="3387 Call\ldeterminarDireccionObjetivo()"]
+    3387 -> 3388
+    3388 [label="3388 Identifier\ltargetX"]
+    3387 -> 3389
+    3389 [label="3389 Identifier\ltargetY"]
+    3387 -> 3390
+    3390 [label="3390 Identifier\ldireccionesValidas"]
+    3111 -> 3398
+    3398 [label="3398 Block"]
+    3398 -> 3399
+    3399 [label="3399 Var Declare\l-----------------\lceldaActual"]
+    3401 [label ="3399 Var : celdaActual"]
+    3399 -> 3401
+    3401 [label="3401 Call\lCoordenadasACelda()"]
+    3401 -> 3403
+    3403 [label="3403 Infix Dot"]
+    3403 -> 3402
+    3402 [label="3402 this"]
+    3403 -> 3404
+    3404 [label="3404 Identifier\lx"]
+    3401 -> 3406
+    3406 [label="3406 Infix Dot"]
+    3406 -> 3405
+    3405 [label="3405 this"]
+    3406 -> 3407
+    3407 [label="3407 Identifier\ly"]
+    3398 [label="3398 Block"]
+    3398 -> 3408
+    3408 [label="3408 Var Declare\l-----------------\lceldaPacman"]
+    3410 [label ="3408 Var : celdaPacman"]
+    3408 -> 3410
+    3410 [label="3410 Call\lCoordenadasACelda()"]
+    3410 -> 3412
+    3412 [label="3412 Infix Dot"]
+    3412 -> 3411
+    3411 [label="3411 Identifier\lPACMAN"]
+    3412 -> 3413
+    3413 [label="3413 Identifier\lx"]
+    3410 -> 3415
+    3415 [label="3415 Infix Dot"]
+    3415 -> 3414
+    3414 [label="3414 Identifier\lPACMAN"]
+    3415 -> 3416
+    3416 [label="3416 Identifier\ly"]
+    3398 [label="3398 Block"]
+    3398 -> 3417
+    3417 [label="3417 Var Declare\l-----------------\ldistancia"]
+    3419 [label ="3417 Var : distancia"]
+    3417 -> 3419
+    3419 [label="3419 Call\lCalcularDistancia()"]
+    3419 -> 3421
+    3421 [label="3421 Index Expr\l"]
+    3421 -> 3420
+    3420 [label="3420 Identifier\lceldaActual"]
+    3421 -> 3422
+    3422 [label="3422 Integer\l0"]
+    3419 -> 3424
+    3424 [label="3424 Index Expr\l"]
+    3424 -> 3423
+    3423 [label="3423 Identifier\lceldaActual"]
+    3424 -> 3425
+    3425 [label="3425 Integer\l1"]
+    3419 -> 3427
+    3427 [label="3427 Index Expr\l"]
+    3427 -> 3426
+    3426 [label="3426 Identifier\lceldaPacman"]
+    3427 -> 3428
+    3428 [label="3428 Integer\l0"]
+    3419 -> 3430
+    3430 [label="3430 Index Expr\l"]
+    3430 -> 3429
+    3429 [label="3429 Identifier\lceldaPacman"]
+    3430 -> 3431
+    3431 [label="3431 Integer\l1"]
+    3398 [label="3398 Block"]
+    3398 -> 3432
+    3432 [label="3432 If Then\l--------"]
+    3432 -> 3436
+    3436 [label="3436 Block"]
+    3436 -> 3437
+    3437 [label="3437 Expression"]
+    3437 -> 3439
+    3439 [label="3439 Call\lprintln()"]
+    3439 -> 3440
+    3440 [label="3440 String\lDistancia mayor de 8"]
+    3436 [label="3436 Block"]
+    3436 -> 3441
+    3441 [label="3441 Expression"]
+    3441 -> 3443
+    3443 [label="3443 Infix Dot"]
+    3443 -> 3442
+    3442 [label="3442 this"]
+    3443 -> 3445
+    3445 [label="3445 Call\ldeterminarDireccionObjetivo()"]
+    3445 -> 3447
+    3447 [label="3447 Index Expr\l"]
+    3447 -> 3446
+    3446 [label="3446 Identifier\lceldaPacman"]
+    3447 -> 3448
+    3448 [label="3448 Integer\l0"]
+    3445 -> 3450
+    3450 [label="3450 Index Expr\l"]
+    3450 -> 3449
+    3449 [label="3449 Identifier\lceldaPacman"]
+    3450 -> 3451
+    3451 [label="3451 Integer\l1"]
+    3445 -> 3452
+    3452 [label="3452 Identifier\ldireccionesValidas"]
+    3111 -> 3471
+    3471 [label="3471 Block"]
+    3471 -> 3472
+    3472 [label="3472 Var Declare\l-----------------\lindiceAleatorio"]
+    3474 [label ="3472 Var : indiceAleatorio"]
+    3472 -> 3474
+    3474 [label="3474 Call\lrandom()"]
+    3474 -> 3475
+    3475 [label="3475 Integer\l0"]
+    3474 -> 3480
+    3480 [label="3480 Infix Expr\l-"]
+    3480 -> 3477
+    3477 [label="3477 Infix Dot"]
+    3477 -> 3476
+    3476 [label="3476 Identifier\ldireccionesValidas"]
+    3477 -> 3479
+    3479 [label="3479 Call\lsize()"]
+    3480 [label="3480 Infix Expr\l-"]
+    3480 -> 3481
+    3481 [label="3481 Integer\l1"]
+    3471 [label="3471 Block"]
+    3471 -> 3482
+    3482 [label="3482 Expression"]
+    3482 -> 3486
+    3486 [label="3486 Assign\l-------------\l="]
+    3486 -> 3484
+    3484 [label="3484 Infix Dot"]
+    3484 -> 3483
+    3483 [label="3483 this"]
+    3484 -> 3485
+    3485 [label="3485 Identifier\ldirection"]
+    3486 -> 3489
+    3489 [label="3489 Index Expr\l"]
+    3489 -> 3488
+    3488 [label="3488 Identifier\ldireccionesValidas"]
+    3489 -> 3490
+    3490 [label="3490 Identifier\lindiceAleatorio"]
+    2106 -> 3491
+    3491 [label="3491 Function Declare\l-----------------------\lupdate"]
     3491 -> 3492
-    3492 [label="3492 Var Declare\l-----------------\lceldaActual"]
-    3494 [label ="3492 Var : celdaActual"]
-    3492 -> 3494
-    3494 [label="3494 Call\lCoordenadasACelda()"]
-    3494 -> 3496
-    3496 [label="3496 Infix Dot"]
-    3496 -> 3495
-    3495 [label="3495 this"]
-    3496 -> 3497
-    3497 [label="3497 Identifier\lx"]
-    3494 -> 3499
-    3499 [label="3499 Infix Dot"]
-    3499 -> 3498
-    3498 [label="3498 this"]
-    3499 -> 3500
-    3500 [label="3500 Identifier\ly"]
-    3491 [label="3491 Block"]
-    3491 -> 3501
-    3501 [label="3501 Var Declare\l-----------------\lnuevaX"]
-    3503 [label ="3501 Var : nuevaX"]
-    3501 -> 3503
-    3503 [label="3503 Infix Dot"]
-    3503 -> 3502
-    3502 [label="3502 this"]
-    3503 -> 3504
-    3504 [label="3504 Identifier\lx"]
-    3491 [label="3491 Block"]
-    3491 -> 3505
-    3505 [label="3505 Var Declare\l-----------------\lnuevaY"]
-    3507 [label ="3505 Var : nuevaY"]
-    3505 -> 3507
-    3507 [label="3507 Infix Dot"]
-    3507 -> 3506
-    3506 [label="3506 this"]
-    3507 -> 3508
-    3508 [label="3508 Identifier\ly"]
-    3491 [label="3491 Block"]
-    3491 -> 3509
-    3509 [label="3509 Constant\l--------"]
-    3509 -> 3510
-    3510 [label="3510 Integer\l3"]
-    3491 [label="3491 Block"]
-    3491 -> 3511
-    3511 [label="3511 Constant\l--------"]
-    3511 -> 3512
-    3512 [label="3512 Integer\l3"]
-    3491 [label="3491 Block"]
-    3491 -> 3513
-    3513 [label="3513 Var Declare\l-----------------\lcarrilX"]
-    3515 [label ="3513 Var : carrilX"]
-    3513 -> 3515
-    3515 [label="3515 Infix Expr\l+"]
-    3515 -> 3514
-    3514 [label="3514 Identifier\lX_MAPINI"]
-    3515 [label="3515 Infix Expr\l+"]
-    3515 -> 3519
-    3519 [label="3519 Infix Expr\l*"]
-    3519 -> 3517
-    3517 [label="3517 Index Expr\l"]
-    3517 -> 3516
-    3516 [label="3516 Identifier\lceldaActual"]
-    3517 -> 3518
-    3518 [label="3518 Integer\l0"]
-    3519 [label="3519 Infix Expr\l*"]
-    3519 -> 3520
-    3520 [label="3520 Identifier\lCELL_SIZE"]
-    3491 [label="3491 Block"]
-    3491 -> 3521
-    3521 [label="3521 Var Declare\l-----------------\lcarrilY"]
-    3523 [label ="3521 Var : carrilY"]
-    3521 -> 3523
-    3523 [label="3523 Infix Expr\l+"]
-    3523 -> 3522
-    3522 [label="3522 Identifier\lY_MAPINI"]
-    3523 [label="3523 Infix Expr\l+"]
-    3523 -> 3527
-    3527 [label="3527 Infix Expr\l*"]
-    3527 -> 3525
-    3525 [label="3525 Index Expr\l"]
-    3525 -> 3524
-    3524 [label="3524 Identifier\lceldaActual"]
-    3525 -> 3526
-    3526 [label="3526 Integer\l1"]
-    3527 [label="3527 Infix Expr\l*"]
-    3527 -> 3528
-    3528 [label="3528 Identifier\lCELL_SIZE"]
-    3491 [label="3491 Block"]
-    3491 -> 3529
-    3529 [label="3529 If Then\l--------"]
-    3529 -> 3545
-    3545 [label="3545 Block"]
-    3545 -> 3546
-    3546 [label="3546 Expression"]
-    3546 -> 3548
-    3548 [label="3548 Assign\l-------------\l="]
-    3548 -> 3547
-    3547 [label="3547 Identifier\lnuevaX"]
-    3548 -> 3551
-    3551 [label="3551 Infix Expr\l+"]
-    3551 -> 3550
-    3550 [label="3550 Identifier\lcarrilX"]
-    3551 [label="3551 Infix Expr\l+"]
-    3551 -> 3552
-    3552 [label="3552 Identifier\lAJUSTE_X"]
-    3529 -> 3568
-    3568 [label="3568 Block"]
-    3568 -> 3569
-    3569 [label="3569 Expression"]
-    3569 -> 3571
-    3571 [label="3571 Assign\l-------------\l="]
-    3571 -> 3570
-    3570 [label="3570 Identifier\lnuevaY"]
-    3571 -> 3574
-    3574 [label="3574 Infix Expr\l+"]
-    3574 -> 3573
-    3573 [label="3573 Identifier\lcarrilY"]
-    3574 [label="3574 Infix Expr\l+"]
-    3574 -> 3575
-    3575 [label="3575 Identifier\lAJUSTE_Y"]
-    3491 [label="3491 Block"]
-    3491 -> 3576
-    3576 [label="3576 If Then\l--------"]
-    3576 -> 3584
-    3584 [label="3584 Block"]
-    3584 -> 3585
-    3585 [label="3585 Expression"]
-    3585 -> 3587
-    3587 [label="3587 Assign\l-------------\l="]
-    3587 -> 3586
-    3586 [label="3586 Identifier\lnuevaY"]
-    3587 -> 3588
-    3588 [label="3588 Infix Expr\l-"]
-    3588 -> 3586
-    3586 [label="3586 Identifier\lnuevaY"]
-    3588 [label="3588 Infix Expr\l-"]
+    3492 [label="3492 Block"]
+    3492 -> 3493
+    3493 [label="3493 Var Declare\l-----------------\lceldaActual"]
+    3495 [label ="3493 Var : celdaActual"]
+    3493 -> 3495
+    3495 [label="3495 Call\lCoordenadasACelda()"]
+    3495 -> 3497
+    3497 [label="3497 Infix Dot"]
+    3497 -> 3496
+    3496 [label="3496 this"]
+    3497 -> 3498
+    3498 [label="3498 Identifier\lx"]
+    3495 -> 3500
+    3500 [label="3500 Infix Dot"]
+    3500 -> 3499
+    3499 [label="3499 this"]
+    3500 -> 3501
+    3501 [label="3501 Identifier\ly"]
+    3492 [label="3492 Block"]
+    3492 -> 3502
+    3502 [label="3502 Var Declare\l-----------------\lnuevaX"]
+    3504 [label ="3502 Var : nuevaX"]
+    3502 -> 3504
+    3504 [label="3504 Infix Dot"]
+    3504 -> 3503
+    3503 [label="3503 this"]
+    3504 -> 3505
+    3505 [label="3505 Identifier\lx"]
+    3492 [label="3492 Block"]
+    3492 -> 3506
+    3506 [label="3506 Var Declare\l-----------------\lnuevaY"]
+    3508 [label ="3506 Var : nuevaY"]
+    3506 -> 3508
+    3508 [label="3508 Infix Dot"]
+    3508 -> 3507
+    3507 [label="3507 this"]
+    3508 -> 3509
+    3509 [label="3509 Identifier\ly"]
+    3492 [label="3492 Block"]
+    3492 -> 3510
+    3510 [label="3510 Constant\l--------"]
+    3510 -> 3511
+    3511 [label="3511 Integer\l3"]
+    3492 [label="3492 Block"]
+    3492 -> 3512
+    3512 [label="3512 Constant\l--------"]
+    3512 -> 3513
+    3513 [label="3513 Integer\l3"]
+    3492 [label="3492 Block"]
+    3492 -> 3514
+    3514 [label="3514 Var Declare\l-----------------\lcarrilX"]
+    3516 [label ="3514 Var : carrilX"]
+    3514 -> 3516
+    3516 [label="3516 Infix Expr\l+"]
+    3516 -> 3515
+    3515 [label="3515 Identifier\lX_MAPINI"]
+    3516 [label="3516 Infix Expr\l+"]
+    3516 -> 3520
+    3520 [label="3520 Infix Expr\l*"]
+    3520 -> 3518
+    3518 [label="3518 Index Expr\l"]
+    3518 -> 3517
+    3517 [label="3517 Identifier\lceldaActual"]
+    3518 -> 3519
+    3519 [label="3519 Integer\l0"]
+    3520 [label="3520 Infix Expr\l*"]
+    3520 -> 3521
+    3521 [label="3521 Identifier\lCELL_SIZE"]
+    3492 [label="3492 Block"]
+    3492 -> 3522
+    3522 [label="3522 Var Declare\l-----------------\lcarrilY"]
+    3524 [label ="3522 Var : carrilY"]
+    3522 -> 3524
+    3524 [label="3524 Infix Expr\l+"]
+    3524 -> 3523
+    3523 [label="3523 Identifier\lY_MAPINI"]
+    3524 [label="3524 Infix Expr\l+"]
+    3524 -> 3528
+    3528 [label="3528 Infix Expr\l*"]
+    3528 -> 3526
+    3526 [label="3526 Index Expr\l"]
+    3526 -> 3525
+    3525 [label="3525 Identifier\lceldaActual"]
+    3526 -> 3527
+    3527 [label="3527 Integer\l1"]
+    3528 [label="3528 Infix Expr\l*"]
+    3528 -> 3529
+    3529 [label="3529 Identifier\lCELL_SIZE"]
+    3492 [label="3492 Block"]
+    3492 -> 3530
+    3530 [label="3530 If Then\l--------"]
+    3530 -> 3546
+    3546 [label="3546 Block"]
+    3546 -> 3547
+    3547 [label="3547 Expression"]
+    3547 -> 3549
+    3549 [label="3549 Assign\l-------------\l="]
+    3549 -> 3548
+    3548 [label="3548 Identifier\lnuevaX"]
+    3549 -> 3552
+    3552 [label="3552 Infix Expr\l+"]
+    3552 -> 3551
+    3551 [label="3551 Identifier\lcarrilX"]
+    3552 [label="3552 Infix Expr\l+"]
+    3552 -> 3553
+    3553 [label="3553 Identifier\lAJUSTE_X"]
+    3530 -> 3569
+    3569 [label="3569 Block"]
+    3569 -> 3570
+    3570 [label="3570 Expression"]
+    3570 -> 3572
+    3572 [label="3572 Assign\l-------------\l="]
+    3572 -> 3571
+    3571 [label="3571 Identifier\lnuevaY"]
+    3572 -> 3575
+    3575 [label="3575 Infix Expr\l+"]
+    3575 -> 3574
+    3574 [label="3574 Identifier\lcarrilY"]
+    3575 [label="3575 Infix Expr\l+"]
+    3575 -> 3576
+    3576 [label="3576 Identifier\lAJUSTE_Y"]
+    3492 [label="3492 Block"]
+    3492 -> 3577
+    3577 [label="3577 If Then\l--------"]
+    3577 -> 3585
+    3585 [label="3585 Block"]
+    3585 -> 3586
+    3586 [label="3586 Expression"]
+    3586 -> 3588
+    3588 [label="3588 Assign\l-------------\l="]
+    3588 -> 3587
+    3587 [label="3587 Identifier\lnuevaY"]
     3588 -> 3589
-    3589 [label="3589 Identifier\lSPEED_GHOST"]
-    3491 [label="3491 Block"]
-    3491 -> 3590
-    3590 [label="3590 If Then\l--------"]
-    3590 -> 3598
-    3598 [label="3598 Block"]
-    3598 -> 3599
-    3599 [label="3599 Expression"]
-    3599 -> 3601
-    3601 [label="3601 Assign\l-------------\l="]
-    3601 -> 3600
-    3600 [label="3600 Identifier\lnuevaY"]
-    3601 -> 3602
-    3602 [label="3602 Infix Expr\l+"]
-    3602 -> 3600
-    3600 [label="3600 Identifier\lnuevaY"]
-    3602 [label="3602 Infix Expr\l+"]
+    3589 [label="3589 Infix Expr\l-"]
+    3589 -> 3587
+    3587 [label="3587 Identifier\lnuevaY"]
+    3589 [label="3589 Infix Expr\l-"]
+    3589 -> 3590
+    3590 [label="3590 Identifier\lSPEED_GHOST"]
+    3492 [label="3492 Block"]
+    3492 -> 3591
+    3591 [label="3591 If Then\l--------"]
+    3591 -> 3599
+    3599 [label="3599 Block"]
+    3599 -> 3600
+    3600 [label="3600 Expression"]
+    3600 -> 3602
+    3602 [label="3602 Assign\l-------------\l="]
+    3602 -> 3601
+    3601 [label="3601 Identifier\lnuevaY"]
     3602 -> 3603
-    3603 [label="3603 Identifier\lSPEED_GHOST"]
-    3491 [label="3491 Block"]
-    3491 -> 3604
-    3604 [label="3604 If Then\l--------"]
-    3604 -> 3612
-    3612 [label="3612 Block"]
-    3612 -> 3613
-    3613 [label="3613 Expression"]
-    3613 -> 3615
-    3615 [label="3615 Assign\l-------------\l="]
-    3615 -> 3614
-    3614 [label="3614 Identifier\lnuevaX"]
-    3615 -> 3616
-    3616 [label="3616 Infix Expr\l-"]
-    3616 -> 3614
-    3614 [label="3614 Identifier\lnuevaX"]
-    3616 [label="3616 Infix Expr\l-"]
+    3603 [label="3603 Infix Expr\l+"]
+    3603 -> 3601
+    3601 [label="3601 Identifier\lnuevaY"]
+    3603 [label="3603 Infix Expr\l+"]
+    3603 -> 3604
+    3604 [label="3604 Identifier\lSPEED_GHOST"]
+    3492 [label="3492 Block"]
+    3492 -> 3605
+    3605 [label="3605 If Then\l--------"]
+    3605 -> 3613
+    3613 [label="3613 Block"]
+    3613 -> 3614
+    3614 [label="3614 Expression"]
+    3614 -> 3616
+    3616 [label="3616 Assign\l-------------\l="]
+    3616 -> 3615
+    3615 [label="3615 Identifier\lnuevaX"]
     3616 -> 3617
-    3617 [label="3617 Identifier\lSPEED_GHOST"]
-    3491 [label="3491 Block"]
-    3491 -> 3618
-    3618 [label="3618 If Then\l--------"]
-    3618 -> 3626
-    3626 [label="3626 Block"]
-    3626 -> 3627
-    3627 [label="3627 Expression"]
-    3627 -> 3629
-    3629 [label="3629 Assign\l-------------\l="]
-    3629 -> 3628
-    3628 [label="3628 Identifier\lnuevaX"]
-    3629 -> 3630
-    3630 [label="3630 Infix Expr\l+"]
-    3630 -> 3628
-    3628 [label="3628 Identifier\lnuevaX"]
-    3630 [label="3630 Infix Expr\l+"]
+    3617 [label="3617 Infix Expr\l-"]
+    3617 -> 3615
+    3615 [label="3615 Identifier\lnuevaX"]
+    3617 [label="3617 Infix Expr\l-"]
+    3617 -> 3618
+    3618 [label="3618 Identifier\lSPEED_GHOST"]
+    3492 [label="3492 Block"]
+    3492 -> 3619
+    3619 [label="3619 If Then\l--------"]
+    3619 -> 3627
+    3627 [label="3627 Block"]
+    3627 -> 3628
+    3628 [label="3628 Expression"]
+    3628 -> 3630
+    3630 [label="3630 Assign\l-------------\l="]
+    3630 -> 3629
+    3629 [label="3629 Identifier\lnuevaX"]
     3630 -> 3631
-    3631 [label="3631 Identifier\lSPEED_GHOST"]
-    3491 [label="3491 Block"]
-    3491 -> 3632
-    3632 [label="3632 Var Declare\l-----------------\lnuevaCelda"]
-    3634 [label ="3632 Var : nuevaCelda"]
-    3632 -> 3634
-    3634 [label="3634 Call\lCoordenadasACelda()"]
-    3634 -> 3635
-    3635 [label="3635 Identifier\lnuevaX"]
-    3634 -> 3636
-    3636 [label="3636 Identifier\lnuevaY"]
-    3491 [label="3491 Block"]
-    3491 -> 3637
-    3637 [label="3637 If Then\l--------"]
-    3637 -> 3646
-    3646 [label="3646 Block"]
-    3646 -> 3647
-    3647 [label="3647 Expression"]
-    3647 -> 3651
-    3651 [label="3651 Assign\l-------------\l="]
-    3651 -> 3649
-    3649 [label="3649 Infix Dot"]
-    3649 -> 3648
-    3648 [label="3648 this"]
-    3649 -> 3650
-    3650 [label="3650 Identifier\lx"]
-    3651 -> 3653
-    3653 [label="3653 Identifier\lnuevaX"]
-    3646 [label="3646 Block"]
-    3646 -> 3654
-    3654 [label="3654 Expression"]
-    3654 -> 3658
-    3658 [label="3658 Assign\l-------------\l="]
-    3658 -> 3656
-    3656 [label="3656 Infix Dot"]
-    3656 -> 3655
-    3655 [label="3655 this"]
-    3656 -> 3657
-    3657 [label="3657 Identifier\ly"]
-    3658 -> 3660
-    3660 [label="3660 Identifier\lnuevaY"]
-    3646 [label="3646 Block"]
-    3646 -> 3661
-    3661 [label="3661 If Then\l--------"]
-    3661 -> 3677
-    3677 [label="3677 Block"]
-    3677 -> 3678
-    3678 [label="3678 Expression"]
-    3678 -> 3680
-    3680 [label="3680 Infix Dot"]
-    3680 -> 3679
-    3679 [label="3679 this"]
-    3680 -> 3682
-    3682 [label="3682 Call\lelegirDireccion()"]
+    3631 [label="3631 Infix Expr\l+"]
+    3631 -> 3629
+    3629 [label="3629 Identifier\lnuevaX"]
+    3631 [label="3631 Infix Expr\l+"]
+    3631 -> 3632
+    3632 [label="3632 Identifier\lSPEED_GHOST"]
+    3492 [label="3492 Block"]
+    3492 -> 3633
+    3633 [label="3633 Var Declare\l-----------------\lnuevaCelda"]
+    3635 [label ="3633 Var : nuevaCelda"]
+    3633 -> 3635
+    3635 [label="3635 Call\lCoordenadasACelda()"]
+    3635 -> 3636
+    3636 [label="3636 Identifier\lnuevaX"]
+    3635 -> 3637
+    3637 [label="3637 Identifier\lnuevaY"]
+    3492 [label="3492 Block"]
+    3492 -> 3638
+    3638 [label="3638 If Then\l--------"]
+    3638 -> 3647
+    3647 [label="3647 Block"]
+    3647 -> 3648
+    3648 [label="3648 Expression"]
+    3648 -> 3652
+    3652 [label="3652 Assign\l-------------\l="]
+    3652 -> 3650
+    3650 [label="3650 Infix Dot"]
+    3650 -> 3649
+    3649 [label="3649 this"]
+    3650 -> 3651
+    3651 [label="3651 Identifier\lx"]
+    3652 -> 3654
+    3654 [label="3654 Identifier\lnuevaX"]
+    3647 [label="3647 Block"]
+    3647 -> 3655
+    3655 [label="3655 Expression"]
+    3655 -> 3659
+    3659 [label="3659 Assign\l-------------\l="]
+    3659 -> 3657
+    3657 [label="3657 Infix Dot"]
+    3657 -> 3656
+    3656 [label="3656 this"]
+    3657 -> 3658
+    3658 [label="3658 Identifier\ly"]
+    3659 -> 3661
+    3661 [label="3661 Identifier\lnuevaY"]
+    3647 [label="3647 Block"]
+    3647 -> 3662
+    3662 [label="3662 If Then\l--------"]
+    3662 -> 3678
+    3678 [label="3678 Block"]
+    3678 -> 3679
+    3679 [label="3679 Expression"]
+    3679 -> 3681
+    3681 [label="3681 Infix Dot"]
+    3681 -> 3680
+    3680 [label="3680 this"]
+    3681 -> 3683
+    3683 [label="3683 Call\lelegirDireccion()"]
     0 [label="0 Root\l--------"]
-    0 -> 3689
-    3689 [label="3689 Expression"]
-    3689 -> 3690
-    3690 [label="3690 Function Declare\l-----------------------\lDrawMap"]
+    0 -> 3690
+    3690 [label="3690 Expression"]
     3690 -> 3691
-    3691 [label="3691 Block"]
+    3691 [label="3691 Function Declare\l-----------------------\lDrawMap"]
     3691 -> 3692
-    3692 [label="3692 Var Declare\l-----------------\lauxFila"]
-    3693 [label ="3692 Var : auxFila"]
+    3692 [label="3692 Block"]
     3692 -> 3693
-    3693 [label="3693 Integer\l0"]
-    3691 [label="3691 Block"]
-    3691 -> 3694
-    3694 [label="3694 Var Declare\l-----------------\lcell"]
-    3695 [label ="3694 Var : cell"]
-    3694 -> 3695
-    3695 [label="3695 Integer\l0"]
-    3691 [label="3691 Block"]
-    3691 -> 3696
-    3696 [label="3696 For Loop\l------------"]
-    3696 -> 3697
-    3697 [label="3697 Var Declare\l-----------------\lfila"]
-    3698 [label ="3697 Var : fila"]
+    3693 [label="3693 Var Declare\l-----------------\lauxFila"]
+    3694 [label ="3693 Var : auxFila"]
+    3693 -> 3694
+    3694 [label="3694 Integer\l0"]
+    3692 [label="3692 Block"]
+    3692 -> 3695
+    3695 [label="3695 Var Declare\l-----------------\lcell"]
+    3696 [label ="3695 Var : cell"]
+    3695 -> 3696
+    3696 [label="3696 Integer\l0"]
+    3692 [label="3692 Block"]
+    3692 -> 3697
+    3697 [label="3697 For Loop\l------------"]
     3697 -> 3698
-    3698 [label="3698 Integer\l0"]
-    3696 -> 3700
-    3700 [label="3700 Infix Expr\l<"]
-    3700 -> 3699
-    3699 [label="3699 Identifier\lfila"]
-    3700 [label="3700 Infix Expr\l<"]
-    3700 -> 3701
-    3701 [label="3701 Integer\l31"]
-    3696 -> 3702
-    3702 [label="3702 Postfix Expr\l++"]
-    3702 -> 3703
-    3703 [label="3703 Identifier\lfila"]
-    3696 -> 3704
-    3704 [label="3704 Block"]
-    3704 -> 3705
-    3705 [label="3705 Expression"]
-    3705 -> 3707
-    3707 [label="3707 Assign\l-------------\l="]
-    3707 -> 3706
-    3706 [label="3706 Identifier\lauxFila"]
-    3707 -> 3712
-    3712 [label="3712 Infix Expr\l+"]
-    3712 -> 3710
-    3710 [label="3710 Infix Expr\l*"]
-    3710 -> 3709
-    3709 [label="3709 Identifier\lfila"]
-    3710 [label="3710 Infix Expr\l*"]
-    3710 -> 3711
-    3711 [label="3711 Identifier\lCELL_SIZE"]
-    3712 [label="3712 Infix Expr\l+"]
-    3712 -> 3713
-    3713 [label="3713 Integer\l27"]
-    3704 [label="3704 Block"]
-    3704 -> 3714
-    3714 [label="3714 For Loop\l------------"]
-    3714 -> 3715
-    3715 [label="3715 Var Declare\l-----------------\lcolumna"]
-    3716 [label ="3715 Var : columna"]
+    3698 [label="3698 Var Declare\l-----------------\lfila"]
+    3699 [label ="3698 Var : fila"]
+    3698 -> 3699
+    3699 [label="3699 Integer\l0"]
+    3697 -> 3701
+    3701 [label="3701 Infix Expr\l<"]
+    3701 -> 3700
+    3700 [label="3700 Identifier\lfila"]
+    3701 [label="3701 Infix Expr\l<"]
+    3701 -> 3702
+    3702 [label="3702 Integer\l31"]
+    3697 -> 3703
+    3703 [label="3703 Postfix Expr\l++"]
+    3703 -> 3704
+    3704 [label="3704 Identifier\lfila"]
+    3697 -> 3705
+    3705 [label="3705 Block"]
+    3705 -> 3706
+    3706 [label="3706 Expression"]
+    3706 -> 3708
+    3708 [label="3708 Assign\l-------------\l="]
+    3708 -> 3707
+    3707 [label="3707 Identifier\lauxFila"]
+    3708 -> 3713
+    3713 [label="3713 Infix Expr\l+"]
+    3713 -> 3711
+    3711 [label="3711 Infix Expr\l*"]
+    3711 -> 3710
+    3710 [label="3710 Identifier\lfila"]
+    3711 [label="3711 Infix Expr\l*"]
+    3711 -> 3712
+    3712 [label="3712 Identifier\lCELL_SIZE"]
+    3713 [label="3713 Infix Expr\l+"]
+    3713 -> 3714
+    3714 [label="3714 Integer\l27"]
+    3705 [label="3705 Block"]
+    3705 -> 3715
+    3715 [label="3715 For Loop\l------------"]
     3715 -> 3716
-    3716 [label="3716 Integer\l0"]
-    3714 -> 3718
-    3718 [label="3718 Infix Expr\l<"]
-    3718 -> 3717
-    3717 [label="3717 Identifier\lcolumna"]
-    3718 [label="3718 Infix Expr\l<"]
-    3718 -> 3719
-    3719 [label="3719 Integer\l28"]
-    3714 -> 3720
-    3720 [label="3720 Postfix Expr\l++"]
-    3720 -> 3721
-    3721 [label="3721 Identifier\lcolumna"]
-    3714 -> 3722
-    3722 [label="3722 Block"]
-    3722 -> 3723
-    3723 [label="3723 Expression"]
-    3723 -> 3725
-    3725 [label="3725 Assign\l-------------\l="]
-    3725 -> 3724
-    3724 [label="3724 Identifier\lcell"]
-    3725 -> 3728
-    3728 [label="3728 Index Expr\l"]
-    3728 -> 3727
-    3727 [label="3727 Identifier\lmapa"]
-    3728 -> 3729
-    3729 [label="3729 Identifier\lfila"]
-    3728 -> 3730
-    3730 [label="3730 Identifier\lcolumna"]
-    3722 [label="3722 Block"]
-    3722 -> 3731
-    3731 [label="3731 If Then\l--------"]
-    3731 -> 3735
-    3735 [label="3735 Block"]
-    3735 -> 3736
-    3736 [label="3736 Expression"]
-    3736 -> 3738
-    3738 [label="3738 Infix Dot"]
-    3738 -> 3737
-    3737 [label="3737 Identifier\ldraw"]
-    3738 -> 3740
-    3740 [label="3740 Call\lrect_fill()"]
-    3740 -> 3744
-    3744 [label="3744 Infix Expr\l+"]
-    3744 -> 3742
-    3742 [label="3742 Infix Expr\l*"]
-    3742 -> 3741
-    3741 [label="3741 Identifier\lcolumna"]
-    3742 [label="3742 Infix Expr\l*"]
-    3742 -> 3743
-    3743 [label="3743 Identifier\lCELL_SIZE"]
-    3744 [label="3744 Infix Expr\l+"]
-    3744 -> 3745
-    3745 [label="3745 Integer\l3"]
-    3740 -> 3746
-    3746 [label="3746 Identifier\lauxFila"]
-    3740 -> 3747
-    3747 [label="3747 Integer\l2"]
-    3740 -> 3748
+    3716 [label="3716 Var Declare\l-----------------\lcolumna"]
+    3717 [label ="3716 Var : columna"]
+    3716 -> 3717
+    3717 [label="3717 Integer\l0"]
+    3715 -> 3719
+    3719 [label="3719 Infix Expr\l<"]
+    3719 -> 3718
+    3718 [label="3718 Identifier\lcolumna"]
+    3719 [label="3719 Infix Expr\l<"]
+    3719 -> 3720
+    3720 [label="3720 Integer\l28"]
+    3715 -> 3721
+    3721 [label="3721 Postfix Expr\l++"]
+    3721 -> 3722
+    3722 [label="3722 Identifier\lcolumna"]
+    3715 -> 3723
+    3723 [label="3723 Block"]
+    3723 -> 3724
+    3724 [label="3724 Expression"]
+    3724 -> 3726
+    3726 [label="3726 Assign\l-------------\l="]
+    3726 -> 3725
+    3725 [label="3725 Identifier\lcell"]
+    3726 -> 3729
+    3729 [label="3729 Index Expr\l"]
+    3729 -> 3728
+    3728 [label="3728 Identifier\lmapa"]
+    3729 -> 3730
+    3730 [label="3730 Identifier\lfila"]
+    3729 -> 3731
+    3731 [label="3731 Identifier\lcolumna"]
+    3723 [label="3723 Block"]
+    3723 -> 3732
+    3732 [label="3732 If Then\l--------"]
+    3732 -> 3736
+    3736 [label="3736 Block"]
+    3736 -> 3737
+    3737 [label="3737 Expression"]
+    3737 -> 3739
+    3739 [label="3739 Infix Dot"]
+    3739 -> 3738
+    3738 [label="3738 Identifier\ldraw"]
+    3739 -> 3741
+    3741 [label="3741 Call\lrect_fill()"]
+    3741 -> 3745
+    3745 [label="3745 Infix Expr\l+"]
+    3745 -> 3743
+    3743 [label="3743 Infix Expr\l*"]
+    3743 -> 3742
+    3742 [label="3742 Identifier\lcolumna"]
+    3743 [label="3743 Infix Expr\l*"]
+    3743 -> 3744
+    3744 [label="3744 Identifier\lCELL_SIZE"]
+    3745 [label="3745 Infix Expr\l+"]
+    3745 -> 3746
+    3746 [label="3746 Integer\l3"]
+    3741 -> 3747
+    3747 [label="3747 Identifier\lauxFila"]
+    3741 -> 3748
     3748 [label="3748 Integer\l2"]
-    3740 -> 3749
-    3749 [label="3749 Integer\l12632256"]
-    3731 -> 3753
-    3753 [label="3753 Block"]
-    3753 -> 3754
-    3754 [label="3754 Expression"]
-    3754 -> 3756
-    3756 [label="3756 Infix Dot"]
-    3756 -> 3755
-    3755 [label="3755 Identifier\ldraw"]
-    3756 -> 3758
-    3758 [label="3758 Call\lellipse_fill()"]
-    3758 -> 3762
-    3762 [label="3762 Infix Expr\l+"]
-    3762 -> 3760
-    3760 [label="3760 Infix Expr\l*"]
-    3760 -> 3759
-    3759 [label="3759 Identifier\lcolumna"]
-    3760 [label="3760 Infix Expr\l*"]
-    3760 -> 3761
-    3761 [label="3761 Identifier\lCELL_SIZE"]
-    3762 [label="3762 Infix Expr\l+"]
-    3762 -> 3763
-    3763 [label="3763 Integer\l3"]
-    3758 -> 3764
-    3764 [label="3764 Identifier\lauxFila"]
-    3758 -> 3765
-    3765 [label="3765 Integer\l3"]
-    3758 -> 3766
-    3766 [label="3766 Integer\l4"]
-    3758 -> 3767
-    3767 [label="3767 Integer\l12632256"]
-    3731 -> 3771
-    3771 [label="3771 Block"]
-    3771 -> 3772
-    3772 [label="3772 Var Declare\l-----------------\lauxCordenadas"]
-    3774 [label ="3772 Var : auxCordenadas"]
-    3772 -> 3774
-    3774 [label="3774 Call\lCeldaACoordenadas()"]
-    3774 -> 3775
-    3775 [label="3775 Identifier\lcolumna"]
-    3774 -> 3776
-    3776 [label="3776 Identifier\lfila"]
-    3771 [label="3771 Block"]
-    3771 -> 3777
-    3777 [label="3777 Expression"]
-    3777 -> 3779
-    3779 [label="3779 Infix Dot"]
-    3779 -> 3778
-    3778 [label="3778 Identifier\limgPacBonus"]
-    3779 -> 3781
-    3781 [label="3781 Call\lnext_frame()"]
-    3781 -> 3782
-    3782 [label="3782 Identifier\lBonusActive"]
-    3771 [label="3771 Block"]
-    3771 -> 3783
-    3783 [label="3783 Expression"]
-    3783 -> 3787
-    3787 [label="3787 Assign\l-------------\l="]
-    3787 -> 3785
-    3785 [label="3785 Infix Dot"]
-    3785 -> 3784
-    3784 [label="3784 Identifier\limgPacBonus"]
-    3785 -> 3786
-    3786 [label="3786 Identifier\lpos"]
-    3787 -> 3789
-    3789 [label="3789 List"]
-    3789 -> 3791
-    3791 [label="3791 Index Expr\l"]
-    3791 -> 3790
-    3790 [label="3790 Identifier\lauxCordenadas"]
-    3791 -> 3792
-    3792 [label="3792 Integer\l0"]
-    3789 -> 3796
-    3796 [label="3796 Infix Expr\l-"]
-    3796 -> 3794
-    3794 [label="3794 Index Expr\l"]
-    3794 -> 3793
-    3793 [label="3793 Identifier\lauxCordenadas"]
-    3794 -> 3795
-    3795 [label="3795 Integer\l1"]
-    3796 [label="3796 Infix Expr\l-"]
-    3796 -> 3797
-    3797 [label="3797 Identifier\lCELL_SIZE"]
-    3771 [label="3771 Block"]
-    3771 -> 3798
-    3798 [label="3798 Expression"]
-    3798 -> 3800
-    3800 [label="3800 Infix Dot"]
-    3800 -> 3799
-    3799 [label="3799 Identifier\ldraw"]
-    3800 -> 3802
-    3802 [label="3802 Call\lsprite()"]
-    3802 -> 3803
-    3803 [label="3803 Identifier\limgPacBonus"]
+    3741 -> 3749
+    3749 [label="3749 Integer\l2"]
+    3741 -> 3750
+    3750 [label="3750 Integer\l12632256"]
+    3732 -> 3754
+    3754 [label="3754 Block"]
+    3754 -> 3755
+    3755 [label="3755 Expression"]
+    3755 -> 3757
+    3757 [label="3757 Infix Dot"]
+    3757 -> 3756
+    3756 [label="3756 Identifier\ldraw"]
+    3757 -> 3759
+    3759 [label="3759 Call\lellipse_fill()"]
+    3759 -> 3763
+    3763 [label="3763 Infix Expr\l+"]
+    3763 -> 3761
+    3761 [label="3761 Infix Expr\l*"]
+    3761 -> 3760
+    3760 [label="3760 Identifier\lcolumna"]
+    3761 [label="3761 Infix Expr\l*"]
+    3761 -> 3762
+    3762 [label="3762 Identifier\lCELL_SIZE"]
+    3763 [label="3763 Infix Expr\l+"]
+    3763 -> 3764
+    3764 [label="3764 Integer\l3"]
+    3759 -> 3765
+    3765 [label="3765 Identifier\lauxFila"]
+    3759 -> 3766
+    3766 [label="3766 Integer\l3"]
+    3759 -> 3767
+    3767 [label="3767 Integer\l4"]
+    3759 -> 3768
+    3768 [label="3768 Integer\l12632256"]
+    3732 -> 3772
+    3772 [label="3772 Block"]
+    3772 -> 3773
+    3773 [label="3773 Var Declare\l-----------------\lauxCordenadas"]
+    3775 [label ="3773 Var : auxCordenadas"]
+    3773 -> 3775
+    3775 [label="3775 Call\lCeldaACoordenadas()"]
+    3775 -> 3776
+    3776 [label="3776 Identifier\lcolumna"]
+    3775 -> 3777
+    3777 [label="3777 Identifier\lfila"]
+    3772 [label="3772 Block"]
+    3772 -> 3778
+    3778 [label="3778 Expression"]
+    3778 -> 3780
+    3780 [label="3780 Infix Dot"]
+    3780 -> 3779
+    3779 [label="3779 Identifier\limgPacBonus"]
+    3780 -> 3782
+    3782 [label="3782 Call\lnext_frame()"]
+    3782 -> 3783
+    3783 [label="3783 Identifier\lBonusActive"]
+    3772 [label="3772 Block"]
+    3772 -> 3784
+    3784 [label="3784 Expression"]
+    3784 -> 3788
+    3788 [label="3788 Assign\l-------------\l="]
+    3788 -> 3786
+    3786 [label="3786 Infix Dot"]
+    3786 -> 3785
+    3785 [label="3785 Identifier\limgPacBonus"]
+    3786 -> 3787
+    3787 [label="3787 Identifier\lpos"]
+    3788 -> 3790
+    3790 [label="3790 List"]
+    3790 -> 3792
+    3792 [label="3792 Index Expr\l"]
+    3792 -> 3791
+    3791 [label="3791 Identifier\lauxCordenadas"]
+    3792 -> 3793
+    3793 [label="3793 Integer\l0"]
+    3790 -> 3797
+    3797 [label="3797 Infix Expr\l-"]
+    3797 -> 3795
+    3795 [label="3795 Index Expr\l"]
+    3795 -> 3794
+    3794 [label="3794 Identifier\lauxCordenadas"]
+    3795 -> 3796
+    3796 [label="3796 Integer\l1"]
+    3797 [label="3797 Infix Expr\l-"]
+    3797 -> 3798
+    3798 [label="3798 Identifier\lCELL_SIZE"]
+    3772 [label="3772 Block"]
+    3772 -> 3799
+    3799 [label="3799 Expression"]
+    3799 -> 3801
+    3801 [label="3801 Infix Dot"]
+    3801 -> 3800
+    3800 [label="3800 Identifier\ldraw"]
+    3801 -> 3803
+    3803 [label="3803 Call\lsprite()"]
+    3803 -> 3804
+    3804 [label="3804 Identifier\limgPacBonus"]
     0 [label="0 Root\l--------"]
-    0 -> 3804
-    3804 [label="3804 Expression"]
-    3804 -> 3805
-    3805 [label="3805 Function Declare\l-----------------------\lCeldaACoordenadas"]
-    3805 -> 3808
-    3808 [label="3808 Block"]
-    3808 -> 3809
-    3809 [label="3809 Var Declare\l-----------------\lx"]
-    3815 [label ="3809 Var : x"]
-    3809 -> 3815
-    3815 [label="3815 Infix Expr\l+"]
-    3815 -> 3811
-    3811 [label="3811 Infix Expr\l+"]
-    3811 -> 3810
-    3810 [label="3810 Identifier\lX_MAPINI"]
-    3811 [label="3811 Infix Expr\l+"]
-    3811 -> 3813
-    3813 [label="3813 Infix Expr\l*"]
-    3813 -> 3812
-    3812 [label="3812 Identifier\lcolumna"]
-    3813 [label="3813 Infix Expr\l*"]
-    3813 -> 3814
-    3814 [label="3814 Identifier\lCELL_SIZE"]
-    3815 [label="3815 Infix Expr\l+"]
-    3815 -> 3817
-    3817 [label="3817 Infix Expr\ldiv"]
-    3817 -> 3816
-    3816 [label="3816 Identifier\lCELL_SIZE"]
-    3817 [label="3817 Infix Expr\ldiv"]
-    3817 -> 3818
-    3818 [label="3818 Integer\l2"]
-    3808 [label="3808 Block"]
-    3808 -> 3819
-    3819 [label="3819 Var Declare\l-----------------\ly"]
-    3825 [label ="3819 Var : y"]
-    3819 -> 3825
-    3825 [label="3825 Infix Expr\l+"]
-    3825 -> 3821
-    3821 [label="3821 Infix Expr\l+"]
-    3821 -> 3820
-    3820 [label="3820 Identifier\lY_MAPINI"]
-    3821 [label="3821 Infix Expr\l+"]
-    3821 -> 3823
-    3823 [label="3823 Infix Expr\l*"]
-    3823 -> 3822
-    3822 [label="3822 Identifier\lfila"]
-    3823 [label="3823 Infix Expr\l*"]
-    3823 -> 3824
-    3824 [label="3824 Identifier\lCELL_SIZE"]
-    3825 [label="3825 Infix Expr\l+"]
-    3825 -> 3827
-    3827 [label="3827 Infix Expr\ldiv"]
-    3827 -> 3826
-    3826 [label="3826 Identifier\lCELL_SIZE"]
-    3827 [label="3827 Infix Expr\ldiv"]
-    3827 -> 3828
-    3828 [label="3828 Integer\l2"]
-    3808 [label="3808 Block"]
-    3808 -> 3829
-    3829 [label="3829 Return"]
-    3829 -> 3830
-    3830 [label="3830 List"]
+    0 -> 3805
+    3805 [label="3805 Expression"]
+    3805 -> 3806
+    3806 [label="3806 Function Declare\l-----------------------\lCeldaACoordenadas"]
+    3806 -> 3809
+    3809 [label="3809 Block"]
+    3809 -> 3810
+    3810 [label="3810 Var Declare\l-----------------\lx"]
+    3816 [label ="3810 Var : x"]
+    3810 -> 3816
+    3816 [label="3816 Infix Expr\l+"]
+    3816 -> 3812
+    3812 [label="3812 Infix Expr\l+"]
+    3812 -> 3811
+    3811 [label="3811 Identifier\lX_MAPINI"]
+    3812 [label="3812 Infix Expr\l+"]
+    3812 -> 3814
+    3814 [label="3814 Infix Expr\l*"]
+    3814 -> 3813
+    3813 [label="3813 Identifier\lcolumna"]
+    3814 [label="3814 Infix Expr\l*"]
+    3814 -> 3815
+    3815 [label="3815 Identifier\lCELL_SIZE"]
+    3816 [label="3816 Infix Expr\l+"]
+    3816 -> 3818
+    3818 [label="3818 Infix Expr\ldiv"]
+    3818 -> 3817
+    3817 [label="3817 Identifier\lCELL_SIZE"]
+    3818 [label="3818 Infix Expr\ldiv"]
+    3818 -> 3819
+    3819 [label="3819 Integer\l2"]
+    3809 [label="3809 Block"]
+    3809 -> 3820
+    3820 [label="3820 Var Declare\l-----------------\ly"]
+    3826 [label ="3820 Var : y"]
+    3820 -> 3826
+    3826 [label="3826 Infix Expr\l+"]
+    3826 -> 3822
+    3822 [label="3822 Infix Expr\l+"]
+    3822 -> 3821
+    3821 [label="3821 Identifier\lY_MAPINI"]
+    3822 [label="3822 Infix Expr\l+"]
+    3822 -> 3824
+    3824 [label="3824 Infix Expr\l*"]
+    3824 -> 3823
+    3823 [label="3823 Identifier\lfila"]
+    3824 [label="3824 Infix Expr\l*"]
+    3824 -> 3825
+    3825 [label="3825 Identifier\lCELL_SIZE"]
+    3826 [label="3826 Infix Expr\l+"]
+    3826 -> 3828
+    3828 [label="3828 Infix Expr\ldiv"]
+    3828 -> 3827
+    3827 [label="3827 Identifier\lCELL_SIZE"]
+    3828 [label="3828 Infix Expr\ldiv"]
+    3828 -> 3829
+    3829 [label="3829 Integer\l2"]
+    3809 [label="3809 Block"]
+    3809 -> 3830
+    3830 [label="3830 Return"]
     3830 -> 3831
-    3831 [label="3831 Identifier\lx"]
-    3830 -> 3832
-    3832 [label="3832 Identifier\ly"]
+    3831 [label="3831 List"]
+    3831 -> 3832
+    3832 [label="3832 Identifier\lx"]
+    3831 -> 3833
+    3833 [label="3833 Identifier\ly"]
     0 [label="0 Root\l--------"]
-    0 -> 3833
-    3833 [label="3833 Expression"]
-    3833 -> 3834
-    3834 [label="3834 Function Declare\l-----------------------\lCoordenadasACelda"]
-    3834 -> 3837
-    3837 [label="3837 Block"]
-    3837 -> 3838
-    3838 [label="3838 Var Declare\l-----------------\lcolumna"]
-    3842 [label ="3838 Var : columna"]
-    3838 -> 3842
-    3842 [label="3842 Infix Expr\ldiv"]
-    3842 -> 3840
-    3840 [label="3840 Infix Expr\l-"]
-    3840 -> 3839
-    3839 [label="3839 Identifier\lx"]
-    3840 [label="3840 Infix Expr\l-"]
-    3840 -> 3841
-    3841 [label="3841 Identifier\lX_MAPINI"]
-    3842 [label="3842 Infix Expr\ldiv"]
-    3842 -> 3843
-    3843 [label="3843 Identifier\lCELL_SIZE"]
-    3837 [label="3837 Block"]
-    3837 -> 3844
-    3844 [label="3844 Var Declare\l-----------------\lfila"]
-    3848 [label ="3844 Var : fila"]
-    3844 -> 3848
-    3848 [label="3848 Infix Expr\ldiv"]
-    3848 -> 3846
-    3846 [label="3846 Infix Expr\l-"]
-    3846 -> 3845
-    3845 [label="3845 Identifier\ly"]
-    3846 [label="3846 Infix Expr\l-"]
-    3846 -> 3847
-    3847 [label="3847 Identifier\lY_MAPINI"]
-    3848 [label="3848 Infix Expr\ldiv"]
-    3848 -> 3849
-    3849 [label="3849 Identifier\lCELL_SIZE"]
-    3837 [label="3837 Block"]
-    3837 -> 3850
-    3850 [label="3850 Return"]
-    3850 -> 3851
-    3851 [label="3851 List"]
+    0 -> 3834
+    3834 [label="3834 Expression"]
+    3834 -> 3835
+    3835 [label="3835 Function Declare\l-----------------------\lCoordenadasACelda"]
+    3835 -> 3838
+    3838 [label="3838 Block"]
+    3838 -> 3839
+    3839 [label="3839 Var Declare\l-----------------\lcolumna"]
+    3843 [label ="3839 Var : columna"]
+    3839 -> 3843
+    3843 [label="3843 Infix Expr\ldiv"]
+    3843 -> 3841
+    3841 [label="3841 Infix Expr\l-"]
+    3841 -> 3840
+    3840 [label="3840 Identifier\lx"]
+    3841 [label="3841 Infix Expr\l-"]
+    3841 -> 3842
+    3842 [label="3842 Identifier\lX_MAPINI"]
+    3843 [label="3843 Infix Expr\ldiv"]
+    3843 -> 3844
+    3844 [label="3844 Identifier\lCELL_SIZE"]
+    3838 [label="3838 Block"]
+    3838 -> 3845
+    3845 [label="3845 Var Declare\l-----------------\lfila"]
+    3849 [label ="3845 Var : fila"]
+    3845 -> 3849
+    3849 [label="3849 Infix Expr\ldiv"]
+    3849 -> 3847
+    3847 [label="3847 Infix Expr\l-"]
+    3847 -> 3846
+    3846 [label="3846 Identifier\ly"]
+    3847 [label="3847 Infix Expr\l-"]
+    3847 -> 3848
+    3848 [label="3848 Identifier\lY_MAPINI"]
+    3849 [label="3849 Infix Expr\ldiv"]
+    3849 -> 3850
+    3850 [label="3850 Identifier\lCELL_SIZE"]
+    3838 [label="3838 Block"]
+    3838 -> 3851
+    3851 [label="3851 Return"]
     3851 -> 3852
-    3852 [label="3852 Identifier\lcolumna"]
-    3851 -> 3853
-    3853 [label="3853 Identifier\lfila"]
+    3852 [label="3852 List"]
+    3852 -> 3853
+    3853 [label="3853 Identifier\lcolumna"]
+    3852 -> 3854
+    3854 [label="3854 Identifier\lfila"]
     0 [label="0 Root\l--------"]
-    0 -> 3854
-    3854 [label="3854 Expression"]
-    3854 -> 3855
-    3855 [label="3855 Function Declare\l-----------------------\lEsCeldaTransitable"]
-    3855 -> 3858
-    3858 [label="3858 Block"]
-    3858 -> 3859
-    3859 [label="3859 If Then\l--------"]
-    3859 -> 3875
-    3875 [label="3875 Block"]
-    3875 -> 3876
-    3876 [label="3876 Return"]
+    0 -> 3855
+    3855 [label="3855 Expression"]
+    3855 -> 3856
+    3856 [label="3856 Function Declare\l-----------------------\lEsCeldaTransitable"]
+    3856 -> 3859
+    3859 [label="3859 Block"]
+    3859 -> 3860
+    3860 [label="3860 If Then\l--------"]
+    3860 -> 3876
+    3876 [label="3876 Block"]
     3876 -> 3877
-    3877 [label="3877 Bool\l0"]
-    3858 [label="3858 Block"]
-    3858 -> 3878
-    3878 [label="3878 Return"]
-    3878 -> 3883
-    3883 [label="3883 Infix Expr\l!="]
-    3883 -> 3880
-    3880 [label="3880 Index Expr\l"]
-    3880 -> 3879
-    3879 [label="3879 Identifier\lmapa"]
-    3880 -> 3881
-    3881 [label="3881 Identifier\lfila"]
-    3880 -> 3882
-    3882 [label="3882 Identifier\lcolumna"]
-    3883 [label="3883 Infix Expr\l!="]
-    3883 -> 3884
-    3884 [label="3884 Integer\l0"]
+    3877 [label="3877 Return"]
+    3877 -> 3878
+    3878 [label="3878 Bool\l0"]
+    3859 [label="3859 Block"]
+    3859 -> 3879
+    3879 [label="3879 Return"]
+    3879 -> 3884
+    3884 [label="3884 Infix Expr\l!="]
+    3884 -> 3881
+    3881 [label="3881 Index Expr\l"]
+    3881 -> 3880
+    3880 [label="3880 Identifier\lmapa"]
+    3881 -> 3882
+    3882 [label="3882 Identifier\lfila"]
+    3881 -> 3883
+    3883 [label="3883 Identifier\lcolumna"]
+    3884 [label="3884 Infix Expr\l!="]
+    3884 -> 3885
+    3885 [label="3885 Integer\l0"]
     0 [label="0 Root\l--------"]
-    0 -> 3885
-    3885 [label="3885 Expression"]
-    3885 -> 3886
-    3886 [label="3886 Function Declare\l-----------------------\lNextCellView"]
-    3886 -> 3890
-    3890 [label="3890 Block"]
-    3890 -> 3891
-    3890 [label="3890 Block"]
-    3890 -> 3933
-    3933 [label="3933 Return"]
-    3933 -> 3934
-    3934 [label="3934 List"]
+    0 -> 3886
+    3886 [label="3886 Expression"]
+    3886 -> 3887
+    3887 [label="3887 Function Declare\l-----------------------\lNextCellView"]
+    3887 -> 3891
+    3891 [label="3891 Block"]
+    3891 -> 3892
+    3891 [label="3891 Block"]
+    3891 -> 3934
+    3934 [label="3934 Return"]
     3934 -> 3935
-    3935 [label="3935 Identifier\lcolumna"]
-    3934 -> 3936
-    3936 [label="3936 Identifier\lfila"]
+    3935 [label="3935 List"]
+    3935 -> 3936
+    3936 [label="3936 Identifier\lcolumna"]
+    3935 -> 3937
+    3937 [label="3937 Identifier\lfila"]
     0 [label="0 Root\l--------"]
-    0 -> 3937
-    3937 [label="3937 Expression"]
-    3937 -> 3938
-    3938 [label="3938 Function Declare\l-----------------------\lObtenerDireccionOpuesta"]
-    3938 -> 3940
-    3940 [label="3940 Block"]
-    3940 -> 3941
+    0 -> 3938
+    3938 [label="3938 Expression"]
+    3938 -> 3939
+    3939 [label="3939 Function Declare\l-----------------------\lObtenerDireccionOpuesta"]
+    3939 -> 3941
+    3941 [label="3941 Block"]
+    3941 -> 3942
     0 [label="0 Root\l--------"]
-    0 -> 3979
-    3979 [label="3979 Expression"]
-    3979 -> 3980
-    3980 [label="3980 Function Declare\l-----------------------\lObtenerDireccionesValidas"]
-    3980 -> 3984
-    3984 [label="3984 Block"]
-    3984 -> 3985
-    3985 [label="3985 Var Declare\l-----------------\ldireccionesValidas"]
-    3986 [label ="3985 Var : direccionesValidas"]
+    0 -> 3980
+    3980 [label="3980 Expression"]
+    3980 -> 3981
+    3981 [label="3981 Function Declare\l-----------------------\lObtenerDireccionesValidas"]
+    3981 -> 3985
+    3985 [label="3985 Block"]
     3985 -> 3986
-    3986 [label="3986 List"]
-    3984 [label="3984 Block"]
-    3984 -> 3987
-    3987 [label="3987 Var Declare\l-----------------\ldireccionOpuesta"]
-    3989 [label ="3987 Var : direccionOpuesta"]
-    3987 -> 3989
-    3989 [label="3989 Call\lObtenerDireccionOpuesta()"]
-    3989 -> 3990
-    3990 [label="3990 Identifier\ldirection"]
-    3984 [label="3984 Block"]
-    3984 -> 3991
-    3991 [label="3991 If Then\l--------"]
-    3991 -> 4004
-    4004 [label="4004 Block"]
-    4004 -> 4005
-    4005 [label="4005 Expression"]
-    4005 -> 4007
-    4007 [label="4007 Infix Dot"]
-    4007 -> 4006
-    4006 [label="4006 Identifier\ldireccionesValidas"]
-    4007 -> 4009
-    4009 [label="4009 Call\linsert()"]
-    4009 -> 4011
-    4011 [label="4011 Infix Dot"]
-    4011 -> 4010
-    4010 [label="4010 Identifier\lDIRECTION"]
-    4011 -> 4012
-    4012 [label="4012 Identifier\lUP"]
-    3984 [label="3984 Block"]
-    3984 -> 4013
-    4013 [label="4013 If Then\l--------"]
-    4013 -> 4042
-    4042 [label="4042 Block"]
-    4042 -> 4043
-    4043 [label="4043 Expression"]
-    4043 -> 4045
-    4045 [label="4045 Infix Dot"]
-    4045 -> 4044
-    4044 [label="4044 Identifier\ldireccionesValidas"]
-    4045 -> 4047
-    4047 [label="4047 Call\linsert()"]
-    4047 -> 4049
-    4049 [label="4049 Infix Dot"]
-    4049 -> 4048
-    4048 [label="4048 Identifier\lDIRECTION"]
-    4049 -> 4050
-    4050 [label="4050 Identifier\lDOWN"]
-    3984 [label="3984 Block"]
-    3984 -> 4051
-    4051 [label="4051 If Then\l--------"]
-    4051 -> 4064
-    4064 [label="4064 Block"]
-    4064 -> 4065
-    4065 [label="4065 Expression"]
-    4065 -> 4067
-    4067 [label="4067 Infix Dot"]
-    4067 -> 4066
-    4066 [label="4066 Identifier\ldireccionesValidas"]
-    4067 -> 4069
-    4069 [label="4069 Call\linsert()"]
-    4069 -> 4071
-    4071 [label="4071 Infix Dot"]
-    4071 -> 4070
-    4070 [label="4070 Identifier\lDIRECTION"]
-    4071 -> 4072
-    4072 [label="4072 Identifier\lLEFT"]
-    3984 [label="3984 Block"]
-    3984 -> 4073
-    4073 [label="4073 If Then\l--------"]
-    4073 -> 4086
-    4086 [label="4086 Block"]
-    4086 -> 4087
-    4087 [label="4087 Expression"]
-    4087 -> 4089
-    4089 [label="4089 Infix Dot"]
-    4089 -> 4088
-    4088 [label="4088 Identifier\ldireccionesValidas"]
-    4089 -> 4091
-    4091 [label="4091 Call\linsert()"]
-    4091 -> 4093
-    4093 [label="4093 Infix Dot"]
-    4093 -> 4092
-    4092 [label="4092 Identifier\lDIRECTION"]
-    4093 -> 4094
-    4094 [label="4094 Identifier\lRIGHT"]
-    3984 [label="3984 Block"]
-    3984 -> 4095
-    4095 [label="4095 Return"]
-    4095 -> 4096
-    4096 [label="4096 Identifier\ldireccionesValidas"]
+    3986 [label="3986 Var Declare\l-----------------\ldireccionesValidas"]
+    3987 [label ="3986 Var : direccionesValidas"]
+    3986 -> 3987
+    3987 [label="3987 List"]
+    3985 [label="3985 Block"]
+    3985 -> 3988
+    3988 [label="3988 Var Declare\l-----------------\ldireccionOpuesta"]
+    3990 [label ="3988 Var : direccionOpuesta"]
+    3988 -> 3990
+    3990 [label="3990 Call\lObtenerDireccionOpuesta()"]
+    3990 -> 3991
+    3991 [label="3991 Identifier\ldirection"]
+    3985 [label="3985 Block"]
+    3985 -> 3992
+    3992 [label="3992 If Then\l--------"]
+    3992 -> 4005
+    4005 [label="4005 Block"]
+    4005 -> 4006
+    4006 [label="4006 Expression"]
+    4006 -> 4008
+    4008 [label="4008 Infix Dot"]
+    4008 -> 4007
+    4007 [label="4007 Identifier\ldireccionesValidas"]
+    4008 -> 4010
+    4010 [label="4010 Call\linsert()"]
+    4010 -> 4012
+    4012 [label="4012 Infix Dot"]
+    4012 -> 4011
+    4011 [label="4011 Identifier\lDIRECTION"]
+    4012 -> 4013
+    4013 [label="4013 Identifier\lUP"]
+    3985 [label="3985 Block"]
+    3985 -> 4014
+    4014 [label="4014 If Then\l--------"]
+    4014 -> 4043
+    4043 [label="4043 Block"]
+    4043 -> 4044
+    4044 [label="4044 Expression"]
+    4044 -> 4046
+    4046 [label="4046 Infix Dot"]
+    4046 -> 4045
+    4045 [label="4045 Identifier\ldireccionesValidas"]
+    4046 -> 4048
+    4048 [label="4048 Call\linsert()"]
+    4048 -> 4050
+    4050 [label="4050 Infix Dot"]
+    4050 -> 4049
+    4049 [label="4049 Identifier\lDIRECTION"]
+    4050 -> 4051
+    4051 [label="4051 Identifier\lDOWN"]
+    3985 [label="3985 Block"]
+    3985 -> 4052
+    4052 [label="4052 If Then\l--------"]
+    4052 -> 4065
+    4065 [label="4065 Block"]
+    4065 -> 4066
+    4066 [label="4066 Expression"]
+    4066 -> 4068
+    4068 [label="4068 Infix Dot"]
+    4068 -> 4067
+    4067 [label="4067 Identifier\ldireccionesValidas"]
+    4068 -> 4070
+    4070 [label="4070 Call\linsert()"]
+    4070 -> 4072
+    4072 [label="4072 Infix Dot"]
+    4072 -> 4071
+    4071 [label="4071 Identifier\lDIRECTION"]
+    4072 -> 4073
+    4073 [label="4073 Identifier\lLEFT"]
+    3985 [label="3985 Block"]
+    3985 -> 4074
+    4074 [label="4074 If Then\l--------"]
+    4074 -> 4087
+    4087 [label="4087 Block"]
+    4087 -> 4088
+    4088 [label="4088 Expression"]
+    4088 -> 4090
+    4090 [label="4090 Infix Dot"]
+    4090 -> 4089
+    4089 [label="4089 Identifier\ldireccionesValidas"]
+    4090 -> 4092
+    4092 [label="4092 Call\linsert()"]
+    4092 -> 4094
+    4094 [label="4094 Infix Dot"]
+    4094 -> 4093
+    4093 [label="4093 Identifier\lDIRECTION"]
+    4094 -> 4095
+    4095 [label="4095 Identifier\lRIGHT"]
+    3985 [label="3985 Block"]
+    3985 -> 4096
+    4096 [label="4096 Return"]
+    4096 -> 4097
+    4097 [label="4097 Identifier\ldireccionesValidas"]
     0 [label="0 Root\l--------"]
-    0 -> 4097
-    4097 [label="4097 Expression"]
-    4097 -> 4098
-    4098 [label="4098 Function Declare\l-----------------------\lCalcularDistancia"]
-    4098 -> 4103
-    4103 [label="4103 Block"]
-    4103 -> 4104
-    4104 [label="4104 Return"]
-    4104 -> 4110
-    4110 [label="4110 Infix Expr\l+"]
-    4110 -> 4106
-    4106 [label="4106 Call\labs()"]
-    4106 -> 4108
-    4108 [label="4108 Infix Expr\l-"]
-    4108 -> 4107
-    4107 [label="4107 Identifier\lcolumna1"]
-    4108 [label="4108 Infix Expr\l-"]
-    4108 -> 4109
-    4109 [label="4109 Identifier\lcolumna2"]
-    4110 [label="4110 Infix Expr\l+"]
-    4110 -> 4112
-    4112 [label="4112 Call\labs()"]
-    4112 -> 4114
-    4114 [label="4114 Infix Expr\l-"]
-    4114 -> 4113
-    4113 [label="4113 Identifier\lfila1"]
-    4114 [label="4114 Infix Expr\l-"]
-    4114 -> 4115
-    4115 [label="4115 Identifier\lfila2"]
+    0 -> 4098
+    4098 [label="4098 Expression"]
+    4098 -> 4099
+    4099 [label="4099 Function Declare\l-----------------------\lCalcularDistancia"]
+    4099 -> 4104
+    4104 [label="4104 Block"]
+    4104 -> 4105
+    4105 [label="4105 Return"]
+    4105 -> 4111
+    4111 [label="4111 Infix Expr\l+"]
+    4111 -> 4107
+    4107 [label="4107 Call\labs()"]
+    4107 -> 4109
+    4109 [label="4109 Infix Expr\l-"]
+    4109 -> 4108
+    4108 [label="4108 Identifier\lcolumna1"]
+    4109 [label="4109 Infix Expr\l-"]
+    4109 -> 4110
+    4110 [label="4110 Identifier\lcolumna2"]
+    4111 [label="4111 Infix Expr\l+"]
+    4111 -> 4113
+    4113 [label="4113 Call\labs()"]
+    4113 -> 4115
+    4115 [label="4115 Infix Expr\l-"]
+    4115 -> 4114
+    4114 [label="4114 Identifier\lfila1"]
+    4115 [label="4115 Infix Expr\l-"]
+    4115 -> 4116
+    4116 [label="4116 Identifier\lfila2"]
     0 [label="0 Root\l--------"]
-    0 -> 4116
-    4116 [label="4116 Expression"]
-    4116 -> 4117
-    4117 [label="4117 Function Declare\l-----------------------\lStartGame"]
+    0 -> 4117
+    4117 [label="4117 Expression"]
     4117 -> 4118
-    4118 [label="4118 Block"]
+    4118 [label="4118 Function Declare\l-----------------------\lStartGame"]
     4118 -> 4119
-    4119 [label="4119 Expression"]
-    4119 -> 4121
-    4121 [label="4121 Call\lprintln()"]
-    4121 -> 4122
-    4122 [label="4122 String\lStarting"]
-    4118 [label="4118 Block"]
-    4118 -> 4123
-    4123 [label="4123 Expression"]
-    4123 -> 4125
-    4125 [label="4125 Infix Dot"]
-    4125 -> 4124
-    4124 [label="4124 Identifier\lPACMAN"]
-    4125 -> 4127
-    4127 [label="4127 Call\lreset()"]
-    4118 [label="4118 Block"]
-    4118 -> 4128
-    4128 [label="4128 Expression"]
-    4128 -> 4130
-    4130 [label="4130 Assign\l-------------\l="]
-    4130 -> 4129
-    4129 [label="4129 Identifier\lStatusGame"]
-    4130 -> 4133
-    4133 [label="4133 Infix Dot"]
-    4133 -> 4132
-    4132 [label="4132 Identifier\lGAME_STATE"]
-    4133 -> 4134
-    4134 [label="4134 Identifier\lplaying"]
-    4118 [label="4118 Block"]
-    4118 -> 4135
-    4135 [label="4135 Foreach"]
-    4135 -> 4136
-    4136 [label="4136 Var Declare\l-----------------\lghost"]
-    4137 [label ="4136 Var : ghost"]
+    4119 [label="4119 Block"]
+    4119 -> 4120
+    4120 [label="4120 Expression"]
+    4120 -> 4122
+    4122 [label="4122 Call\lprintln()"]
+    4122 -> 4123
+    4123 [label="4123 String\lStarting"]
+    4119 [label="4119 Block"]
+    4119 -> 4124
+    4124 [label="4124 Expression"]
+    4124 -> 4126
+    4126 [label="4126 Infix Dot"]
+    4126 -> 4125
+    4125 [label="4125 Identifier\lPACMAN"]
+    4126 -> 4128
+    4128 [label="4128 Call\lreset()"]
+    4119 [label="4119 Block"]
+    4119 -> 4129
+    4129 [label="4129 Expression"]
+    4129 -> 4131
+    4131 [label="4131 Assign\l-------------\l="]
+    4131 -> 4130
+    4130 [label="4130 Identifier\lStatusGame"]
+    4131 -> 4134
+    4134 [label="4134 Infix Dot"]
+    4134 -> 4133
+    4133 [label="4133 Identifier\lGAME_STATE"]
+    4134 -> 4135
+    4135 [label="4135 Identifier\lplaying"]
+    4119 [label="4119 Block"]
+    4119 -> 4136
+    4136 [label="4136 Foreach"]
     4136 -> 4137
-    4137 [label="4137 Iterator"]
+    4137 [label="4137 Var Declare\l-----------------\lghost"]
+    4138 [label ="4137 Var : ghost"]
     4137 -> 4138
-    4138 [label="4138 Identifier\lghosts"]
-    4137 -> 4139
-    4139 [label="4139 Var Declare\l-----------------\l@index_4139"]
-    4140 [label ="4139 Var : @index_4139"]
-    4139 -> 4140
-    4140 [label="4140 Integer\l0"]
-    4135 ->     4135 -> 4144
-    4144 [label="4144 Block"]
-    4144 -> 4145
-    4145 [label="4145 Expression"]
-    4145 -> 4149
-    4149 [label="4149 Assign\l-------------\l="]
-    4149 -> 4147
-    4147 [label="4147 Infix Dot"]
-    4147 -> 4146
-    4146 [label="4146 Identifier\lghost"]
-    4147 -> 4148
-    4148 [label="4148 Identifier\lactive"]
-    4149 -> 4151
-    4151 [label="4151 Bool\l1"]
-    4118 [label="4118 Block"]
-    4118 -> 4152
-    4152 [label="4152 Expression"]
-    4152 -> 4154
-    4154 [label="4154 Infix Dot"]
-    4154 -> 4153
-    4153 [label="4153 Identifier\lPACMAN"]
-    4154 -> 4156
-    4156 [label="4156 Call\ldraw()"]
+    4138 [label="4138 Iterator"]
+    4138 -> 4139
+    4139 [label="4139 Identifier\lghosts"]
+    4138 -> 4140
+    4140 [label="4140 Var Declare\l-----------------\l@index_4140"]
+    4141 [label ="4140 Var : @index_4140"]
+    4140 -> 4141
+    4141 [label="4141 Integer\l0"]
+    4136 ->     4136 -> 4145
+    4145 [label="4145 Block"]
+    4145 -> 4146
+    4146 [label="4146 Expression"]
+    4146 -> 4150
+    4150 [label="4150 Assign\l-------------\l="]
+    4150 -> 4148
+    4148 [label="4148 Infix Dot"]
+    4148 -> 4147
+    4147 [label="4147 Identifier\lghost"]
+    4148 -> 4149
+    4149 [label="4149 Identifier\lactive"]
+    4150 -> 4152
+    4152 [label="4152 Bool\l1"]
+    4119 [label="4119 Block"]
+    4119 -> 4153
+    4153 [label="4153 Expression"]
+    4153 -> 4155
+    4155 [label="4155 Infix Dot"]
+    4155 -> 4154
+    4154 [label="4154 Identifier\lPACMAN"]
+    4155 -> 4157
+    4157 [label="4157 Call\ldraw()"]
     0 [label="0 Root\l--------"]
-    0 -> 4157
-    4157 [label="4157 Expression"]
-    4157 -> 4158
-    4158 [label="4158 Function Declare\l-----------------------\lPlayGame"]
+    0 -> 4158
+    4158 [label="4158 Expression"]
     4158 -> 4159
-    4159 [label="4159 Block"]
+    4159 [label="4159 Function Declare\l-----------------------\lPlayGame"]
     4159 -> 4160
-    4160 [label="4160 Foreach"]
+    4160 [label="4160 Block"]
     4160 -> 4161
-    4161 [label="4161 Var Declare\l-----------------\lghost"]
-    4162 [label ="4161 Var : ghost"]
+    4161 [label="4161 Foreach"]
     4161 -> 4162
-    4162 [label="4162 Iterator"]
+    4162 [label="4162 Var Declare\l-----------------\lghost"]
+    4163 [label ="4162 Var : ghost"]
     4162 -> 4163
-    4163 [label="4163 Identifier\lghosts"]
-    4162 -> 4164
-    4164 [label="4164 Var Declare\l-----------------\l@index_4164"]
-    4165 [label ="4164 Var : @index_4164"]
-    4164 -> 4165
-    4165 [label="4165 Integer\l0"]
-    4160 ->     4160 -> 4169
-    4169 [label="4169 Block"]
-    4169 -> 4170
-    4170 [label="4170 Expression"]
-    4170 -> 4172
-    4172 [label="4172 Infix Dot"]
-    4172 -> 4171
-    4171 [label="4171 Identifier\lghost"]
-    4172 -> 4174
-    4174 [label="4174 Call\lupdate()"]
-    4169 [label="4169 Block"]
-    4169 -> 4175
-    4175 [label="4175 Expression"]
-    4175 -> 4177
-    4177 [label="4177 Infix Dot"]
-    4177 -> 4176
-    4176 [label="4176 Identifier\lghost"]
-    4177 -> 4179
-    4179 [label="4179 Call\ldraw()"]
-    4159 [label="4159 Block"]
-    4159 -> 4180
-    4180 [label="4180 Expression"]
-    4180 -> 4182
-    4182 [label="4182 Infix Dot"]
-    4182 -> 4181
-    4181 [label="4181 Identifier\lPACMAN"]
-    4182 -> 4184
-    4184 [label="4184 Call\lupdate()"]
-    4184 -> 4186
-    4186 [label="4186 Infix Dot"]
-    4186 -> 4185
-    4185 [label="4185 Identifier\lPACMAN"]
-    4186 -> 4187
-    4187 [label="4187 Identifier\ldirection"]
-    4159 [label="4159 Block"]
-    4159 -> 4188
-    4188 [label="4188 If Then\l--------"]
-    4188 -> 4196
-    4196 [label="4196 Block"]
-    4196 -> 4197
-    4197 [label="4197 Expression"]
+    4163 [label="4163 Iterator"]
+    4163 -> 4164
+    4164 [label="4164 Identifier\lghosts"]
+    4163 -> 4165
+    4165 [label="4165 Var Declare\l-----------------\l@index_4165"]
+    4166 [label ="4165 Var : @index_4165"]
+    4165 -> 4166
+    4166 [label="4166 Integer\l0"]
+    4161 ->     4161 -> 4170
+    4170 [label="4170 Block"]
+    4170 -> 4171
+    4171 [label="4171 Expression"]
+    4171 -> 4173
+    4173 [label="4173 Infix Dot"]
+    4173 -> 4172
+    4172 [label="4172 Identifier\lghost"]
+    4173 -> 4175
+    4175 [label="4175 Call\lupdate()"]
+    4170 [label="4170 Block"]
+    4170 -> 4176
+    4176 [label="4176 Expression"]
+    4176 -> 4178
+    4178 [label="4178 Infix Dot"]
+    4178 -> 4177
+    4177 [label="4177 Identifier\lghost"]
+    4178 -> 4180
+    4180 [label="4180 Call\ldraw()"]
+    4160 [label="4160 Block"]
+    4160 -> 4181
+    4181 [label="4181 Expression"]
+    4181 -> 4183
+    4183 [label="4183 Infix Dot"]
+    4183 -> 4182
+    4182 [label="4182 Identifier\lPACMAN"]
+    4183 -> 4185
+    4185 [label="4185 Call\lupdate()"]
+    4185 -> 4187
+    4187 [label="4187 Infix Dot"]
+    4187 -> 4186
+    4186 [label="4186 Identifier\lPACMAN"]
+    4187 -> 4188
+    4188 [label="4188 Identifier\ldirection"]
+    4160 [label="4160 Block"]
+    4160 -> 4189
+    4189 [label="4189 If Then\l--------"]
+    4189 -> 4197
+    4197 [label="4197 Block"]
     4197 -> 4198
-    4198 [label="4198 Postfix Expr\l--"]
+    4198 [label="4198 Expression"]
     4198 -> 4199
-    4199 [label="4199 Identifier\lPlayerLives"]
-    4196 [label="4196 Block"]
-    4196 -> 4200
-    4200 [label="4200 Expression"]
-    4200 -> 4202
-    4202 [label="4202 Assign\l-------------\l="]
-    4202 -> 4201
-    4201 [label="4201 Identifier\lStatusGame"]
-    4202 -> 4205
-    4205 [label="4205 Infix Dot"]
-    4205 -> 4204
-    4204 [label="4204 Identifier\lGAME_STATE"]
-    4205 -> 4206
-    4206 [label="4206 Identifier\llifelost"]
-    4196 [label="4196 Block"]
-    4196 -> 4207
-    4207 [label="4207 Expression"]
-    4207 -> 4209
-    4209 [label="4209 Call\lprintln()"]
-    4209 -> 4211
-    4211 [label="4211 Infix Expr\l+"]
-    4211 -> 4210
-    4210 [label="4210 String\lSe ha perdido una vida. Vidas restantes: "]
-    4211 [label="4211 Infix Expr\l+"]
-    4211 -> 4213
-    4213 [label="4213 Infix Dot"]
-    4213 -> 4212
-    4212 [label="4212 Identifier\lPlayerLives"]
-    4213 -> 4215
-    4215 [label="4215 Call\lstring()"]
+    4199 [label="4199 Postfix Expr\l--"]
+    4199 -> 4200
+    4200 [label="4200 Identifier\lPlayerLives"]
+    4197 [label="4197 Block"]
+    4197 -> 4201
+    4201 [label="4201 Expression"]
+    4201 -> 4203
+    4203 [label="4203 Assign\l-------------\l="]
+    4203 -> 4202
+    4202 [label="4202 Identifier\lStatusGame"]
+    4203 -> 4206
+    4206 [label="4206 Infix Dot"]
+    4206 -> 4205
+    4205 [label="4205 Identifier\lGAME_STATE"]
+    4206 -> 4207
+    4207 [label="4207 Identifier\llifelost"]
+    4197 [label="4197 Block"]
+    4197 -> 4208
+    4208 [label="4208 Expression"]
+    4208 -> 4210
+    4210 [label="4210 Call\lprintln()"]
+    4210 -> 4212
+    4212 [label="4212 Infix Expr\l+"]
+    4212 -> 4211
+    4211 [label="4211 String\lSe ha perdido una vida. Vidas restantes: "]
+    4212 [label="4212 Infix Expr\l+"]
+    4212 -> 4214
+    4214 [label="4214 Infix Dot"]
+    4214 -> 4213
+    4213 [label="4213 Identifier\lPlayerLives"]
+    4214 -> 4216
+    4216 [label="4216 Call\lstring()"]
     0 [label="0 Root\l--------"]
-    0 -> 4222
-    4222 [label="4222 Expression"]
-    4222 -> 4223
-    4223 [label="4223 Function Declare\l-----------------------\lLifeLost"]
+    0 -> 4223
+    4223 [label="4223 Expression"]
     4223 -> 4224
-    4224 [label="4224 Block"]
+    4224 [label="4224 Function Declare\l-----------------------\lLifeLost"]
     4224 -> 4225
-    4225 [label="4225 Foreach"]
+    4225 [label="4225 Block"]
     4225 -> 4226
-    4226 [label="4226 Var Declare\l-----------------\lghost"]
-    4227 [label ="4226 Var : ghost"]
+    4226 [label="4226 Foreach"]
     4226 -> 4227
-    4227 [label="4227 Iterator"]
+    4227 [label="4227 Var Declare\l-----------------\lghost"]
+    4228 [label ="4227 Var : ghost"]
     4227 -> 4228
-    4228 [label="4228 Identifier\lghosts"]
-    4227 -> 4229
-    4229 [label="4229 Var Declare\l-----------------\l@index_4229"]
-    4230 [label ="4229 Var : @index_4229"]
-    4229 -> 4230
-    4230 [label="4230 Integer\l0"]
-    4225 ->     4225 -> 4234
-    4234 [label="4234 Block"]
-    4234 -> 4235
-    4235 [label="4235 Expression"]
-    4235 -> 4239
-    4239 [label="4239 Assign\l-------------\l="]
-    4239 -> 4237
-    4237 [label="4237 Infix Dot"]
-    4237 -> 4236
-    4236 [label="4236 Identifier\lghost"]
-    4237 -> 4238
-    4238 [label="4238 Identifier\lactive"]
-    4239 -> 4241
-    4241 [label="4241 Bool\l0"]
-    4224 [label="4224 Block"]
-    4224 -> 4242
-    4242 [label="4242 Expression"]
-    4242 -> 4244
-    4244 [label="4244 Infix Dot"]
-    4244 -> 4243
-    4243 [label="4243 Identifier\lPACMAN"]
-    4244 -> 4246
-    4246 [label="4246 Call\ldraw()"]
-    4224 [label="4224 Block"]
-    4224 -> 4247
-    4247 [label="4247 If Then\l--------"]
-    4247 -> 4255
-    4255 [label="4255 Block"]
-    4255 -> 4256
-    4256 [label="4256 If Then\l--------"]
-    4256 -> 4260
-    4260 [label="4260 Block"]
-    4260 -> 4261
-    4261 [label="4261 Expression"]
-    4261 -> 4263
-    4263 [label="4263 Call\lprintln()"]
-    4263 -> 4264
-    4264 [label="4264 String\lGAME OVER !!!"]
-    4260 [label="4260 Block"]
-    4260 -> 4265
-    4265 [label="4265 Expression"]
-    4265 -> 4267
-    4267 [label="4267 Assign\l-------------\l="]
-    4267 -> 4266
-    4266 [label="4266 Identifier\lStatusGame"]
-    4267 -> 4270
-    4270 [label="4270 Infix Dot"]
-    4270 -> 4269
-    4269 [label="4269 Identifier\lGAME_STATE"]
-    4270 -> 4271
-    4271 [label="4271 Identifier\lgameover"]
+    4228 [label="4228 Iterator"]
+    4228 -> 4229
+    4229 [label="4229 Identifier\lghosts"]
+    4228 -> 4230
+    4230 [label="4230 Var Declare\l-----------------\l@index_4230"]
+    4231 [label ="4230 Var : @index_4230"]
+    4230 -> 4231
+    4231 [label="4231 Integer\l0"]
+    4226 ->     4226 -> 4235
+    4235 [label="4235 Block"]
+    4235 -> 4236
+    4236 [label="4236 Expression"]
+    4236 -> 4240
+    4240 [label="4240 Assign\l-------------\l="]
+    4240 -> 4238
+    4238 [label="4238 Infix Dot"]
+    4238 -> 4237
+    4237 [label="4237 Identifier\lghost"]
+    4238 -> 4239
+    4239 [label="4239 Identifier\lactive"]
+    4240 -> 4242
+    4242 [label="4242 Bool\l0"]
+    4225 [label="4225 Block"]
+    4225 -> 4243
+    4243 [label="4243 Expression"]
+    4243 -> 4245
+    4245 [label="4245 Infix Dot"]
+    4245 -> 4244
+    4244 [label="4244 Identifier\lPACMAN"]
+    4245 -> 4247
+    4247 [label="4247 Call\ldraw()"]
+    4225 [label="4225 Block"]
+    4225 -> 4248
+    4248 [label="4248 If Then\l--------"]
+    4248 -> 4256
+    4256 [label="4256 Block"]
+    4256 -> 4257
+    4257 [label="4257 If Then\l--------"]
+    4257 -> 4261
+    4261 [label="4261 Block"]
+    4261 -> 4262
+    4262 [label="4262 Expression"]
+    4262 -> 4264
+    4264 [label="4264 Call\lprintln()"]
+    4264 -> 4265
+    4265 [label="4265 String\lGAME OVER !!!"]
+    4261 [label="4261 Block"]
+    4261 -> 4266
+    4266 [label="4266 Expression"]
+    4266 -> 4268
+    4268 [label="4268 Assign\l-------------\l="]
+    4268 -> 4267
+    4267 [label="4267 Identifier\lStatusGame"]
+    4268 -> 4271
+    4271 [label="4271 Infix Dot"]
+    4271 -> 4270
+    4270 [label="4270 Identifier\lGAME_STATE"]
+    4271 -> 4272
+    4272 [label="4272 Identifier\lgameover"]
     0 [label="0 Root\l--------"]
-    0 -> 4338
-    4338 [label="4338 Expression"]
-    4338 -> 4339
-    4339 [label="4339 Function Declare\l-----------------------\lGameOver"]
+    0 -> 4339
+    4339 [label="4339 Expression"]
     4339 -> 4340
-    4340 [label="4340 Block"]
+    4340 [label="4340 Function Declare\l-----------------------\lGameOver"]
     4340 -> 4341
-    4341 [label="4341 Expression"]
-    4341 -> 4343
-    4343 [label="4343 Call\lprintln()"]
-    4343 -> 4344
-    4344 [label="4344 String\lMuestra el Game Over en pantalla"]
-    4340 [label="4340 Block"]
-    4340 -> 4345
-    4345 [label="4345 Expression"]
-    4345 -> 4347
-    4347 [label="4347 Call\lpause()"]
-    4347 -> 4348
-    4348 [label="4348 Integer\l1000"]
-    4340 [label="4340 Block"]
-    4340 -> 4349
-    4349 [label="4349 Expression"]
-    4349 -> 4351
-    4351 [label="4351 Assign\l-------------\l="]
-    4351 -> 4350
-    4350 [label="4350 Identifier\lPlayerLives"]
-    4351 -> 4353
-    4353 [label="4353 Integer\l3"]
-    4340 [label="4340 Block"]
-    4340 -> 4354
-    4354 [label="4354 Expression"]
-    4354 -> 4356
-    4356 [label="4356 Assign\l-------------\l="]
-    4356 -> 4355
-    4355 [label="4355 Identifier\lStatusGame"]
-    4356 -> 4359
-    4359 [label="4359 Infix Dot"]
-    4359 -> 4358
-    4358 [label="4358 Identifier\lGAME_STATE"]
-    4359 -> 4360
-    4360 [label="4360 Identifier\lstart"]
+    4341 [label="4341 Block"]
+    4341 -> 4342
+    4342 [label="4342 Expression"]
+    4342 -> 4344
+    4344 [label="4344 Call\lprintln()"]
+    4344 -> 4345
+    4345 [label="4345 String\lMuestra el Game Over en pantalla"]
+    4341 [label="4341 Block"]
+    4341 -> 4346
+    4346 [label="4346 Expression"]
+    4346 -> 4348
+    4348 [label="4348 Call\lpause()"]
+    4348 -> 4349
+    4349 [label="4349 Integer\l1000"]
+    4341 [label="4341 Block"]
+    4341 -> 4350
+    4350 [label="4350 Expression"]
+    4350 -> 4352
+    4352 [label="4352 Assign\l-------------\l="]
+    4352 -> 4351
+    4351 [label="4351 Identifier\lPlayerLives"]
+    4352 -> 4354
+    4354 [label="4354 Integer\l3"]
+    4341 [label="4341 Block"]
+    4341 -> 4355
+    4355 [label="4355 Expression"]
+    4355 -> 4357
+    4357 [label="4357 Assign\l-------------\l="]
+    4357 -> 4356
+    4356 [label="4356 Identifier\lStatusGame"]
+    4357 -> 4360
+    4360 [label="4360 Infix Dot"]
+    4360 -> 4359
+    4359 [label="4359 Identifier\lGAME_STATE"]
+    4360 -> 4361
+    4361 [label="4361 Identifier\lstart"]
     0 [label="0 Root\l--------"]
-    0 -> 4361
-    4361 [label="4361 Expression"]
-    4361 -> 4362
-    4362 [label="4362 Function Declare\l-----------------------\lUpdateGame"]
+    0 -> 4362
+    4362 [label="4362 Expression"]
     4362 -> 4363
-    4363 [label="4363 Block"]
+    4363 [label="4363 Function Declare\l-----------------------\lUpdateGame"]
     4363 -> 4364
+    4364 [label="4364 Block"]
+    4364 -> 4365
     0 [label="0 Root\l--------"]
-    0 -> 4400
-    4400 [label="4400 Expression"]
-    4400 -> 4401
-    4401 [label="4401 Function Declare\l-----------------------\lCheckColisiones"]
+    0 -> 4401
+    4401 [label="4401 Expression"]
     4401 -> 4402
-    4402 [label="4402 Block"]
+    4402 [label="4402 Function Declare\l-----------------------\lCheckColisiones"]
     4402 -> 4403
-    4403 [label="4403 Foreach"]
+    4403 [label="4403 Block"]
     4403 -> 4404
-    4404 [label="4404 Var Declare\l-----------------\lghost"]
-    4405 [label ="4404 Var : ghost"]
+    4404 [label="4404 Foreach"]
     4404 -> 4405
-    4405 [label="4405 Iterator"]
+    4405 [label="4405 Var Declare\l-----------------\lghost"]
+    4406 [label ="4405 Var : ghost"]
     4405 -> 4406
-    4406 [label="4406 Identifier\lghosts"]
-    4405 -> 4407
-    4407 [label="4407 Var Declare\l-----------------\l@index_4407"]
-    4408 [label ="4407 Var : @index_4407"]
-    4407 -> 4408
-    4408 [label="4408 Integer\l0"]
-    4403 ->     4403 -> 4412
-    4412 [label="4412 Block"]
-    4412 -> 4413
-    4413 [label="4413 If Then\l--------"]
-    4413 -> 4437
-    4437 [label="4437 Block"]
-    4437 -> 4438
-    4438 [label="4438 Expression"]
-    4438 -> 4442
-    4442 [label="4442 Assign\l-------------\l="]
-    4442 -> 4440
-    4440 [label="4440 Infix Dot"]
-    4440 -> 4439
-    4439 [label="4439 Identifier\lPACMAN"]
-    4440 -> 4441
-    4441 [label="4441 Identifier\ldying"]
-    4442 -> 4444
-    4444 [label="4444 Bool\l1"]
-    4437 [label="4437 Block"]
-    4437 -> 4445
-    4445 [label="4445 Return"]
-    4445 -> 4446
-    4446 [label="4446 Bool\l1"]
-    4402 [label="4402 Block"]
-    4402 -> 4447
-    4447 [label="4447 Return"]
-    4447 -> 4448
-    4448 [label="4448 Bool\l0"]
+    4406 [label="4406 Iterator"]
+    4406 -> 4407
+    4407 [label="4407 Identifier\lghosts"]
+    4406 -> 4408
+    4408 [label="4408 Var Declare\l-----------------\l@index_4408"]
+    4409 [label ="4408 Var : @index_4408"]
+    4408 -> 4409
+    4409 [label="4409 Integer\l0"]
+    4404 ->     4404 -> 4413
+    4413 [label="4413 Block"]
+    4413 -> 4414
+    4414 [label="4414 If Then\l--------"]
+    4414 -> 4438
+    4438 [label="4438 Block"]
+    4438 -> 4439
+    4439 [label="4439 Expression"]
+    4439 -> 4443
+    4443 [label="4443 Assign\l-------------\l="]
+    4443 -> 4441
+    4441 [label="4441 Infix Dot"]
+    4441 -> 4440
+    4440 [label="4440 Identifier\lPACMAN"]
+    4441 -> 4442
+    4442 [label="4442 Identifier\ldying"]
+    4443 -> 4445
+    4445 [label="4445 Bool\l1"]
+    4438 [label="4438 Block"]
+    4438 -> 4446
+    4446 [label="4446 Return"]
+    4446 -> 4447
+    4447 [label="4447 Bool\l1"]
+    4403 [label="4403 Block"]
+    4403 -> 4448
+    4448 [label="4448 Return"]
+    4448 -> 4449
+    4449 [label="4449 Bool\l0"]
     0 [label="0 Root\l--------"]
-    0 -> 4449
-    4449 [label="4449 Expression"]
-    4449 -> 4450
-    4450 [label="4450 Function Declare\l-----------------------\lEsPosicionValida"]
-    4450 -> 4453
-    4453 [label="4453 Block"]
-    4453 -> 4454
-    4454 [label="4454 Var Declare\l-----------------\lcelda"]
-    4456 [label ="4454 Var : celda"]
-    4454 -> 4456
-    4456 [label="4456 Call\lCoordenadasACelda()"]
-    4456 -> 4457
-    4457 [label="4457 Identifier\lx"]
-    4456 -> 4458
-    4458 [label="4458 Identifier\ly"]
-    4453 [label="4453 Block"]
-    4453 -> 4459
-    4459 [label="4459 Var Declare\l-----------------\lcolumna"]
-    4461 [label ="4459 Var : columna"]
-    4459 -> 4461
-    4461 [label="4461 Index Expr\l"]
-    4461 -> 4460
-    4460 [label="4460 Identifier\lcelda"]
-    4461 -> 4462
-    4462 [label="4462 Integer\l0"]
-    4453 [label="4453 Block"]
-    4453 -> 4463
-    4463 [label="4463 Var Declare\l-----------------\lfila"]
-    4465 [label ="4463 Var : fila"]
-    4463 -> 4465
-    4465 [label="4465 Index Expr\l"]
-    4465 -> 4464
-    4464 [label="4464 Identifier\lcelda"]
-    4465 -> 4466
-    4466 [label="4466 Integer\l1"]
-    4453 [label="4453 Block"]
-    4453 -> 4467
-    4467 [label="4467 If Then\l--------"]
-    4467 -> 4483
-    4483 [label="4483 Block"]
-    4483 -> 4484
-    4484 [label="4484 Return"]
+    0 -> 4450
+    4450 [label="4450 Expression"]
+    4450 -> 4451
+    4451 [label="4451 Function Declare\l-----------------------\lEsPosicionValida"]
+    4451 -> 4454
+    4454 [label="4454 Block"]
+    4454 -> 4455
+    4455 [label="4455 Var Declare\l-----------------\lcelda"]
+    4457 [label ="4455 Var : celda"]
+    4455 -> 4457
+    4457 [label="4457 Call\lCoordenadasACelda()"]
+    4457 -> 4458
+    4458 [label="4458 Identifier\lx"]
+    4457 -> 4459
+    4459 [label="4459 Identifier\ly"]
+    4454 [label="4454 Block"]
+    4454 -> 4460
+    4460 [label="4460 Var Declare\l-----------------\lcolumna"]
+    4462 [label ="4460 Var : columna"]
+    4460 -> 4462
+    4462 [label="4462 Index Expr\l"]
+    4462 -> 4461
+    4461 [label="4461 Identifier\lcelda"]
+    4462 -> 4463
+    4463 [label="4463 Integer\l0"]
+    4454 [label="4454 Block"]
+    4454 -> 4464
+    4464 [label="4464 Var Declare\l-----------------\lfila"]
+    4466 [label ="4464 Var : fila"]
+    4464 -> 4466
+    4466 [label="4466 Index Expr\l"]
+    4466 -> 4465
+    4465 [label="4465 Identifier\lcelda"]
+    4466 -> 4467
+    4467 [label="4467 Integer\l1"]
+    4454 [label="4454 Block"]
+    4454 -> 4468
+    4468 [label="4468 If Then\l--------"]
+    4468 -> 4484
+    4484 [label="4484 Block"]
     4484 -> 4485
-    4485 [label="4485 Bool\l0"]
-    4453 [label="4453 Block"]
-    4453 -> 4486
-    4486 [label="4486 Return"]
-    4486 -> 4491
-    4491 [label="4491 Infix Expr\l!="]
-    4491 -> 4488
-    4488 [label="4488 Index Expr\l"]
-    4488 -> 4487
-    4487 [label="4487 Identifier\lmapa"]
-    4488 -> 4489
-    4489 [label="4489 Identifier\lfila"]
-    4488 -> 4490
-    4490 [label="4490 Identifier\lcolumna"]
-    4491 [label="4491 Infix Expr\l!="]
-    4491 -> 4492
-    4492 [label="4492 Integer\l0"]
+    4485 [label="4485 Return"]
+    4485 -> 4486
+    4486 [label="4486 Bool\l0"]
+    4454 [label="4454 Block"]
+    4454 -> 4487
+    4487 [label="4487 Return"]
+    4487 -> 4492
+    4492 [label="4492 Infix Expr\l!="]
+    4492 -> 4489
+    4489 [label="4489 Index Expr\l"]
+    4489 -> 4488
+    4488 [label="4488 Identifier\lmapa"]
+    4489 -> 4490
+    4490 [label="4490 Identifier\lfila"]
+    4489 -> 4491
+    4491 [label="4491 Identifier\lcolumna"]
+    4492 [label="4492 Infix Expr\l!="]
+    4492 -> 4493
+    4493 [label="4493 Integer\l0"]
     0 [label="0 Root\l--------"]
-    0 -> 4493
-    4493 [label="4493 Expression"]
-    4493 -> 4494
-    4494 [label="4494 Function Declare\l-----------------------\lDrawGrid"]
+    0 -> 4494
+    4494 [label="4494 Expression"]
     4494 -> 4495
-    4495 [label="4495 Block"]
+    4495 [label="4495 Function Declare\l-----------------------\lDrawGrid"]
     4495 -> 4496
-    4496 [label="4496 For Loop\l------------"]
+    4496 [label="4496 Block"]
     4496 -> 4497
-    4497 [label="4497 Var Declare\l-----------------\ly"]
-    4498 [label ="4497 Var : y"]
+    4497 [label="4497 For Loop\l------------"]
     4497 -> 4498
-    4498 [label="4498 Integer\l0"]
-    4496 -> 4500
-    4500 [label="4500 Infix Expr\l<"]
-    4500 -> 4499
-    4499 [label="4499 Identifier\ly"]
-    4500 [label="4500 Infix Expr\l<"]
-    4500 -> 4501
-    4501 [label="4501 Integer\l32"]
-    4496 -> 4502
-    4502 [label="4502 Postfix Expr\l++"]
-    4502 -> 4503
-    4503 [label="4503 Identifier\ly"]
-    4496 -> 4504
-    4504 [label="4504 Block"]
-    4504 -> 4505
-    4505 [label="4505 Expression"]
-    4505 -> 4507
-    4507 [label="4507 Infix Dot"]
-    4507 -> 4506
-    4506 [label="4506 Identifier\ldraw"]
-    4507 -> 4509
-    4509 [label="4509 Call\lline()"]
-    4509 -> 4510
-    4510 [label="4510 Identifier\lX_MAPINI"]
-    4509 -> 4514
-    4514 [label="4514 Infix Expr\l+"]
-    4514 -> 4512
-    4512 [label="4512 Infix Expr\l+"]
-    4512 -> 4511
-    4511 [label="4511 Integer\l16"]
-    4512 [label="4512 Infix Expr\l+"]
-    4512 -> 4513
-    4513 [label="4513 Identifier\lY_MAPINI"]
-    4514 [label="4514 Infix Expr\l+"]
-    4514 -> 4516
-    4516 [label="4516 Infix Expr\l*"]
-    4516 -> 4515
-    4515 [label="4515 Identifier\ly"]
-    4516 [label="4516 Infix Expr\l*"]
-    4516 -> 4517
-    4517 [label="4517 Identifier\lCELL_SIZE"]
-    4509 -> 4521
-    4521 [label="4521 Infix Expr\l+"]
-    4521 -> 4519
-    4519 [label="4519 Infix Expr\l+"]
-    4519 -> 4518
-    4518 [label="4518 Identifier\lX_MAPINI"]
-    4519 [label="4519 Infix Expr\l+"]
-    4519 -> 4520
-    4520 [label="4520 Identifier\lVIEW_W"]
-    4521 [label="4521 Infix Expr\l+"]
-    4521 -> 4522
-    4522 [label="4522 Integer\l8"]
-    4509 -> 4526
-    4526 [label="4526 Infix Expr\l+"]
-    4526 -> 4524
-    4524 [label="4524 Infix Expr\l+"]
-    4524 -> 4523
-    4523 [label="4523 Integer\l16"]
-    4524 [label="4524 Infix Expr\l+"]
-    4524 -> 4525
-    4525 [label="4525 Identifier\lY_MAPINI"]
-    4526 [label="4526 Infix Expr\l+"]
-    4526 -> 4528
-    4528 [label="4528 Infix Expr\l*"]
-    4528 -> 4527
-    4527 [label="4527 Identifier\ly"]
-    4528 [label="4528 Infix Expr\l*"]
-    4528 -> 4529
-    4529 [label="4529 Identifier\lCELL_SIZE"]
-    4509 -> 4530
-    4530 [label="4530 Integer\l4473924"]
-    4495 [label="4495 Block"]
-    4495 -> 4531
-    4531 [label="4531 For Loop\l------------"]
-    4531 -> 4532
-    4532 [label="4532 Var Declare\l-----------------\lx"]
-    4533 [label ="4532 Var : x"]
+    4498 [label="4498 Var Declare\l-----------------\ly"]
+    4499 [label ="4498 Var : y"]
+    4498 -> 4499
+    4499 [label="4499 Integer\l0"]
+    4497 -> 4501
+    4501 [label="4501 Infix Expr\l<"]
+    4501 -> 4500
+    4500 [label="4500 Identifier\ly"]
+    4501 [label="4501 Infix Expr\l<"]
+    4501 -> 4502
+    4502 [label="4502 Integer\l32"]
+    4497 -> 4503
+    4503 [label="4503 Postfix Expr\l++"]
+    4503 -> 4504
+    4504 [label="4504 Identifier\ly"]
+    4497 -> 4505
+    4505 [label="4505 Block"]
+    4505 -> 4506
+    4506 [label="4506 Expression"]
+    4506 -> 4508
+    4508 [label="4508 Infix Dot"]
+    4508 -> 4507
+    4507 [label="4507 Identifier\ldraw"]
+    4508 -> 4510
+    4510 [label="4510 Call\lline()"]
+    4510 -> 4511
+    4511 [label="4511 Identifier\lX_MAPINI"]
+    4510 -> 4515
+    4515 [label="4515 Infix Expr\l+"]
+    4515 -> 4513
+    4513 [label="4513 Infix Expr\l+"]
+    4513 -> 4512
+    4512 [label="4512 Integer\l16"]
+    4513 [label="4513 Infix Expr\l+"]
+    4513 -> 4514
+    4514 [label="4514 Identifier\lY_MAPINI"]
+    4515 [label="4515 Infix Expr\l+"]
+    4515 -> 4517
+    4517 [label="4517 Infix Expr\l*"]
+    4517 -> 4516
+    4516 [label="4516 Identifier\ly"]
+    4517 [label="4517 Infix Expr\l*"]
+    4517 -> 4518
+    4518 [label="4518 Identifier\lCELL_SIZE"]
+    4510 -> 4522
+    4522 [label="4522 Infix Expr\l+"]
+    4522 -> 4520
+    4520 [label="4520 Infix Expr\l+"]
+    4520 -> 4519
+    4519 [label="4519 Identifier\lX_MAPINI"]
+    4520 [label="4520 Infix Expr\l+"]
+    4520 -> 4521
+    4521 [label="4521 Identifier\lVIEW_W"]
+    4522 [label="4522 Infix Expr\l+"]
+    4522 -> 4523
+    4523 [label="4523 Integer\l8"]
+    4510 -> 4527
+    4527 [label="4527 Infix Expr\l+"]
+    4527 -> 4525
+    4525 [label="4525 Infix Expr\l+"]
+    4525 -> 4524
+    4524 [label="4524 Integer\l16"]
+    4525 [label="4525 Infix Expr\l+"]
+    4525 -> 4526
+    4526 [label="4526 Identifier\lY_MAPINI"]
+    4527 [label="4527 Infix Expr\l+"]
+    4527 -> 4529
+    4529 [label="4529 Infix Expr\l*"]
+    4529 -> 4528
+    4528 [label="4528 Identifier\ly"]
+    4529 [label="4529 Infix Expr\l*"]
+    4529 -> 4530
+    4530 [label="4530 Identifier\lCELL_SIZE"]
+    4510 -> 4531
+    4531 [label="4531 Integer\l4473924"]
+    4496 [label="4496 Block"]
+    4496 -> 4532
+    4532 [label="4532 For Loop\l------------"]
     4532 -> 4533
-    4533 [label="4533 Integer\l0"]
-    4531 -> 4535
-    4535 [label="4535 Infix Expr\l<"]
-    4535 -> 4534
-    4534 [label="4534 Identifier\lx"]
-    4535 [label="4535 Infix Expr\l<"]
-    4535 -> 4536
-    4536 [label="4536 Integer\l29"]
-    4531 -> 4537
-    4537 [label="4537 Postfix Expr\l++"]
-    4537 -> 4538
-    4538 [label="4538 Identifier\lx"]
-    4531 -> 4539
-    4539 [label="4539 Block"]
-    4539 -> 4540
-    4540 [label="4540 Expression"]
-    4540 -> 4542
-    4542 [label="4542 Infix Dot"]
-    4542 -> 4541
-    4541 [label="4541 Identifier\ldraw"]
-    4542 -> 4544
-    4544 [label="4544 Call\lline()"]
-    4544 -> 4546
-    4546 [label="4546 Infix Expr\l+"]
-    4546 -> 4545
-    4545 [label="4545 Identifier\lX_MAPINI"]
-    4546 [label="4546 Infix Expr\l+"]
-    4546 -> 4548
-    4548 [label="4548 Infix Expr\l*"]
-    4548 -> 4547
-    4547 [label="4547 Identifier\lx"]
-    4548 [label="4548 Infix Expr\l*"]
-    4548 -> 4549
-    4549 [label="4549 Identifier\lCELL_SIZE"]
-    4544 -> 4551
-    4551 [label="4551 Infix Expr\l+"]
-    4551 -> 4550
-    4550 [label="4550 Integer\l16"]
-    4551 [label="4551 Infix Expr\l+"]
-    4551 -> 4552
-    4552 [label="4552 Identifier\lY_MAPINI"]
-    4544 -> 4554
-    4554 [label="4554 Infix Expr\l+"]
-    4554 -> 4553
-    4553 [label="4553 Identifier\lX_MAPINI"]
-    4554 [label="4554 Infix Expr\l+"]
-    4554 -> 4556
-    4556 [label="4556 Infix Expr\l*"]
-    4556 -> 4555
-    4555 [label="4555 Identifier\lx"]
-    4556 [label="4556 Infix Expr\l*"]
-    4556 -> 4557
-    4557 [label="4557 Identifier\lCELL_SIZE"]
-    4544 -> 4561
-    4561 [label="4561 Infix Expr\l+"]
-    4561 -> 4559
-    4559 [label="4559 Infix Expr\l+"]
-    4559 -> 4558
-    4558 [label="4558 Integer\l16"]
-    4559 [label="4559 Infix Expr\l+"]
-    4559 -> 4560
-    4560 [label="4560 Identifier\lY_MAPINI"]
-    4561 [label="4561 Infix Expr\l+"]
-    4561 -> 4562
-    4562 [label="4562 Identifier\lVIEW_H"]
-    4544 -> 4563
-    4563 [label="4563 Integer\l4473924"]
+    4533 [label="4533 Var Declare\l-----------------\lx"]
+    4534 [label ="4533 Var : x"]
+    4533 -> 4534
+    4534 [label="4534 Integer\l0"]
+    4532 -> 4536
+    4536 [label="4536 Infix Expr\l<"]
+    4536 -> 4535
+    4535 [label="4535 Identifier\lx"]
+    4536 [label="4536 Infix Expr\l<"]
+    4536 -> 4537
+    4537 [label="4537 Integer\l29"]
+    4532 -> 4538
+    4538 [label="4538 Postfix Expr\l++"]
+    4538 -> 4539
+    4539 [label="4539 Identifier\lx"]
+    4532 -> 4540
+    4540 [label="4540 Block"]
+    4540 -> 4541
+    4541 [label="4541 Expression"]
+    4541 -> 4543
+    4543 [label="4543 Infix Dot"]
+    4543 -> 4542
+    4542 [label="4542 Identifier\ldraw"]
+    4543 -> 4545
+    4545 [label="4545 Call\lline()"]
+    4545 -> 4547
+    4547 [label="4547 Infix Expr\l+"]
+    4547 -> 4546
+    4546 [label="4546 Identifier\lX_MAPINI"]
+    4547 [label="4547 Infix Expr\l+"]
+    4547 -> 4549
+    4549 [label="4549 Infix Expr\l*"]
+    4549 -> 4548
+    4548 [label="4548 Identifier\lx"]
+    4549 [label="4549 Infix Expr\l*"]
+    4549 -> 4550
+    4550 [label="4550 Identifier\lCELL_SIZE"]
+    4545 -> 4552
+    4552 [label="4552 Infix Expr\l+"]
+    4552 -> 4551
+    4551 [label="4551 Integer\l16"]
+    4552 [label="4552 Infix Expr\l+"]
+    4552 -> 4553
+    4553 [label="4553 Identifier\lY_MAPINI"]
+    4545 -> 4555
+    4555 [label="4555 Infix Expr\l+"]
+    4555 -> 4554
+    4554 [label="4554 Identifier\lX_MAPINI"]
+    4555 [label="4555 Infix Expr\l+"]
+    4555 -> 4557
+    4557 [label="4557 Infix Expr\l*"]
+    4557 -> 4556
+    4556 [label="4556 Identifier\lx"]
+    4557 [label="4557 Infix Expr\l*"]
+    4557 -> 4558
+    4558 [label="4558 Identifier\lCELL_SIZE"]
+    4545 -> 4562
+    4562 [label="4562 Infix Expr\l+"]
+    4562 -> 4560
+    4560 [label="4560 Infix Expr\l+"]
+    4560 -> 4559
+    4559 [label="4559 Integer\l16"]
+    4560 [label="4560 Infix Expr\l+"]
+    4560 -> 4561
+    4561 [label="4561 Identifier\lY_MAPINI"]
+    4562 [label="4562 Infix Expr\l+"]
+    4562 -> 4563
+    4563 [label="4563 Identifier\lVIEW_H"]
+    4545 -> 4564
+    4564 [label="4564 Integer\l4473924"]
     0 [label="0 Root\l--------"]
-    0 -> 4564
-    4564 [label="4564 Expression"]
-    4564 -> 4565
-    4565 [label="4565 Function Declare\l-----------------------\lDrawHUD"]
+    0 -> 4565
+    4565 [label="4565 Expression"]
     4565 -> 4566
-    4566 [label="4566 Block"]
+    4566 [label="4566 Function Declare\l-----------------------\lDrawHUD"]
     4566 -> 4567
-    4567 [label="4567 Expression"]
-    4567 -> 4569
-    4569 [label="4569 Infix Dot"]
-    4569 -> 4568
-    4568 [label="4568 Identifier\ldraw"]
-    4569 -> 4571
-    4571 [label="4571 Call\ltext()"]
-    4571 -> 4572
-    4572 [label="4572 Integer\l10"]
-    4571 -> 4573
-    4573 [label="4573 Integer\l0"]
-    4571 -> 4574
-    4574 [label="4574 String\lScore: "]
-    4571 -> 4575
-    4575 [label="4575 Integer\l16777215"]
-    4566 [label="4566 Block"]
-    4566 -> 4576
-    4576 [label="4576 Expression"]
-    4576 -> 4578
-    4578 [label="4578 Infix Dot"]
-    4578 -> 4577
-    4577 [label="4577 Identifier\ldraw"]
-    4578 -> 4580
-    4580 [label="4580 Call\ltext()"]
-    4580 -> 4581
-    4581 [label="4581 Integer\l80"]
-    4580 -> 4582
-    4582 [label="4582 Integer\l0"]
-    4580 -> 4584
-    4584 [label="4584 Infix Dot"]
-    4584 -> 4583
-    4583 [label="4583 Identifier\lPlayerScore"]
-    4584 -> 4586
-    4586 [label="4586 Call\lstring()"]
-    4580 -> 4587
-    4587 [label="4587 Integer\l16777215"]
-    4566 [label="4566 Block"]
-    4566 -> 4588
-    4588 [label="4588 Expression"]
-    4588 -> 4590
-    4590 [label="4590 Infix Dot"]
-    4590 -> 4589
-    4589 [label="4589 Identifier\ldraw"]
-    4590 -> 4592
-    4592 [label="4592 Call\lrect_fill()"]
-    4592 -> 4593
-    4593 [label="4593 Integer\l0"]
-    4592 -> 4594
-    4594 [label="4594 Integer\l274"]
-    4592 -> 4595
-    4595 [label="4595 Integer\l32"]
-    4592 -> 4596
-    4596 [label="4596 Integer\l16"]
-    4592 -> 4597
-    4597 [label="4597 Integer\l0"]
-    4566 [label="4566 Block"]
-    4566 -> 4598
-    4598 [label="4598 For Loop\l------------"]
-    4598 -> 4599
-    4599 [label="4599 Var Declare\l-----------------\la"]
-    4600 [label ="4599 Var : a"]
+    4567 [label="4567 Block"]
+    4567 -> 4568
+    4568 [label="4568 Expression"]
+    4568 -> 4570
+    4570 [label="4570 Infix Dot"]
+    4570 -> 4569
+    4569 [label="4569 Identifier\ldraw"]
+    4570 -> 4572
+    4572 [label="4572 Call\ltext()"]
+    4572 -> 4573
+    4573 [label="4573 Integer\l10"]
+    4572 -> 4574
+    4574 [label="4574 Integer\l0"]
+    4572 -> 4575
+    4575 [label="4575 String\lScore: "]
+    4572 -> 4576
+    4576 [label="4576 Integer\l16777215"]
+    4567 [label="4567 Block"]
+    4567 -> 4577
+    4577 [label="4577 Expression"]
+    4577 -> 4579
+    4579 [label="4579 Infix Dot"]
+    4579 -> 4578
+    4578 [label="4578 Identifier\ldraw"]
+    4579 -> 4581
+    4581 [label="4581 Call\ltext()"]
+    4581 -> 4582
+    4582 [label="4582 Integer\l80"]
+    4581 -> 4583
+    4583 [label="4583 Integer\l0"]
+    4581 -> 4585
+    4585 [label="4585 Infix Dot"]
+    4585 -> 4584
+    4584 [label="4584 Identifier\lPlayerScore"]
+    4585 -> 4587
+    4587 [label="4587 Call\lstring()"]
+    4581 -> 4588
+    4588 [label="4588 Integer\l16777215"]
+    4567 [label="4567 Block"]
+    4567 -> 4589
+    4589 [label="4589 Expression"]
+    4589 -> 4591
+    4591 [label="4591 Infix Dot"]
+    4591 -> 4590
+    4590 [label="4590 Identifier\ldraw"]
+    4591 -> 4593
+    4593 [label="4593 Call\lrect_fill()"]
+    4593 -> 4594
+    4594 [label="4594 Integer\l0"]
+    4593 -> 4595
+    4595 [label="4595 Integer\l274"]
+    4593 -> 4596
+    4596 [label="4596 Integer\l32"]
+    4593 -> 4597
+    4597 [label="4597 Integer\l16"]
+    4593 -> 4598
+    4598 [label="4598 Integer\l0"]
+    4567 [label="4567 Block"]
+    4567 -> 4599
+    4599 [label="4599 For Loop\l------------"]
     4599 -> 4600
-    4600 [label="4600 Integer\l0"]
-    4598 -> 4602
-    4602 [label="4602 Infix Expr\l<"]
-    4602 -> 4601
-    4601 [label="4601 Identifier\la"]
-    4602 [label="4602 Infix Expr\l<"]
-    4602 -> 4604
-    4604 [label="4604 Infix Expr\l-"]
-    4604 -> 4603
-    4603 [label="4603 Identifier\lPlayerLives"]
-    4604 [label="4604 Infix Expr\l-"]
-    4604 -> 4605
-    4605 [label="4605 Integer\l1"]
-    4598 -> 4606
-    4606 [label="4606 Postfix Expr\l++"]
-    4606 -> 4607
-    4607 [label="4607 Identifier\la"]
-    4598 -> 4608
-    4608 [label="4608 Block"]
-    4608 -> 4609
-    4609 [label="4609 Expression"]
-    4609 -> 4613
-    4613 [label="4613 Assign\l-------------\l="]
-    4613 -> 4611
-    4611 [label="4611 Infix Dot"]
-    4611 -> 4610
-    4610 [label="4610 Identifier\lpacmanHud"]
-    4611 -> 4612
-    4612 [label="4612 Identifier\lpos"]
-    4613 -> 4615
-    4615 [label="4615 List"]
-    4615 -> 4619
-    4619 [label="4619 Infix Expr\l+"]
-    4619 -> 4617
-    4617 [label="4617 Infix Expr\l*"]
-    4617 -> 4616
-    4616 [label="4616 Identifier\la"]
-    4617 [label="4617 Infix Expr\l*"]
-    4617 -> 4618
-    4618 [label="4618 Integer\l16"]
-    4619 [label="4619 Infix Expr\l+"]
-    4619 -> 4620
-    4620 [label="4620 Integer\l2"]
-    4615 -> 4621
-    4621 [label="4621 Integer\l274"]
-    4608 [label="4608 Block"]
-    4608 -> 4622
-    4622 [label="4622 Expression"]
-    4622 -> 4624
-    4624 [label="4624 Infix Dot"]
-    4624 -> 4623
-    4623 [label="4623 Identifier\ldraw"]
-    4624 -> 4626
-    4626 [label="4626 Call\lsprite()"]
-    4626 -> 4627
-    4627 [label="4627 Identifier\lpacmanHud"]
+    4600 [label="4600 Var Declare\l-----------------\la"]
+    4601 [label ="4600 Var : a"]
+    4600 -> 4601
+    4601 [label="4601 Integer\l0"]
+    4599 -> 4603
+    4603 [label="4603 Infix Expr\l<"]
+    4603 -> 4602
+    4602 [label="4602 Identifier\la"]
+    4603 [label="4603 Infix Expr\l<"]
+    4603 -> 4605
+    4605 [label="4605 Infix Expr\l-"]
+    4605 -> 4604
+    4604 [label="4604 Identifier\lPlayerLives"]
+    4605 [label="4605 Infix Expr\l-"]
+    4605 -> 4606
+    4606 [label="4606 Integer\l1"]
+    4599 -> 4607
+    4607 [label="4607 Postfix Expr\l++"]
+    4607 -> 4608
+    4608 [label="4608 Identifier\la"]
+    4599 -> 4609
+    4609 [label="4609 Block"]
+    4609 -> 4610
+    4610 [label="4610 Expression"]
+    4610 -> 4614
+    4614 [label="4614 Assign\l-------------\l="]
+    4614 -> 4612
+    4612 [label="4612 Infix Dot"]
+    4612 -> 4611
+    4611 [label="4611 Identifier\lpacmanHud"]
+    4612 -> 4613
+    4613 [label="4613 Identifier\lpos"]
+    4614 -> 4616
+    4616 [label="4616 List"]
+    4616 -> 4620
+    4620 [label="4620 Infix Expr\l+"]
+    4620 -> 4618
+    4618 [label="4618 Infix Expr\l*"]
+    4618 -> 4617
+    4617 [label="4617 Identifier\la"]
+    4618 [label="4618 Infix Expr\l*"]
+    4618 -> 4619
+    4619 [label="4619 Integer\l16"]
+    4620 [label="4620 Infix Expr\l+"]
+    4620 -> 4621
+    4621 [label="4621 Integer\l2"]
+    4616 -> 4622
+    4622 [label="4622 Integer\l274"]
+    4609 [label="4609 Block"]
+    4609 -> 4623
+    4623 [label="4623 Expression"]
+    4623 -> 4625
+    4625 [label="4625 Infix Dot"]
+    4625 -> 4624
+    4624 [label="4624 Identifier\ldraw"]
+    4625 -> 4627
+    4627 [label="4627 Call\lsprite()"]
+    4627 -> 4628
+    4628 [label="4628 Identifier\lpacmanHud"]
     0 [label="0 Root\l--------"]
-    0 -> 4628
-    4628 [label="4628 Expression"]
-    4628 -> 4629
-    4629 [label="4629 Function Declare\l-----------------------\lProcessGameLogic"]
+    0 -> 4629
+    4629 [label="4629 Expression"]
     4629 -> 4630
-    4630 [label="4630 Block"]
+    4630 [label="4630 Function Declare\l-----------------------\lProcessGameLogic"]
     4630 -> 4631
-    4631 [label="4631 Expression"]
-    4631 -> 4633
-    4633 [label="4633 Call\lDrawMap()"]
-    4630 [label="4630 Block"]
-    4630 -> 4634
-    4634 [label="4634 Expression"]
-    4634 -> 4636
-    4636 [label="4636 Call\lUpdateGame()"]
-    4630 [label="4630 Block"]
-    4630 -> 4637
-    4637 [label="4637 Expression"]
-    4637 -> 4639
-    4639 [label="4639 Call\lDrawHUD()"]
+    4631 [label="4631 Block"]
+    4631 -> 4632
+    4632 [label="4632 Expression"]
+    4632 -> 4634
+    4634 [label="4634 Call\lDrawMap()"]
+    4631 [label="4631 Block"]
+    4631 -> 4635
+    4635 [label="4635 Expression"]
+    4635 -> 4637
+    4637 [label="4637 Call\lUpdateGame()"]
+    4631 [label="4631 Block"]
+    4631 -> 4638
+    4638 [label="4638 Expression"]
+    4638 -> 4640
+    4640 [label="4640 Call\lDrawHUD()"]
     0 [label="0 Root\l--------"]
-    0 -> 4640
-    4640 [label="4640 Expression"]
-    4640 -> 4642
-    4642 [label="4642 Call\lInitSystem()"]
+    0 -> 4641
+    4641 [label="4641 Expression"]
+    4641 -> 4643
+    4643 [label="4643 Call\lInitSystem()"]
     0 [label="0 Root\l--------"]
-    0 -> 4643
-    4643 [label="4643 Expression"]
-    4643 -> 4645
-    4645 [label="4645 Call\lInitScreen()"]
+    0 -> 4644
+    4644 [label="4644 Expression"]
+    4644 -> 4646
+    4646 [label="4646 Call\lInitScreen()"]
     0 [label="0 Root\l--------"]
-    0 -> 4646
-    4646 [label="4646 Expression"]
-    4646 -> 4648
-    4648 [label="4648 Call\lIniMap()"]
+    0 -> 4647
+    4647 [label="4647 Expression"]
+    4647 -> 4649
+    4649 [label="4649 Call\lIniMap()"]
     0 [label="0 Root\l--------"]
-    0 -> 4649
-    4649 [label="4649 Expression"]
-    4649 -> 4651
-    4651 [label="4651 Call\lpause()"]
-    4651 -> 4652
-    4652 [label="4652 Integer\l1000"]
+    0 -> 4650
+    4650 [label="4650 Expression"]
+    4650 -> 4652
+    4652 [label="4652 Call\lpause()"]
+    4652 -> 4653
+    4653 [label="4653 Integer\l1000"]
     0 [label="0 Root\l--------"]
-    0 -> 4653
-    4653 [label="4653 Var Declare\l-----------------\lPACMAN"]
-    4655 [label ="4653 Var : PACMAN"]
-    4653 -> 4655
-    4655 [label="4655 Call\lObjPacMan()"]
+    0 -> 4654
+    4654 [label="4654 Var Declare\l-----------------\lPACMAN"]
+    4656 [label ="4654 Var : PACMAN"]
+    4654 -> 4656
+    4656 [label="4656 Call\lObjPacMan()"]
     0 [label="0 Root\l--------"]
-    0 -> 4656
-    4656 [label="4656 Var Declare\l-----------------\lghosts"]
-    4657 [label ="4656 Var : ghosts"]
-    4656 -> 4657
-    4657 [label="4657 List"]
-    4657 -> 4659
-    4659 [label="4659 Call\lObjGhost()"]
-    4659 -> 4661
-    4661 [label="4661 Infix Dot"]
-    4661 -> 4660
-    4660 [label="4660 Identifier\lGHOST"]
-    4661 -> 4662
-    4662 [label="4662 Identifier\lblinky"]
-    4657 -> 4664
-    4664 [label="4664 Call\lObjGhost()"]
-    4664 -> 4666
-    4666 [label="4666 Infix Dot"]
-    4666 -> 4665
-    4665 [label="4665 Identifier\lGHOST"]
-    4666 -> 4667
-    4667 [label="4667 Identifier\lpinky"]
-    4657 -> 4669
-    4669 [label="4669 Call\lObjGhost()"]
-    4669 -> 4671
-    4671 [label="4671 Infix Dot"]
-    4671 -> 4670
-    4670 [label="4670 Identifier\lGHOST"]
-    4671 -> 4672
-    4672 [label="4672 Identifier\linky"]
-    4657 -> 4674
-    4674 [label="4674 Call\lObjGhost()"]
-    4674 -> 4676
-    4676 [label="4676 Infix Dot"]
-    4676 -> 4675
-    4675 [label="4675 Identifier\lGHOST"]
-    4676 -> 4677
-    4677 [label="4677 Identifier\lclyde"]
+    0 -> 4657
+    4657 [label="4657 Var Declare\l-----------------\lghosts"]
+    4658 [label ="4657 Var : ghosts"]
+    4657 -> 4658
+    4658 [label="4658 List"]
+    4658 -> 4660
+    4660 [label="4660 Call\lObjGhost()"]
+    4660 -> 4662
+    4662 [label="4662 Infix Dot"]
+    4662 -> 4661
+    4661 [label="4661 Identifier\lGHOST"]
+    4662 -> 4663
+    4663 [label="4663 Identifier\lblinky"]
+    4658 -> 4665
+    4665 [label="4665 Call\lObjGhost()"]
+    4665 -> 4667
+    4667 [label="4667 Infix Dot"]
+    4667 -> 4666
+    4666 [label="4666 Identifier\lGHOST"]
+    4667 -> 4668
+    4668 [label="4668 Identifier\lpinky"]
+    4658 -> 4670
+    4670 [label="4670 Call\lObjGhost()"]
+    4670 -> 4672
+    4672 [label="4672 Infix Dot"]
+    4672 -> 4671
+    4671 [label="4671 Identifier\lGHOST"]
+    4672 -> 4673
+    4673 [label="4673 Identifier\linky"]
+    4658 -> 4675
+    4675 [label="4675 Call\lObjGhost()"]
+    4675 -> 4677
+    4677 [label="4677 Infix Dot"]
+    4677 -> 4676
+    4676 [label="4676 Identifier\lGHOST"]
+    4677 -> 4678
+    4678 [label="4678 Identifier\lclyde"]
     0 [label="0 Root\l--------"]
-    0 -> 4678
-    4678 [label="4678 Foreach"]
-    4678 -> 4679
-    4679 [label="4679 Var Declare\l-----------------\lghost"]
-    4680 [label ="4679 Var : ghost"]
+    0 -> 4679
+    4679 [label="4679 Foreach"]
     4679 -> 4680
-    4680 [label="4680 Iterator"]
+    4680 [label="4680 Var Declare\l-----------------\lghost"]
+    4681 [label ="4680 Var : ghost"]
     4680 -> 4681
-    4681 [label="4681 Identifier\lghosts"]
-    4680 -> 4682
-    4682 [label="4682 Var Declare\l-----------------\l@index_4682"]
-    4683 [label ="4682 Var : @index_4682"]
-    4682 -> 4683
-    4683 [label="4683 Integer\l0"]
-    4678 ->     4678 -> 4687
-    4687 [label="4687 Block"]
-    4687 -> 4688
-    4688 [label="4688 Expression"]
-    4688 -> 4690
-    4690 [label="4690 Infix Dot"]
-    4690 -> 4689
-    4689 [label="4689 Identifier\lghost"]
-    4690 -> 4692
-    4692 [label="4692 Call\ldraw()"]
+    4681 [label="4681 Iterator"]
+    4681 -> 4682
+    4682 [label="4682 Identifier\lghosts"]
+    4681 -> 4683
+    4683 [label="4683 Var Declare\l-----------------\l@index_4683"]
+    4684 [label ="4683 Var : @index_4683"]
+    4683 -> 4684
+    4684 [label="4684 Integer\l0"]
+    4679 ->     4679 -> 4688
+    4688 [label="4688 Block"]
+    4688 -> 4689
+    4689 [label="4689 Expression"]
+    4689 -> 4691
+    4691 [label="4691 Infix Dot"]
+    4691 -> 4690
+    4690 [label="4690 Identifier\lghost"]
+    4691 -> 4693
+    4693 [label="4693 Call\ldraw()"]
     0 [label="0 Root\l--------"]
-    0 -> 4693
-    4693 [label="4693 Expression"]
-    4693 -> 4695
-    4695 [label="4695 Call\lprintln()"]
-    4695 -> 4696
-    4696 [label="4696 String\lMemfree : "]
-    4695 -> 4698
-    4698 [label="4698 Call\lmemfree()"]
-    4695 -> 4699
-    4699 [label="4699 String\l  MemUsed : "]
-    4695 -> 4701
-    4701 [label="4701 Call\lmemuse()"]
+    0 -> 4694
+    4694 [label="4694 Expression"]
+    4694 -> 4696
+    4696 [label="4696 Call\lprintln()"]
+    4696 -> 4697
+    4697 [label="4697 String\lMemfree : "]
+    4696 -> 4699
+    4699 [label="4699 Call\lmemfree()"]
+    4696 -> 4700
+    4700 [label="4700 String\l  MemUsed : "]
+    4696 -> 4702
+    4702 [label="4702 Call\lmemuse()"]
     0 [label="0 Root\l--------"]
-    0 -> 4702
-    4702 [label="4702 Var Declare\l-----------------\ltimer0"]
-    4704 [label ="4702 Var : timer0"]
-    4702 -> 4704
-    4704 [label="4704 Call\lclock()"]
+    0 -> 4703
+    4703 [label="4703 Var Declare\l-----------------\ltimer0"]
+    4705 [label ="4703 Var : timer0"]
+    4703 -> 4705
+    4705 [label="4705 Call\lclock()"]
     0 [label="0 Root\l--------"]
-    0 -> 4705
-    4705 [label="4705 Var Declare\l-----------------\lnewDirec"]
-    4706 [label ="4705 Var : newDirec"]
-    4705 -> 4706
-    4706 [label="4706 Integer\l3"]
+    0 -> 4706
+    4706 [label="4706 Var Declare\l-----------------\lnewDirec"]
+    4707 [label ="4706 Var : newDirec"]
+    4706 -> 4707
+    4707 [label="4707 Integer\l3"]
     0 [label="0 Root\l--------"]
-    0 -> 4707
-    4707 [label="4707 For Loop\l------------"]
-    4707 -> 4708
-    4708 [label="4708 Var Declare\l-----------------\li"]
-    4709 [label ="4708 Var : i"]
+    0 -> 4708
+    4708 [label="4708 For Loop\l------------"]
     4708 -> 4709
-    4709 [label="4709 Integer\l0"]
-    4707 -> 4711
-    4711 [label="4711 Infix Expr\l<"]
-    4711 -> 4710
-    4710 [label="4710 Identifier\li"]
-    4711 [label="4711 Infix Expr\l<"]
-    4711 -> 4712
-    4712 [label="4712 Integer\l10000"]
-    4707 -> 4714
-    4714 [label="4714 Assign\l-------------\l="]
-    4714 -> 4713
-    4713 [label="4713 Identifier\li"]
-    4714 -> 4715
-    4715 [label="4715 Infix Expr\l+"]
-    4715 -> 4713
-    4713 [label="4713 Identifier\li"]
-    4715 [label="4715 Infix Expr\l+"]
+    4709 [label="4709 Var Declare\l-----------------\li"]
+    4710 [label ="4709 Var : i"]
+    4709 -> 4710
+    4710 [label="4710 Integer\l0"]
+    4708 -> 4712
+    4712 [label="4712 Infix Expr\l<"]
+    4712 -> 4711
+    4711 [label="4711 Identifier\li"]
+    4712 [label="4712 Infix Expr\l<"]
+    4712 -> 4713
+    4713 [label="4713 Integer\l10000"]
+    4708 -> 4715
+    4715 [label="4715 Assign\l-------------\l="]
+    4715 -> 4714
+    4714 [label="4714 Identifier\li"]
     4715 -> 4716
-    4716 [label="4716 Integer\l1"]
-    4707 -> 4717
-    4717 [label="4717 Block"]
-    4717 -> 4718
-    4718 [label="4718 Expression"]
-    4718 -> 4720
-    4720 [label="4720 Call\lProcessGameLogic()"]
-    4717 [label="4717 Block"]
-    4717 -> 4721
-    4721 [label="4721 Expression"]
-    4721 -> 4723
-    4723 [label="4723 Infix Dot"]
-    4723 -> 4722
-    4722 [label="4722 Identifier\lDisplay"]
-    4723 -> 4725
-    4725 [label="4725 Call\lupdate()"]
-    4717 [label="4717 Block"]
-    4717 -> 4726
-    4726 [label="4726 Expression"]
-    4726 -> 4728
-    4728 [label="4728 Call\lpause()"]
-    4728 -> 4729
-    4729 [label="4729 Identifier\lFRAMEPAUSE"]
+    4716 [label="4716 Infix Expr\l+"]
+    4716 -> 4714
+    4714 [label="4714 Identifier\li"]
+    4716 [label="4716 Infix Expr\l+"]
+    4716 -> 4717
+    4717 [label="4717 Integer\l1"]
+    4708 -> 4718
+    4718 [label="4718 Block"]
+    4718 -> 4719
+    4719 [label="4719 Expression"]
+    4719 -> 4721
+    4721 [label="4721 Call\lProcessGameLogic()"]
+    4718 [label="4718 Block"]
+    4718 -> 4722
+    4722 [label="4722 Expression"]
+    4722 -> 4724
+    4724 [label="4724 Infix Dot"]
+    4724 -> 4723
+    4723 [label="4723 Identifier\lDisplay"]
+    4724 -> 4726
+    4726 [label="4726 Call\lupdate()"]
+    4718 [label="4718 Block"]
+    4718 -> 4727
+    4727 [label="4727 Expression"]
+    4727 -> 4729
+    4729 [label="4729 Call\lpause()"]
+    4729 -> 4730
+    4730 [label="4730 Identifier\lFRAMEPAUSE"]
     0 [label="0 Root\l--------"]
-    0 -> 4730
-    4730 [label="4730 Expression"]
-    4730 -> 4732
-    4732 [label="4732 Call\lprintln()"]
-    4732 -> 4734
-    4734 [label="4734 Infix Dot"]
-    4734 -> 4733
-    4733 [label="4733 Identifier\lDIRECTION"]
-    4734 -> 4735
-    4735 [label="4735 Identifier\lUP"]
-    4732 -> 4736
-    4736 [label="4736 String\l   "]
-    4732 -> 4738
-    4738 [label="4738 Infix Dot"]
-    4738 -> 4737
-    4737 [label="4737 Identifier\lDIRECTION"]
-    4738 -> 4739
-    4739 [label="4739 Identifier\lDOWN"]
-    4732 -> 4740
-    4740 [label="4740 String\l  "]
-    4732 -> 4742
-    4742 [label="4742 Infix Dot"]
-    4742 -> 4741
-    4741 [label="4741 Identifier\lDIRECTION"]
-    4742 -> 4743
-    4743 [label="4743 Identifier\lLEFT"]
-    4732 -> 4744
-    4744 [label="4744 String\l  "]
-    4732 -> 4746
-    4746 [label="4746 Infix Dot"]
-    4746 -> 4745
-    4745 [label="4745 Identifier\lDIRECTION"]
-    4746 -> 4747
-    4747 [label="4747 Identifier\lRIGHT"]
+    0 -> 4731
+    4731 [label="4731 Expression"]
+    4731 -> 4733
+    4733 [label="4733 Call\lprintln()"]
+    4733 -> 4735
+    4735 [label="4735 Infix Dot"]
+    4735 -> 4734
+    4734 [label="4734 Identifier\lDIRECTION"]
+    4735 -> 4736
+    4736 [label="4736 Identifier\lUP"]
+    4733 -> 4737
+    4737 [label="4737 String\l   "]
+    4733 -> 4739
+    4739 [label="4739 Infix Dot"]
+    4739 -> 4738
+    4738 [label="4738 Identifier\lDIRECTION"]
+    4739 -> 4740
+    4740 [label="4740 Identifier\lDOWN"]
+    4733 -> 4741
+    4741 [label="4741 String\l  "]
+    4733 -> 4743
+    4743 [label="4743 Infix Dot"]
+    4743 -> 4742
+    4742 [label="4742 Identifier\lDIRECTION"]
+    4743 -> 4744
+    4744 [label="4744 Identifier\lLEFT"]
+    4733 -> 4745
+    4745 [label="4745 String\l  "]
+    4733 -> 4747
+    4747 [label="4747 Infix Dot"]
+    4747 -> 4746
+    4746 [label="4746 Identifier\lDIRECTION"]
+    4747 -> 4748
+    4748 [label="4748 Identifier\lRIGHT"]
     0 [label="0 Root\l--------"]
-    0 -> 4748
-    4748 [label="4748 Expression"]
-    4748 -> 4750
-    4750 [label="4750 Call\lprintln()"]
-    4750 -> 4751
-    4751 [label="4751 String\lMemfree : "]
-    4750 -> 4753
-    4753 [label="4753 Call\lmemfree()"]
-    4750 -> 4754
-    4754 [label="4754 String\l  MemUsed : "]
-    4750 -> 4756
-    4756 [label="4756 Call\lmemuse()"]
+    0 -> 4749
+    4749 [label="4749 Expression"]
+    4749 -> 4751
+    4751 [label="4751 Call\lprintln()"]
+    4751 -> 4752
+    4752 [label="4752 String\lMemfree : "]
+    4751 -> 4754
+    4754 [label="4754 Call\lmemfree()"]
+    4751 -> 4755
+    4755 [label="4755 String\l  MemUsed : "]
+    4751 -> 4757
+    4757 [label="4757 Call\lmemuse()"]
     0 [label="0 Root\l--------"]
-    0 -> 4757
-    4757 [label="4757 Expression"]
-    4757 -> 4759
-    4759 [label="4759 Call\lpause()"]
-    4759 -> 4760
-    4760 [label="4760 Integer\l3000"]
+    0 -> 4758
+    4758 [label="4758 Expression"]
+    4758 -> 4760
+    4760 [label="4760 Call\lpause()"]
+    4760 -> 4761
+    4761 [label="4761 Integer\l3000"]
     0 [label="0 Root\l--------"]
-    0 -> 4761
-    4761 [label="4761 Expression"]
-    4761 -> 4763
-    4763 [label="4763 Infix Dot"]
-    4763 -> 4762
-    4762 [label="4762 Identifier\lDisplay"]
-    4763 -> 4765
-    4765 [label="4765 Call\lclose()"]
+    0 -> 4762
+    4762 [label="4762 Expression"]
+    4762 -> 4764
+    4764 [label="4764 Infix Dot"]
+    4764 -> 4763
+    4763 [label="4763 Identifier\lDisplay"]
+    4764 -> 4766
+    4766 [label="4766 Call\lclose()"]
 }

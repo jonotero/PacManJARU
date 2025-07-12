@@ -235,8 +235,7 @@ class ObjPacMan
                 elsif(auxCell==3) then
                     PlayerScore+=50
                     mapa[nuevaFila][nuevaColumna]=1;
-                end
-                if (auxCell!=0 and auxCell!=4 ) then
+                elsif (auxCell!=0 and auxCell!=4 ) then
                     this.x=nuevaX
                     this.y=nuevaY
                 end;
