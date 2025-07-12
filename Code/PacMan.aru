@@ -744,10 +744,31 @@ func LifeLost()
 end
 
 func GameOver()
-    println("Muestra el Game Over en pantalla")
-    pause (1000)
-    PlayerLives=3;
-    StatusGame=GAME_STATE.start
+    // Paso 1: Dibujamos la pantalla de "Game Over".
+    draw.rect_fill(0, 0, VIEW_W, VIEW_H, 0x000000) // Ponemos un fondo negro para limpiar la pantalla.
+
+    var textoGameOver = "GAME OVER"
+    // Calculamos una posición aproximada para centrar el texto.
+    // (Ancho de la vista / 2) - (longitud del texto * tamaño aproximado de letra en píxeles / 2)
+    var textoX = (VIEW_W / 2) - (textoGameOver.size() * 4)
+    var textoY = (VIEW_H / 2) - 8
+
+    draw.text(textoX, textoY, textoGameOver, 0xFF0000) // Dibujamos el texto en color rojo.
+
+    // Mostramos el resultado en pantalla.
+    Display.update()
+
+    // Paso 2: Esperamos unos segundos para que el jugador lo vea.
+    pause(4000) // Pausa de 4 segundos.
+
+    // Paso 3: Reiniciamos todas las variables para una partida nueva.
+    println("Reiniciando el juego para una nueva partida...")
+    PlayerLives = 3
+    PlayerScore = 0
+    IniMap() // ¡Muy importante! Esto vuelve a generar todos los puntos en el mapa.
+
+    // Paso 4: Volvemos al estado inicial para que el juego comience de nuevo.
+    StatusGame = GAME_STATE.start
 end
 
 // =================================================================

@@ -6012,688 +6012,794 @@ digraph{
     4493 -> 4494
     4494 [label="4494 Expression"]
     4494 -> 4496
-    4496 [label="4496 Call\lprintln()"]
-    4496 -> 4497
-    4497 [label="4497 String\lMuestra el Game Over en pantalla"]
-    4493 [label="4493 Block"]
-    4493 -> 4498
-    4498 [label="4498 Expression"]
+    4496 [label="4496 Infix Dot"]
+    4496 -> 4495
+    4495 [label="4495 Identifier\ldraw"]
+    4496 -> 4498
+    4498 [label="4498 Call\lrect_fill()"]
+    4498 -> 4499
+    4499 [label="4499 Integer\l0"]
     4498 -> 4500
-    4500 [label="4500 Call\lpause()"]
-    4500 -> 4501
-    4501 [label="4501 Integer\l1000"]
+    4500 [label="4500 Integer\l0"]
+    4498 -> 4501
+    4501 [label="4501 Identifier\lVIEW_W"]
+    4498 -> 4502
+    4502 [label="4502 Identifier\lVIEW_H"]
+    4498 -> 4503
+    4503 [label="4503 Integer\l0"]
     4493 [label="4493 Block"]
-    4493 -> 4502
-    4502 [label="4502 Expression"]
-    4502 -> 4504
-    4504 [label="4504 Assign\l-------------\l="]
-    4504 -> 4503
-    4503 [label="4503 Identifier\lPlayerLives"]
-    4504 -> 4506
-    4506 [label="4506 Integer\l3"]
+    4493 -> 4504
+    4504 [label="4504 Var Declare\l-----------------\ltextoGameOver"]
+    4505 [label ="4504 Var : textoGameOver"]
+    4504 -> 4505
+    4505 [label="4505 String\lGAME OVER"]
     4493 [label="4493 Block"]
-    4493 -> 4507
-    4507 [label="4507 Expression"]
-    4507 -> 4509
-    4509 [label="4509 Assign\l-------------\l="]
-    4509 -> 4508
-    4508 [label="4508 Identifier\lStatusGame"]
-    4509 -> 4512
+    4493 -> 4506
+    4506 [label="4506 Var Declare\l-----------------\ltextoX"]
+    4510 [label ="4506 Var : textoX"]
+    4506 -> 4510
+    4510 [label="4510 Infix Expr\l-"]
+    4510 -> 4508
+    4508 [label="4508 Infix Expr\l/"]
+    4508 -> 4507
+    4507 [label="4507 Identifier\lVIEW_W"]
+    4508 [label="4508 Infix Expr\l/"]
+    4508 -> 4509
+    4509 [label="4509 Integer\l2"]
+    4510 [label="4510 Infix Expr\l-"]
+    4510 -> 4515
+    4515 [label="4515 Infix Expr\l*"]
+    4515 -> 4512
     4512 [label="4512 Infix Dot"]
     4512 -> 4511
-    4511 [label="4511 Identifier\lGAME_STATE"]
-    4512 -> 4513
-    4513 [label="4513 Identifier\lstart"]
-    0 [label="0 Root\l--------"]
-    0 -> 4514
-    4514 [label="4514 Expression"]
-    4514 -> 4515
-    4515 [label="4515 Function Declare\l-----------------------\lUpdateGame"]
+    4511 [label="4511 Identifier\ltextoGameOver"]
+    4512 -> 4514
+    4514 [label="4514 Call\lsize()"]
+    4515 [label="4515 Infix Expr\l*"]
     4515 -> 4516
-    4516 [label="4516 Block"]
-    4516 -> 4517
-    0 [label="0 Root\l--------"]
-    0 -> 4553
-    4553 [label="4553 Expression"]
-    4553 -> 4554
-    4554 [label="4554 Function Declare\l-----------------------\lCheckColisiones"]
-    4554 -> 4555
-    4555 [label="4555 Block"]
-    4555 -> 4556
-    4556 [label="4556 Foreach"]
-    4556 -> 4557
-    4557 [label="4557 Var Declare\l-----------------\lghost"]
-    4558 [label ="4557 Var : ghost"]
-    4557 -> 4558
-    4558 [label="4558 Iterator"]
-    4558 -> 4559
-    4559 [label="4559 Identifier\lghosts"]
+    4516 [label="4516 Integer\l4"]
+    4493 [label="4493 Block"]
+    4493 -> 4517
+    4517 [label="4517 Var Declare\l-----------------\ltextoY"]
+    4521 [label ="4517 Var : textoY"]
+    4517 -> 4521
+    4521 [label="4521 Infix Expr\l-"]
+    4521 -> 4519
+    4519 [label="4519 Infix Expr\l/"]
+    4519 -> 4518
+    4518 [label="4518 Identifier\lVIEW_H"]
+    4519 [label="4519 Infix Expr\l/"]
+    4519 -> 4520
+    4520 [label="4520 Integer\l2"]
+    4521 [label="4521 Infix Expr\l-"]
+    4521 -> 4522
+    4522 [label="4522 Integer\l8"]
+    4493 [label="4493 Block"]
+    4493 -> 4523
+    4523 [label="4523 Expression"]
+    4523 -> 4525
+    4525 [label="4525 Infix Dot"]
+    4525 -> 4524
+    4524 [label="4524 Identifier\ldraw"]
+    4525 -> 4527
+    4527 [label="4527 Call\ltext()"]
+    4527 -> 4528
+    4528 [label="4528 Identifier\ltextoX"]
+    4527 -> 4529
+    4529 [label="4529 Identifier\ltextoY"]
+    4527 -> 4530
+    4530 [label="4530 Identifier\ltextoGameOver"]
+    4527 -> 4531
+    4531 [label="4531 Integer\l16711680"]
+    4493 [label="4493 Block"]
+    4493 -> 4532
+    4532 [label="4532 Expression"]
+    4532 -> 4534
+    4534 [label="4534 Infix Dot"]
+    4534 -> 4533
+    4533 [label="4533 Identifier\lDisplay"]
+    4534 -> 4536
+    4536 [label="4536 Call\lupdate()"]
+    4493 [label="4493 Block"]
+    4493 -> 4537
+    4537 [label="4537 Expression"]
+    4537 -> 4539
+    4539 [label="4539 Call\lpause()"]
+    4539 -> 4540
+    4540 [label="4540 Integer\l4000"]
+    4493 [label="4493 Block"]
+    4493 -> 4541
+    4541 [label="4541 Expression"]
+    4541 -> 4543
+    4543 [label="4543 Call\lprintln()"]
+    4543 -> 4544
+    4544 [label="4544 String\lReiniciando el juego para una nueva partida..."]
+    4493 [label="4493 Block"]
+    4493 -> 4545
+    4545 [label="4545 Expression"]
+    4545 -> 4547
+    4547 [label="4547 Assign\l-------------\l="]
+    4547 -> 4546
+    4546 [label="4546 Identifier\lPlayerLives"]
+    4547 -> 4549
+    4549 [label="4549 Integer\l3"]
+    4493 [label="4493 Block"]
+    4493 -> 4550
+    4550 [label="4550 Expression"]
+    4550 -> 4552
+    4552 [label="4552 Assign\l-------------\l="]
+    4552 -> 4551
+    4551 [label="4551 Identifier\lPlayerScore"]
+    4552 -> 4554
+    4554 [label="4554 Integer\l0"]
+    4493 [label="4493 Block"]
+    4493 -> 4555
+    4555 [label="4555 Expression"]
+    4555 -> 4557
+    4557 [label="4557 Call\lIniMap()"]
+    4493 [label="4493 Block"]
+    4493 -> 4558
+    4558 [label="4558 Expression"]
     4558 -> 4560
-    4560 [label="4560 Var Declare\l-----------------\l@index_4560"]
-    4561 [label ="4560 Var : @index_4560"]
-    4560 -> 4561
-    4561 [label="4561 Integer\l0"]
-    4556 ->     4556 -> 4565
-    4565 [label="4565 Block"]
-    4565 -> 4566
-    4566 [label="4566 If Then\l--------"]
-    4566 -> 4590
-    4590 [label="4590 Block"]
-    4590 -> 4591
-    4591 [label="4591 Expression"]
-    4591 -> 4595
-    4595 [label="4595 Assign\l-------------\l="]
-    4595 -> 4593
-    4593 [label="4593 Infix Dot"]
-    4593 -> 4592
-    4592 [label="4592 Identifier\lPACMAN"]
-    4593 -> 4594
-    4594 [label="4594 Identifier\ldying"]
-    4595 -> 4597
-    4597 [label="4597 Bool\l1"]
-    4590 [label="4590 Block"]
-    4590 -> 4598
-    4598 [label="4598 Return"]
-    4598 -> 4599
-    4599 [label="4599 Bool\l1"]
-    4555 [label="4555 Block"]
-    4555 -> 4600
-    4600 [label="4600 Return"]
-    4600 -> 4601
-    4601 [label="4601 Bool\l0"]
+    4560 [label="4560 Assign\l-------------\l="]
+    4560 -> 4559
+    4559 [label="4559 Identifier\lStatusGame"]
+    4560 -> 4563
+    4563 [label="4563 Infix Dot"]
+    4563 -> 4562
+    4562 [label="4562 Identifier\lGAME_STATE"]
+    4563 -> 4564
+    4564 [label="4564 Identifier\lstart"]
     0 [label="0 Root\l--------"]
-    0 -> 4602
-    4602 [label="4602 Expression"]
-    4602 -> 4603
-    4603 [label="4603 Function Declare\l-----------------------\lEsPosicionValida"]
-    4603 -> 4606
+    0 -> 4565
+    4565 [label="4565 Expression"]
+    4565 -> 4566
+    4566 [label="4566 Function Declare\l-----------------------\lUpdateGame"]
+    4566 -> 4567
+    4567 [label="4567 Block"]
+    4567 -> 4568
+    0 [label="0 Root\l--------"]
+    0 -> 4604
+    4604 [label="4604 Expression"]
+    4604 -> 4605
+    4605 [label="4605 Function Declare\l-----------------------\lCheckColisiones"]
+    4605 -> 4606
     4606 [label="4606 Block"]
     4606 -> 4607
-    4607 [label="4607 Var Declare\l-----------------\lcelda"]
-    4609 [label ="4607 Var : celda"]
-    4607 -> 4609
-    4609 [label="4609 Call\lCoordenadasACelda()"]
+    4607 [label="4607 Foreach"]
+    4607 -> 4608
+    4608 [label="4608 Var Declare\l-----------------\lghost"]
+    4609 [label ="4608 Var : ghost"]
+    4608 -> 4609
+    4609 [label="4609 Iterator"]
     4609 -> 4610
-    4610 [label="4610 Identifier\lx"]
+    4610 [label="4610 Identifier\lghosts"]
     4609 -> 4611
-    4611 [label="4611 Identifier\ly"]
-    4606 [label="4606 Block"]
-    4606 -> 4612
-    4612 [label="4612 Var Declare\l-----------------\lcolumna"]
-    4614 [label ="4612 Var : columna"]
-    4612 -> 4614
-    4614 [label="4614 Index Expr\l"]
-    4614 -> 4613
-    4613 [label="4613 Identifier\lcelda"]
-    4614 -> 4615
-    4615 [label="4615 Integer\l0"]
-    4606 [label="4606 Block"]
-    4606 -> 4616
-    4616 [label="4616 Var Declare\l-----------------\lfila"]
-    4618 [label ="4616 Var : fila"]
-    4616 -> 4618
-    4618 [label="4618 Index Expr\l"]
-    4618 -> 4617
-    4617 [label="4617 Identifier\lcelda"]
-    4618 -> 4619
-    4619 [label="4619 Integer\l1"]
-    4606 [label="4606 Block"]
-    4606 -> 4620
-    4620 [label="4620 If Then\l--------"]
-    4620 -> 4636
-    4636 [label="4636 Block"]
-    4636 -> 4637
-    4637 [label="4637 Return"]
-    4637 -> 4638
-    4638 [label="4638 Bool\l0"]
-    4606 [label="4606 Block"]
-    4606 -> 4639
-    4639 [label="4639 Return"]
-    4639 -> 4644
-    4644 [label="4644 Infix Expr\l!="]
-    4644 -> 4641
-    4641 [label="4641 Index Expr\l"]
-    4641 -> 4640
-    4640 [label="4640 Identifier\lmapa"]
+    4611 [label="4611 Var Declare\l-----------------\l@index_4611"]
+    4612 [label ="4611 Var : @index_4611"]
+    4611 -> 4612
+    4612 [label="4612 Integer\l0"]
+    4607 ->     4607 -> 4616
+    4616 [label="4616 Block"]
+    4616 -> 4617
+    4617 [label="4617 If Then\l--------"]
+    4617 -> 4641
+    4641 [label="4641 Block"]
     4641 -> 4642
-    4642 [label="4642 Identifier\lfila"]
-    4641 -> 4643
-    4643 [label="4643 Identifier\lcolumna"]
-    4644 [label="4644 Infix Expr\l!="]
+    4642 [label="4642 Expression"]
+    4642 -> 4646
+    4646 [label="4646 Assign\l-------------\l="]
+    4646 -> 4644
+    4644 [label="4644 Infix Dot"]
+    4644 -> 4643
+    4643 [label="4643 Identifier\lPACMAN"]
     4644 -> 4645
-    4645 [label="4645 Integer\l0"]
-    0 [label="0 Root\l--------"]
-    0 -> 4646
-    4646 [label="4646 Expression"]
-    4646 -> 4647
-    4647 [label="4647 Function Declare\l-----------------------\lDrawGrid"]
-    4647 -> 4648
-    4648 [label="4648 Block"]
-    4648 -> 4649
-    4649 [label="4649 For Loop\l------------"]
+    4645 [label="4645 Identifier\ldying"]
+    4646 -> 4648
+    4648 [label="4648 Bool\l1"]
+    4641 [label="4641 Block"]
+    4641 -> 4649
+    4649 [label="4649 Return"]
     4649 -> 4650
-    4650 [label="4650 Var Declare\l-----------------\ly"]
-    4651 [label ="4650 Var : y"]
-    4650 -> 4651
-    4651 [label="4651 Integer\l0"]
-    4649 -> 4653
-    4653 [label="4653 Infix Expr\l<"]
-    4653 -> 4652
-    4652 [label="4652 Identifier\ly"]
-    4653 [label="4653 Infix Expr\l<"]
+    4650 [label="4650 Bool\l1"]
+    4606 [label="4606 Block"]
+    4606 -> 4651
+    4651 [label="4651 Return"]
+    4651 -> 4652
+    4652 [label="4652 Bool\l0"]
+    0 [label="0 Root\l--------"]
+    0 -> 4653
+    4653 [label="4653 Expression"]
     4653 -> 4654
-    4654 [label="4654 Integer\l32"]
-    4649 -> 4655
-    4655 [label="4655 Postfix Expr\l++"]
-    4655 -> 4656
-    4656 [label="4656 Identifier\ly"]
-    4649 -> 4657
+    4654 [label="4654 Function Declare\l-----------------------\lEsPosicionValida"]
+    4654 -> 4657
     4657 [label="4657 Block"]
     4657 -> 4658
-    4658 [label="4658 Expression"]
+    4658 [label="4658 Var Declare\l-----------------\lcelda"]
+    4660 [label ="4658 Var : celda"]
     4658 -> 4660
-    4660 [label="4660 Infix Dot"]
-    4660 -> 4659
-    4659 [label="4659 Identifier\ldraw"]
+    4660 [label="4660 Call\lCoordenadasACelda()"]
+    4660 -> 4661
+    4661 [label="4661 Identifier\lx"]
     4660 -> 4662
-    4662 [label="4662 Call\lline()"]
-    4662 -> 4663
-    4663 [label="4663 Identifier\lX_MAPINI"]
-    4662 -> 4667
-    4667 [label="4667 Infix Expr\l+"]
-    4667 -> 4665
-    4665 [label="4665 Infix Expr\l+"]
+    4662 [label="4662 Identifier\ly"]
+    4657 [label="4657 Block"]
+    4657 -> 4663
+    4663 [label="4663 Var Declare\l-----------------\lcolumna"]
+    4665 [label ="4663 Var : columna"]
+    4663 -> 4665
+    4665 [label="4665 Index Expr\l"]
     4665 -> 4664
-    4664 [label="4664 Integer\l16"]
-    4665 [label="4665 Infix Expr\l+"]
+    4664 [label="4664 Identifier\lcelda"]
     4665 -> 4666
-    4666 [label="4666 Identifier\lY_MAPINI"]
-    4667 [label="4667 Infix Expr\l+"]
+    4666 [label="4666 Integer\l0"]
+    4657 [label="4657 Block"]
+    4657 -> 4667
+    4667 [label="4667 Var Declare\l-----------------\lfila"]
+    4669 [label ="4667 Var : fila"]
     4667 -> 4669
-    4669 [label="4669 Infix Expr\l*"]
+    4669 [label="4669 Index Expr\l"]
     4669 -> 4668
-    4668 [label="4668 Identifier\ly"]
-    4669 [label="4669 Infix Expr\l*"]
+    4668 [label="4668 Identifier\lcelda"]
     4669 -> 4670
-    4670 [label="4670 Identifier\lCELL_SIZE"]
-    4662 -> 4674
-    4674 [label="4674 Infix Expr\l+"]
-    4674 -> 4672
-    4672 [label="4672 Infix Expr\l+"]
-    4672 -> 4671
-    4671 [label="4671 Identifier\lX_MAPINI"]
-    4672 [label="4672 Infix Expr\l+"]
-    4672 -> 4673
-    4673 [label="4673 Identifier\lVIEW_W"]
-    4674 [label="4674 Infix Expr\l+"]
-    4674 -> 4675
-    4675 [label="4675 Integer\l8"]
-    4662 -> 4679
-    4679 [label="4679 Infix Expr\l+"]
-    4679 -> 4677
-    4677 [label="4677 Infix Expr\l+"]
-    4677 -> 4676
-    4676 [label="4676 Integer\l16"]
-    4677 [label="4677 Infix Expr\l+"]
-    4677 -> 4678
-    4678 [label="4678 Identifier\lY_MAPINI"]
-    4679 [label="4679 Infix Expr\l+"]
-    4679 -> 4681
-    4681 [label="4681 Infix Expr\l*"]
-    4681 -> 4680
-    4680 [label="4680 Identifier\ly"]
-    4681 [label="4681 Infix Expr\l*"]
-    4681 -> 4682
-    4682 [label="4682 Identifier\lCELL_SIZE"]
-    4662 -> 4683
-    4683 [label="4683 Integer\l4473924"]
-    4648 [label="4648 Block"]
-    4648 -> 4684
-    4684 [label="4684 For Loop\l------------"]
-    4684 -> 4685
-    4685 [label="4685 Var Declare\l-----------------\lx"]
-    4686 [label ="4685 Var : x"]
-    4685 -> 4686
-    4686 [label="4686 Integer\l0"]
-    4684 -> 4688
-    4688 [label="4688 Infix Expr\l<"]
-    4688 -> 4687
-    4687 [label="4687 Identifier\lx"]
-    4688 [label="4688 Infix Expr\l<"]
+    4670 [label="4670 Integer\l1"]
+    4657 [label="4657 Block"]
+    4657 -> 4671
+    4671 [label="4671 If Then\l--------"]
+    4671 -> 4687
+    4687 [label="4687 Block"]
+    4687 -> 4688
+    4688 [label="4688 Return"]
     4688 -> 4689
-    4689 [label="4689 Integer\l29"]
-    4684 -> 4690
-    4690 [label="4690 Postfix Expr\l++"]
-    4690 -> 4691
-    4691 [label="4691 Identifier\lx"]
-    4684 -> 4692
-    4692 [label="4692 Block"]
+    4689 [label="4689 Bool\l0"]
+    4657 [label="4657 Block"]
+    4657 -> 4690
+    4690 [label="4690 Return"]
+    4690 -> 4695
+    4695 [label="4695 Infix Expr\l!="]
+    4695 -> 4692
+    4692 [label="4692 Index Expr\l"]
+    4692 -> 4691
+    4691 [label="4691 Identifier\lmapa"]
     4692 -> 4693
-    4693 [label="4693 Expression"]
-    4693 -> 4695
-    4695 [label="4695 Infix Dot"]
-    4695 -> 4694
-    4694 [label="4694 Identifier\ldraw"]
-    4695 -> 4697
-    4697 [label="4697 Call\lline()"]
-    4697 -> 4699
-    4699 [label="4699 Infix Expr\l+"]
-    4699 -> 4698
-    4698 [label="4698 Identifier\lX_MAPINI"]
-    4699 [label="4699 Infix Expr\l+"]
-    4699 -> 4701
-    4701 [label="4701 Infix Expr\l*"]
-    4701 -> 4700
-    4700 [label="4700 Identifier\lx"]
-    4701 [label="4701 Infix Expr\l*"]
+    4693 [label="4693 Identifier\lfila"]
+    4692 -> 4694
+    4694 [label="4694 Identifier\lcolumna"]
+    4695 [label="4695 Infix Expr\l!="]
+    4695 -> 4696
+    4696 [label="4696 Integer\l0"]
+    0 [label="0 Root\l--------"]
+    0 -> 4697
+    4697 [label="4697 Expression"]
+    4697 -> 4698
+    4698 [label="4698 Function Declare\l-----------------------\lDrawGrid"]
+    4698 -> 4699
+    4699 [label="4699 Block"]
+    4699 -> 4700
+    4700 [label="4700 For Loop\l------------"]
+    4700 -> 4701
+    4701 [label="4701 Var Declare\l-----------------\ly"]
+    4702 [label ="4701 Var : y"]
     4701 -> 4702
-    4702 [label="4702 Identifier\lCELL_SIZE"]
-    4697 -> 4704
-    4704 [label="4704 Infix Expr\l+"]
+    4702 [label="4702 Integer\l0"]
+    4700 -> 4704
+    4704 [label="4704 Infix Expr\l<"]
     4704 -> 4703
-    4703 [label="4703 Integer\l16"]
-    4704 [label="4704 Infix Expr\l+"]
+    4703 [label="4703 Identifier\ly"]
+    4704 [label="4704 Infix Expr\l<"]
     4704 -> 4705
-    4705 [label="4705 Identifier\lY_MAPINI"]
-    4697 -> 4707
-    4707 [label="4707 Infix Expr\l+"]
-    4707 -> 4706
-    4706 [label="4706 Identifier\lX_MAPINI"]
-    4707 [label="4707 Infix Expr\l+"]
-    4707 -> 4709
-    4709 [label="4709 Infix Expr\l*"]
-    4709 -> 4708
-    4708 [label="4708 Identifier\lx"]
-    4709 [label="4709 Infix Expr\l*"]
-    4709 -> 4710
-    4710 [label="4710 Identifier\lCELL_SIZE"]
-    4697 -> 4714
-    4714 [label="4714 Infix Expr\l+"]
-    4714 -> 4712
-    4712 [label="4712 Infix Expr\l+"]
-    4712 -> 4711
-    4711 [label="4711 Integer\l16"]
-    4712 [label="4712 Infix Expr\l+"]
-    4712 -> 4713
-    4713 [label="4713 Identifier\lY_MAPINI"]
-    4714 [label="4714 Infix Expr\l+"]
-    4714 -> 4715
-    4715 [label="4715 Identifier\lVIEW_H"]
-    4697 -> 4716
-    4716 [label="4716 Integer\l4473924"]
-    0 [label="0 Root\l--------"]
-    0 -> 4717
-    4717 [label="4717 Expression"]
-    4717 -> 4718
-    4718 [label="4718 Function Declare\l-----------------------\lDrawHUD"]
-    4718 -> 4719
-    4719 [label="4719 Block"]
-    4719 -> 4720
-    4720 [label="4720 Expression"]
-    4720 -> 4722
-    4722 [label="4722 Infix Dot"]
-    4722 -> 4721
-    4721 [label="4721 Identifier\ldraw"]
-    4722 -> 4724
-    4724 [label="4724 Call\ltext()"]
-    4724 -> 4725
-    4725 [label="4725 Integer\l10"]
-    4724 -> 4726
-    4726 [label="4726 Integer\l0"]
-    4724 -> 4727
-    4727 [label="4727 String\lScore: "]
-    4724 -> 4728
-    4728 [label="4728 Integer\l16777215"]
-    4719 [label="4719 Block"]
-    4719 -> 4729
-    4729 [label="4729 Expression"]
-    4729 -> 4731
-    4731 [label="4731 Infix Dot"]
-    4731 -> 4730
-    4730 [label="4730 Identifier\ldraw"]
-    4731 -> 4733
-    4733 [label="4733 Call\ltext()"]
-    4733 -> 4734
-    4734 [label="4734 Integer\l80"]
-    4733 -> 4735
-    4735 [label="4735 Integer\l0"]
-    4733 -> 4737
-    4737 [label="4737 Infix Dot"]
-    4737 -> 4736
-    4736 [label="4736 Identifier\lPlayerScore"]
-    4737 -> 4739
-    4739 [label="4739 Call\lstring()"]
-    4733 -> 4740
-    4740 [label="4740 Integer\l16777215"]
-    4719 [label="4719 Block"]
-    4719 -> 4741
-    4741 [label="4741 Expression"]
-    4741 -> 4743
-    4743 [label="4743 Infix Dot"]
-    4743 -> 4742
-    4742 [label="4742 Identifier\ldraw"]
-    4743 -> 4745
-    4745 [label="4745 Call\lrect_fill()"]
-    4745 -> 4746
-    4746 [label="4746 Integer\l0"]
-    4745 -> 4747
-    4747 [label="4747 Integer\l274"]
-    4745 -> 4748
-    4748 [label="4748 Integer\l32"]
-    4745 -> 4749
-    4749 [label="4749 Integer\l16"]
-    4745 -> 4750
-    4750 [label="4750 Integer\l0"]
-    4719 [label="4719 Block"]
-    4719 -> 4751
-    4751 [label="4751 For Loop\l------------"]
-    4751 -> 4752
-    4752 [label="4752 Var Declare\l-----------------\la"]
-    4753 [label ="4752 Var : a"]
+    4705 [label="4705 Integer\l32"]
+    4700 -> 4706
+    4706 [label="4706 Postfix Expr\l++"]
+    4706 -> 4707
+    4707 [label="4707 Identifier\ly"]
+    4700 -> 4708
+    4708 [label="4708 Block"]
+    4708 -> 4709
+    4709 [label="4709 Expression"]
+    4709 -> 4711
+    4711 [label="4711 Infix Dot"]
+    4711 -> 4710
+    4710 [label="4710 Identifier\ldraw"]
+    4711 -> 4713
+    4713 [label="4713 Call\lline()"]
+    4713 -> 4714
+    4714 [label="4714 Identifier\lX_MAPINI"]
+    4713 -> 4718
+    4718 [label="4718 Infix Expr\l+"]
+    4718 -> 4716
+    4716 [label="4716 Infix Expr\l+"]
+    4716 -> 4715
+    4715 [label="4715 Integer\l16"]
+    4716 [label="4716 Infix Expr\l+"]
+    4716 -> 4717
+    4717 [label="4717 Identifier\lY_MAPINI"]
+    4718 [label="4718 Infix Expr\l+"]
+    4718 -> 4720
+    4720 [label="4720 Infix Expr\l*"]
+    4720 -> 4719
+    4719 [label="4719 Identifier\ly"]
+    4720 [label="4720 Infix Expr\l*"]
+    4720 -> 4721
+    4721 [label="4721 Identifier\lCELL_SIZE"]
+    4713 -> 4725
+    4725 [label="4725 Infix Expr\l+"]
+    4725 -> 4723
+    4723 [label="4723 Infix Expr\l+"]
+    4723 -> 4722
+    4722 [label="4722 Identifier\lX_MAPINI"]
+    4723 [label="4723 Infix Expr\l+"]
+    4723 -> 4724
+    4724 [label="4724 Identifier\lVIEW_W"]
+    4725 [label="4725 Infix Expr\l+"]
+    4725 -> 4726
+    4726 [label="4726 Integer\l8"]
+    4713 -> 4730
+    4730 [label="4730 Infix Expr\l+"]
+    4730 -> 4728
+    4728 [label="4728 Infix Expr\l+"]
+    4728 -> 4727
+    4727 [label="4727 Integer\l16"]
+    4728 [label="4728 Infix Expr\l+"]
+    4728 -> 4729
+    4729 [label="4729 Identifier\lY_MAPINI"]
+    4730 [label="4730 Infix Expr\l+"]
+    4730 -> 4732
+    4732 [label="4732 Infix Expr\l*"]
+    4732 -> 4731
+    4731 [label="4731 Identifier\ly"]
+    4732 [label="4732 Infix Expr\l*"]
+    4732 -> 4733
+    4733 [label="4733 Identifier\lCELL_SIZE"]
+    4713 -> 4734
+    4734 [label="4734 Integer\l4473924"]
+    4699 [label="4699 Block"]
+    4699 -> 4735
+    4735 [label="4735 For Loop\l------------"]
+    4735 -> 4736
+    4736 [label="4736 Var Declare\l-----------------\lx"]
+    4737 [label ="4736 Var : x"]
+    4736 -> 4737
+    4737 [label="4737 Integer\l0"]
+    4735 -> 4739
+    4739 [label="4739 Infix Expr\l<"]
+    4739 -> 4738
+    4738 [label="4738 Identifier\lx"]
+    4739 [label="4739 Infix Expr\l<"]
+    4739 -> 4740
+    4740 [label="4740 Integer\l29"]
+    4735 -> 4741
+    4741 [label="4741 Postfix Expr\l++"]
+    4741 -> 4742
+    4742 [label="4742 Identifier\lx"]
+    4735 -> 4743
+    4743 [label="4743 Block"]
+    4743 -> 4744
+    4744 [label="4744 Expression"]
+    4744 -> 4746
+    4746 [label="4746 Infix Dot"]
+    4746 -> 4745
+    4745 [label="4745 Identifier\ldraw"]
+    4746 -> 4748
+    4748 [label="4748 Call\lline()"]
+    4748 -> 4750
+    4750 [label="4750 Infix Expr\l+"]
+    4750 -> 4749
+    4749 [label="4749 Identifier\lX_MAPINI"]
+    4750 [label="4750 Infix Expr\l+"]
+    4750 -> 4752
+    4752 [label="4752 Infix Expr\l*"]
+    4752 -> 4751
+    4751 [label="4751 Identifier\lx"]
+    4752 [label="4752 Infix Expr\l*"]
     4752 -> 4753
-    4753 [label="4753 Integer\l0"]
-    4751 -> 4755
-    4755 [label="4755 Infix Expr\l<"]
+    4753 [label="4753 Identifier\lCELL_SIZE"]
+    4748 -> 4755
+    4755 [label="4755 Infix Expr\l+"]
     4755 -> 4754
-    4754 [label="4754 Identifier\la"]
-    4755 [label="4755 Infix Expr\l<"]
-    4755 -> 4757
-    4757 [label="4757 Infix Expr\l-"]
-    4757 -> 4756
-    4756 [label="4756 Identifier\lPlayerLives"]
-    4757 [label="4757 Infix Expr\l-"]
-    4757 -> 4758
-    4758 [label="4758 Integer\l1"]
-    4751 -> 4759
-    4759 [label="4759 Postfix Expr\l++"]
-    4759 -> 4760
-    4760 [label="4760 Identifier\la"]
-    4751 -> 4761
-    4761 [label="4761 Block"]
-    4761 -> 4762
-    4762 [label="4762 Expression"]
-    4762 -> 4766
-    4766 [label="4766 Assign\l-------------\l="]
-    4766 -> 4764
-    4764 [label="4764 Infix Dot"]
-    4764 -> 4763
-    4763 [label="4763 Identifier\lpacmanHud"]
-    4764 -> 4765
-    4765 [label="4765 Identifier\lpos"]
-    4766 -> 4768
-    4768 [label="4768 List"]
-    4768 -> 4772
-    4772 [label="4772 Infix Expr\l+"]
-    4772 -> 4770
-    4770 [label="4770 Infix Expr\l*"]
-    4770 -> 4769
-    4769 [label="4769 Identifier\la"]
-    4770 [label="4770 Infix Expr\l*"]
+    4754 [label="4754 Integer\l16"]
+    4755 [label="4755 Infix Expr\l+"]
+    4755 -> 4756
+    4756 [label="4756 Identifier\lY_MAPINI"]
+    4748 -> 4758
+    4758 [label="4758 Infix Expr\l+"]
+    4758 -> 4757
+    4757 [label="4757 Identifier\lX_MAPINI"]
+    4758 [label="4758 Infix Expr\l+"]
+    4758 -> 4760
+    4760 [label="4760 Infix Expr\l*"]
+    4760 -> 4759
+    4759 [label="4759 Identifier\lx"]
+    4760 [label="4760 Infix Expr\l*"]
+    4760 -> 4761
+    4761 [label="4761 Identifier\lCELL_SIZE"]
+    4748 -> 4765
+    4765 [label="4765 Infix Expr\l+"]
+    4765 -> 4763
+    4763 [label="4763 Infix Expr\l+"]
+    4763 -> 4762
+    4762 [label="4762 Integer\l16"]
+    4763 [label="4763 Infix Expr\l+"]
+    4763 -> 4764
+    4764 [label="4764 Identifier\lY_MAPINI"]
+    4765 [label="4765 Infix Expr\l+"]
+    4765 -> 4766
+    4766 [label="4766 Identifier\lVIEW_H"]
+    4748 -> 4767
+    4767 [label="4767 Integer\l4473924"]
+    0 [label="0 Root\l--------"]
+    0 -> 4768
+    4768 [label="4768 Expression"]
+    4768 -> 4769
+    4769 [label="4769 Function Declare\l-----------------------\lDrawHUD"]
+    4769 -> 4770
+    4770 [label="4770 Block"]
     4770 -> 4771
-    4771 [label="4771 Integer\l16"]
-    4772 [label="4772 Infix Expr\l+"]
-    4772 -> 4773
-    4773 [label="4773 Integer\l2"]
-    4768 -> 4774
-    4774 [label="4774 Integer\l274"]
-    4761 [label="4761 Block"]
-    4761 -> 4775
-    4775 [label="4775 Expression"]
+    4771 [label="4771 Expression"]
+    4771 -> 4773
+    4773 [label="4773 Infix Dot"]
+    4773 -> 4772
+    4772 [label="4772 Identifier\ldraw"]
+    4773 -> 4775
+    4775 [label="4775 Call\ltext()"]
+    4775 -> 4776
+    4776 [label="4776 Integer\l10"]
     4775 -> 4777
-    4777 [label="4777 Infix Dot"]
-    4777 -> 4776
-    4776 [label="4776 Identifier\ldraw"]
-    4777 -> 4779
-    4779 [label="4779 Call\lsprite()"]
-    4779 -> 4780
-    4780 [label="4780 Identifier\lpacmanHud"]
-    0 [label="0 Root\l--------"]
-    0 -> 4781
-    4781 [label="4781 Expression"]
-    4781 -> 4782
-    4782 [label="4782 Function Declare\l-----------------------\lProcessGameLogic"]
-    4782 -> 4783
-    4783 [label="4783 Block"]
-    4783 -> 4784
-    4784 [label="4784 Expression"]
+    4777 [label="4777 Integer\l0"]
+    4775 -> 4778
+    4778 [label="4778 String\lScore: "]
+    4775 -> 4779
+    4779 [label="4779 Integer\l16777215"]
+    4770 [label="4770 Block"]
+    4770 -> 4780
+    4780 [label="4780 Expression"]
+    4780 -> 4782
+    4782 [label="4782 Infix Dot"]
+    4782 -> 4781
+    4781 [label="4781 Identifier\ldraw"]
+    4782 -> 4784
+    4784 [label="4784 Call\ltext()"]
+    4784 -> 4785
+    4785 [label="4785 Integer\l80"]
     4784 -> 4786
-    4786 [label="4786 Call\lDrawMap()"]
-    4783 [label="4783 Block"]
-    4783 -> 4787
-    4787 [label="4787 Expression"]
-    4787 -> 4789
-    4789 [label="4789 Call\lUpdateGame()"]
-    4783 [label="4783 Block"]
-    4783 -> 4790
-    4790 [label="4790 Expression"]
-    4790 -> 4792
-    4792 [label="4792 Call\lDrawHUD()"]
-    0 [label="0 Root\l--------"]
-    0 -> 4793
-    4793 [label="4793 Expression"]
-    4793 -> 4795
-    4795 [label="4795 Call\lInitSystem()"]
-    0 [label="0 Root\l--------"]
-    0 -> 4796
-    4796 [label="4796 Expression"]
+    4786 [label="4786 Integer\l0"]
+    4784 -> 4788
+    4788 [label="4788 Infix Dot"]
+    4788 -> 4787
+    4787 [label="4787 Identifier\lPlayerScore"]
+    4788 -> 4790
+    4790 [label="4790 Call\lstring()"]
+    4784 -> 4791
+    4791 [label="4791 Integer\l16777215"]
+    4770 [label="4770 Block"]
+    4770 -> 4792
+    4792 [label="4792 Expression"]
+    4792 -> 4794
+    4794 [label="4794 Infix Dot"]
+    4794 -> 4793
+    4793 [label="4793 Identifier\ldraw"]
+    4794 -> 4796
+    4796 [label="4796 Call\lrect_fill()"]
+    4796 -> 4797
+    4797 [label="4797 Integer\l0"]
     4796 -> 4798
-    4798 [label="4798 Call\lInitScreen()"]
-    0 [label="0 Root\l--------"]
-    0 -> 4799
-    4799 [label="4799 Expression"]
-    4799 -> 4801
-    4801 [label="4801 Call\lIniMap()"]
-    0 [label="0 Root\l--------"]
-    0 -> 4802
-    4802 [label="4802 Expression"]
-    4802 -> 4804
-    4804 [label="4804 Call\lpause()"]
-    4804 -> 4805
-    4805 [label="4805 Integer\l1000"]
-    0 [label="0 Root\l--------"]
-    0 -> 4806
-    4806 [label="4806 Var Declare\l-----------------\lPACMAN"]
-    4808 [label ="4806 Var : PACMAN"]
+    4798 [label="4798 Integer\l274"]
+    4796 -> 4799
+    4799 [label="4799 Integer\l32"]
+    4796 -> 4800
+    4800 [label="4800 Integer\l16"]
+    4796 -> 4801
+    4801 [label="4801 Integer\l0"]
+    4770 [label="4770 Block"]
+    4770 -> 4802
+    4802 [label="4802 For Loop\l------------"]
+    4802 -> 4803
+    4803 [label="4803 Var Declare\l-----------------\la"]
+    4804 [label ="4803 Var : a"]
+    4803 -> 4804
+    4804 [label="4804 Integer\l0"]
+    4802 -> 4806
+    4806 [label="4806 Infix Expr\l<"]
+    4806 -> 4805
+    4805 [label="4805 Identifier\la"]
+    4806 [label="4806 Infix Expr\l<"]
     4806 -> 4808
-    4808 [label="4808 Call\lObjPacMan()"]
-    0 [label="0 Root\l--------"]
-    0 -> 4809
-    4809 [label="4809 Var Declare\l-----------------\lghosts"]
-    4810 [label ="4809 Var : ghosts"]
-    4809 -> 4810
-    4810 [label="4810 List"]
-    4810 -> 4812
-    4812 [label="4812 Call\lObjGhost()"]
-    4812 -> 4814
-    4814 [label="4814 Infix Dot"]
-    4814 -> 4813
-    4813 [label="4813 Identifier\lGHOST"]
-    4814 -> 4815
-    4815 [label="4815 Identifier\lblinky"]
-    4810 -> 4817
-    4817 [label="4817 Call\lObjGhost()"]
+    4808 [label="4808 Infix Expr\l-"]
+    4808 -> 4807
+    4807 [label="4807 Identifier\lPlayerLives"]
+    4808 [label="4808 Infix Expr\l-"]
+    4808 -> 4809
+    4809 [label="4809 Integer\l1"]
+    4802 -> 4810
+    4810 [label="4810 Postfix Expr\l++"]
+    4810 -> 4811
+    4811 [label="4811 Identifier\la"]
+    4802 -> 4812
+    4812 [label="4812 Block"]
+    4812 -> 4813
+    4813 [label="4813 Expression"]
+    4813 -> 4817
+    4817 [label="4817 Assign\l-------------\l="]
+    4817 -> 4815
+    4815 [label="4815 Infix Dot"]
+    4815 -> 4814
+    4814 [label="4814 Identifier\lpacmanHud"]
+    4815 -> 4816
+    4816 [label="4816 Identifier\lpos"]
     4817 -> 4819
-    4819 [label="4819 Infix Dot"]
-    4819 -> 4818
-    4818 [label="4818 Identifier\lGHOST"]
-    4819 -> 4820
-    4820 [label="4820 Identifier\lpinky"]
-    4810 -> 4822
-    4822 [label="4822 Call\lObjGhost()"]
-    4822 -> 4824
-    4824 [label="4824 Infix Dot"]
-    4824 -> 4823
-    4823 [label="4823 Identifier\lGHOST"]
-    4824 -> 4825
-    4825 [label="4825 Identifier\linky"]
-    4810 -> 4827
-    4827 [label="4827 Call\lObjGhost()"]
-    4827 -> 4829
-    4829 [label="4829 Infix Dot"]
-    4829 -> 4828
-    4828 [label="4828 Identifier\lGHOST"]
-    4829 -> 4830
-    4830 [label="4830 Identifier\lclyde"]
+    4819 [label="4819 List"]
+    4819 -> 4823
+    4823 [label="4823 Infix Expr\l+"]
+    4823 -> 4821
+    4821 [label="4821 Infix Expr\l*"]
+    4821 -> 4820
+    4820 [label="4820 Identifier\la"]
+    4821 [label="4821 Infix Expr\l*"]
+    4821 -> 4822
+    4822 [label="4822 Integer\l16"]
+    4823 [label="4823 Infix Expr\l+"]
+    4823 -> 4824
+    4824 [label="4824 Integer\l2"]
+    4819 -> 4825
+    4825 [label="4825 Integer\l274"]
+    4812 [label="4812 Block"]
+    4812 -> 4826
+    4826 [label="4826 Expression"]
+    4826 -> 4828
+    4828 [label="4828 Infix Dot"]
+    4828 -> 4827
+    4827 [label="4827 Identifier\ldraw"]
+    4828 -> 4830
+    4830 [label="4830 Call\lsprite()"]
+    4830 -> 4831
+    4831 [label="4831 Identifier\lpacmanHud"]
     0 [label="0 Root\l--------"]
-    0 -> 4831
-    4831 [label="4831 Foreach"]
-    4831 -> 4832
-    4832 [label="4832 Var Declare\l-----------------\lghost"]
-    4833 [label ="4832 Var : ghost"]
+    0 -> 4832
+    4832 [label="4832 Expression"]
     4832 -> 4833
-    4833 [label="4833 Iterator"]
+    4833 [label="4833 Function Declare\l-----------------------\lProcessGameLogic"]
     4833 -> 4834
-    4834 [label="4834 Identifier\lghosts"]
-    4833 -> 4835
-    4835 [label="4835 Var Declare\l-----------------\l@index_4835"]
-    4836 [label ="4835 Var : @index_4835"]
-    4835 -> 4836
-    4836 [label="4836 Integer\l0"]
-    4831 ->     4831 -> 4840
-    4840 [label="4840 Block"]
-    4840 -> 4841
+    4834 [label="4834 Block"]
+    4834 -> 4835
+    4835 [label="4835 Expression"]
+    4835 -> 4837
+    4837 [label="4837 Call\lDrawMap()"]
+    4834 [label="4834 Block"]
+    4834 -> 4838
+    4838 [label="4838 Expression"]
+    4838 -> 4840
+    4840 [label="4840 Call\lUpdateGame()"]
+    4834 [label="4834 Block"]
+    4834 -> 4841
     4841 [label="4841 Expression"]
     4841 -> 4843
-    4843 [label="4843 Infix Dot"]
-    4843 -> 4842
-    4842 [label="4842 Identifier\lghost"]
-    4843 -> 4845
-    4845 [label="4845 Call\ldraw()"]
+    4843 [label="4843 Call\lDrawHUD()"]
     0 [label="0 Root\l--------"]
-    0 -> 4846
-    4846 [label="4846 Expression"]
-    4846 -> 4848
-    4848 [label="4848 Call\lprintln()"]
-    4848 -> 4849
-    4849 [label="4849 String\lMemfree : "]
-    4848 -> 4851
-    4851 [label="4851 Call\lmemfree()"]
-    4848 -> 4852
-    4852 [label="4852 String\l  MemUsed : "]
-    4848 -> 4854
-    4854 [label="4854 Call\lmemuse()"]
+    0 -> 4844
+    4844 [label="4844 Expression"]
+    4844 -> 4846
+    4846 [label="4846 Call\lInitSystem()"]
     0 [label="0 Root\l--------"]
-    0 -> 4855
-    4855 [label="4855 Var Declare\l-----------------\ltimer0"]
-    4857 [label ="4855 Var : timer0"]
-    4855 -> 4857
-    4857 [label="4857 Call\lclock()"]
+    0 -> 4847
+    4847 [label="4847 Expression"]
+    4847 -> 4849
+    4849 [label="4849 Call\lInitScreen()"]
     0 [label="0 Root\l--------"]
-    0 -> 4858
-    4858 [label="4858 Var Declare\l-----------------\lnewDirec"]
-    4859 [label ="4858 Var : newDirec"]
-    4858 -> 4859
-    4859 [label="4859 Integer\l3"]
+    0 -> 4850
+    4850 [label="4850 Expression"]
+    4850 -> 4852
+    4852 [label="4852 Call\lIniMap()"]
+    0 [label="0 Root\l--------"]
+    0 -> 4853
+    4853 [label="4853 Expression"]
+    4853 -> 4855
+    4855 [label="4855 Call\lpause()"]
+    4855 -> 4856
+    4856 [label="4856 Integer\l1000"]
+    0 [label="0 Root\l--------"]
+    0 -> 4857
+    4857 [label="4857 Var Declare\l-----------------\lPACMAN"]
+    4859 [label ="4857 Var : PACMAN"]
+    4857 -> 4859
+    4859 [label="4859 Call\lObjPacMan()"]
     0 [label="0 Root\l--------"]
     0 -> 4860
-    4860 [label="4860 For Loop\l------------"]
+    4860 [label="4860 Var Declare\l-----------------\lghosts"]
+    4861 [label ="4860 Var : ghosts"]
     4860 -> 4861
-    4861 [label="4861 Var Declare\l-----------------\li"]
-    4862 [label ="4861 Var : i"]
-    4861 -> 4862
-    4862 [label="4862 Integer\l0"]
-    4860 -> 4864
-    4864 [label="4864 Infix Expr\l<"]
-    4864 -> 4863
-    4863 [label="4863 Identifier\li"]
-    4864 [label="4864 Infix Expr\l<"]
-    4864 -> 4865
-    4865 [label="4865 Integer\l10000"]
-    4860 -> 4867
-    4867 [label="4867 Assign\l-------------\l="]
-    4867 -> 4866
-    4866 [label="4866 Identifier\li"]
-    4867 -> 4868
-    4868 [label="4868 Infix Expr\l+"]
-    4868 -> 4866
-    4866 [label="4866 Identifier\li"]
-    4868 [label="4868 Infix Expr\l+"]
-    4868 -> 4869
-    4869 [label="4869 Integer\l1"]
-    4860 -> 4870
-    4870 [label="4870 Block"]
+    4861 [label="4861 List"]
+    4861 -> 4863
+    4863 [label="4863 Call\lObjGhost()"]
+    4863 -> 4865
+    4865 [label="4865 Infix Dot"]
+    4865 -> 4864
+    4864 [label="4864 Identifier\lGHOST"]
+    4865 -> 4866
+    4866 [label="4866 Identifier\lblinky"]
+    4861 -> 4868
+    4868 [label="4868 Call\lObjGhost()"]
+    4868 -> 4870
+    4870 [label="4870 Infix Dot"]
+    4870 -> 4869
+    4869 [label="4869 Identifier\lGHOST"]
     4870 -> 4871
-    4871 [label="4871 Expression"]
-    4871 -> 4873
-    4873 [label="4873 Call\lProcessGameLogic()"]
-    4870 [label="4870 Block"]
-    4870 -> 4874
-    4874 [label="4874 Expression"]
-    4874 -> 4876
-    4876 [label="4876 Infix Dot"]
-    4876 -> 4875
-    4875 [label="4875 Identifier\lDisplay"]
-    4876 -> 4878
-    4878 [label="4878 Call\lupdate()"]
-    4870 [label="4870 Block"]
-    4870 -> 4879
-    4879 [label="4879 Expression"]
-    4879 -> 4881
-    4881 [label="4881 Call\lpause()"]
-    4881 -> 4882
-    4882 [label="4882 Identifier\lFRAMEPAUSE"]
+    4871 [label="4871 Identifier\lpinky"]
+    4861 -> 4873
+    4873 [label="4873 Call\lObjGhost()"]
+    4873 -> 4875
+    4875 [label="4875 Infix Dot"]
+    4875 -> 4874
+    4874 [label="4874 Identifier\lGHOST"]
+    4875 -> 4876
+    4876 [label="4876 Identifier\linky"]
+    4861 -> 4878
+    4878 [label="4878 Call\lObjGhost()"]
+    4878 -> 4880
+    4880 [label="4880 Infix Dot"]
+    4880 -> 4879
+    4879 [label="4879 Identifier\lGHOST"]
+    4880 -> 4881
+    4881 [label="4881 Identifier\lclyde"]
     0 [label="0 Root\l--------"]
-    0 -> 4883
-    4883 [label="4883 Expression"]
-    4883 -> 4885
-    4885 [label="4885 Call\lprintln()"]
-    4885 -> 4887
-    4887 [label="4887 Infix Dot"]
-    4887 -> 4886
-    4886 [label="4886 Identifier\lDIRECTION"]
-    4887 -> 4888
-    4888 [label="4888 Identifier\lUP"]
-    4885 -> 4889
-    4889 [label="4889 String\l   "]
-    4885 -> 4891
-    4891 [label="4891 Infix Dot"]
-    4891 -> 4890
-    4890 [label="4890 Identifier\lDIRECTION"]
+    0 -> 4882
+    4882 [label="4882 Foreach"]
+    4882 -> 4883
+    4883 [label="4883 Var Declare\l-----------------\lghost"]
+    4884 [label ="4883 Var : ghost"]
+    4883 -> 4884
+    4884 [label="4884 Iterator"]
+    4884 -> 4885
+    4885 [label="4885 Identifier\lghosts"]
+    4884 -> 4886
+    4886 [label="4886 Var Declare\l-----------------\l@index_4886"]
+    4887 [label ="4886 Var : @index_4886"]
+    4886 -> 4887
+    4887 [label="4887 Integer\l0"]
+    4882 ->     4882 -> 4891
+    4891 [label="4891 Block"]
     4891 -> 4892
-    4892 [label="4892 Identifier\lDOWN"]
-    4885 -> 4893
-    4893 [label="4893 String\l  "]
-    4885 -> 4895
-    4895 [label="4895 Infix Dot"]
-    4895 -> 4894
-    4894 [label="4894 Identifier\lDIRECTION"]
-    4895 -> 4896
-    4896 [label="4896 Identifier\lLEFT"]
-    4885 -> 4897
-    4897 [label="4897 String\l  "]
-    4885 -> 4899
-    4899 [label="4899 Infix Dot"]
-    4899 -> 4898
-    4898 [label="4898 Identifier\lDIRECTION"]
+    4892 [label="4892 Expression"]
+    4892 -> 4894
+    4894 [label="4894 Infix Dot"]
+    4894 -> 4893
+    4893 [label="4893 Identifier\lghost"]
+    4894 -> 4896
+    4896 [label="4896 Call\ldraw()"]
+    0 [label="0 Root\l--------"]
+    0 -> 4897
+    4897 [label="4897 Expression"]
+    4897 -> 4899
+    4899 [label="4899 Call\lprintln()"]
     4899 -> 4900
-    4900 [label="4900 Identifier\lRIGHT"]
+    4900 [label="4900 String\lMemfree : "]
+    4899 -> 4902
+    4902 [label="4902 Call\lmemfree()"]
+    4899 -> 4903
+    4903 [label="4903 String\l  MemUsed : "]
+    4899 -> 4905
+    4905 [label="4905 Call\lmemuse()"]
     0 [label="0 Root\l--------"]
-    0 -> 4901
-    4901 [label="4901 Expression"]
-    4901 -> 4903
-    4903 [label="4903 Call\lprintln()"]
-    4903 -> 4904
-    4904 [label="4904 String\lMemfree : "]
-    4903 -> 4906
-    4906 [label="4906 Call\lmemfree()"]
-    4903 -> 4907
-    4907 [label="4907 String\l  MemUsed : "]
-    4903 -> 4909
-    4909 [label="4909 Call\lmemuse()"]
+    0 -> 4906
+    4906 [label="4906 Var Declare\l-----------------\ltimer0"]
+    4908 [label ="4906 Var : timer0"]
+    4906 -> 4908
+    4908 [label="4908 Call\lclock()"]
     0 [label="0 Root\l--------"]
-    0 -> 4910
-    4910 [label="4910 Expression"]
-    4910 -> 4912
-    4912 [label="4912 Call\lpause()"]
+    0 -> 4909
+    4909 [label="4909 Var Declare\l-----------------\lnewDirec"]
+    4910 [label ="4909 Var : newDirec"]
+    4909 -> 4910
+    4910 [label="4910 Integer\l3"]
+    0 [label="0 Root\l--------"]
+    0 -> 4911
+    4911 [label="4911 For Loop\l------------"]
+    4911 -> 4912
+    4912 [label="4912 Var Declare\l-----------------\li"]
+    4913 [label ="4912 Var : i"]
     4912 -> 4913
-    4913 [label="4913 Integer\l3000"]
+    4913 [label="4913 Integer\l0"]
+    4911 -> 4915
+    4915 [label="4915 Infix Expr\l<"]
+    4915 -> 4914
+    4914 [label="4914 Identifier\li"]
+    4915 [label="4915 Infix Expr\l<"]
+    4915 -> 4916
+    4916 [label="4916 Integer\l10000"]
+    4911 -> 4918
+    4918 [label="4918 Assign\l-------------\l="]
+    4918 -> 4917
+    4917 [label="4917 Identifier\li"]
+    4918 -> 4919
+    4919 [label="4919 Infix Expr\l+"]
+    4919 -> 4917
+    4917 [label="4917 Identifier\li"]
+    4919 [label="4919 Infix Expr\l+"]
+    4919 -> 4920
+    4920 [label="4920 Integer\l1"]
+    4911 -> 4921
+    4921 [label="4921 Block"]
+    4921 -> 4922
+    4922 [label="4922 Expression"]
+    4922 -> 4924
+    4924 [label="4924 Call\lProcessGameLogic()"]
+    4921 [label="4921 Block"]
+    4921 -> 4925
+    4925 [label="4925 Expression"]
+    4925 -> 4927
+    4927 [label="4927 Infix Dot"]
+    4927 -> 4926
+    4926 [label="4926 Identifier\lDisplay"]
+    4927 -> 4929
+    4929 [label="4929 Call\lupdate()"]
+    4921 [label="4921 Block"]
+    4921 -> 4930
+    4930 [label="4930 Expression"]
+    4930 -> 4932
+    4932 [label="4932 Call\lpause()"]
+    4932 -> 4933
+    4933 [label="4933 Identifier\lFRAMEPAUSE"]
     0 [label="0 Root\l--------"]
-    0 -> 4914
-    4914 [label="4914 Expression"]
-    4914 -> 4916
-    4916 [label="4916 Infix Dot"]
-    4916 -> 4915
-    4915 [label="4915 Identifier\lDisplay"]
-    4916 -> 4918
-    4918 [label="4918 Call\lclose()"]
+    0 -> 4934
+    4934 [label="4934 Expression"]
+    4934 -> 4936
+    4936 [label="4936 Call\lprintln()"]
+    4936 -> 4938
+    4938 [label="4938 Infix Dot"]
+    4938 -> 4937
+    4937 [label="4937 Identifier\lDIRECTION"]
+    4938 -> 4939
+    4939 [label="4939 Identifier\lUP"]
+    4936 -> 4940
+    4940 [label="4940 String\l   "]
+    4936 -> 4942
+    4942 [label="4942 Infix Dot"]
+    4942 -> 4941
+    4941 [label="4941 Identifier\lDIRECTION"]
+    4942 -> 4943
+    4943 [label="4943 Identifier\lDOWN"]
+    4936 -> 4944
+    4944 [label="4944 String\l  "]
+    4936 -> 4946
+    4946 [label="4946 Infix Dot"]
+    4946 -> 4945
+    4945 [label="4945 Identifier\lDIRECTION"]
+    4946 -> 4947
+    4947 [label="4947 Identifier\lLEFT"]
+    4936 -> 4948
+    4948 [label="4948 String\l  "]
+    4936 -> 4950
+    4950 [label="4950 Infix Dot"]
+    4950 -> 4949
+    4949 [label="4949 Identifier\lDIRECTION"]
+    4950 -> 4951
+    4951 [label="4951 Identifier\lRIGHT"]
+    0 [label="0 Root\l--------"]
+    0 -> 4952
+    4952 [label="4952 Expression"]
+    4952 -> 4954
+    4954 [label="4954 Call\lprintln()"]
+    4954 -> 4955
+    4955 [label="4955 String\lMemfree : "]
+    4954 -> 4957
+    4957 [label="4957 Call\lmemfree()"]
+    4954 -> 4958
+    4958 [label="4958 String\l  MemUsed : "]
+    4954 -> 4960
+    4960 [label="4960 Call\lmemuse()"]
+    0 [label="0 Root\l--------"]
+    0 -> 4961
+    4961 [label="4961 Expression"]
+    4961 -> 4963
+    4963 [label="4963 Call\lpause()"]
+    4963 -> 4964
+    4964 [label="4964 Integer\l3000"]
+    0 [label="0 Root\l--------"]
+    0 -> 4965
+    4965 [label="4965 Expression"]
+    4965 -> 4967
+    4967 [label="4967 Infix Dot"]
+    4967 -> 4966
+    4966 [label="4966 Identifier\lDisplay"]
+    4967 -> 4969
+    4969 [label="4969 Call\lclose()"]
 }
