@@ -4,7 +4,7 @@
 // Version: 1.0.0
 
 use Display, Sprite
-var draw=Display.draw;
+var draw = Display.draw;
 
 import "Pacman_Map.aru"
 
@@ -22,15 +22,15 @@ enum GAME_STATE
     start, playing, lifelost, levelcomplete, gameover
 end
 
-var StatusGame=GAME_STATE.start
+var StatusGame = GAME_STATE.start
 
 // 224x288
-const ANCHO= 320
+const ANCHO = 320
 const ALTO = 240
-const VIEW_W=224
-const VIEW_H=288
-const VOFFSET_X=8
-const VOFFSET_Y=40
+const VIEW_W = 224
+const VIEW_H = 288
+const VOFFSET_X = 8
+const VOFFSET_Y = 40
 
 const X_CELDA_INICIAL_PACMAN = 14;
 const Y_CELDA_INICIAL_PACMAN = 23;
@@ -38,49 +38,79 @@ const Y_CELDA_INICIAL_PACMAN = 23;
 const X_INICIAL_PACMAN = 4 + X_MAPINI + (X_CELDA_INICIAL_PACMAN) * CELL_SIZE
 const Y_INICIAL_PACMAN = 4 + Y_MAPINI + (Y_CELDA_INICIAL_PACMAN) * CELL_SIZE
 
-var PlayerScore=0;  // Puntuación del jugador.
-var PlayerLives=3;  // Vidas del usuario.
-var BonusActive=0   // Bonus activo
+var PlayerScore = 0;
+var PlayerLives = 3;
+var BonusActive = 0
+var dotsEatenCounter = 0;
+var ghostReleaseTimer = 0;
 
-var SPEED_PACMAN    // Velocidad del pacman
-var SPEED_GHOST     // Velocidad del ghost
+var SPEED_PACMAN
+var SPEED_GHOST
 var FRAMEPAUSE
 
+// =================================================================
+//                 Variables para el Modo de Fantasmas
+// =================================================================
+
+// El patrón de modos para el nivel: [MODO, DURACIÓN_EN_FRAMES]
+var levelModePattern = [
+[STATE.scatter, 7 * 25], 
+[STATE.chase, 20 * 25], 
+[STATE.scatter, 7 * 25], 
+[STATE.chase, 20 * 25], 
+[STATE.scatter, 5 * 25], 
+[STATE.chase, 20 * 25], 
+[STATE.scatter, 5 * 25], 
+[STATE.chase, 9999 * 25]
+];
+
+var currentModeIndex = 0;
+var modeTimer = 0;
+var GLOBAL_GHOST_STATE = levelModePattern[0][0];
+
+// Duración del modo Frightened en frames (6 segundos a 25fps)
+const FRIGHT_DURATION = 6 * 25;
+// Momento en que los fantasmas empiezan a parpadear (a los 4 segundos)
+const FRIGHT_FLASH_START = 4 * 25;
+
+var isFrightModeActive = false;
+var frightModeTimer = 0;
 
 var imgPacBonus = Sprite.load("Sprites/PacBonus.spr")
-var pacmanHud =Sprite.load("Sprites/PacManHud.spr")
-pacmanHud.pivot=[0,0]
+var pacmanHud = Sprite.load("Sprites/PacManHud.spr")
+pacmanHud.pivot = [0, 0]
 
-imgPacBonus.animation_speed=0
-imgPacBonus.pivot=[3,3]
+imgPacBonus.animationSpeed = 0
+imgPacBonus.pivot = [3, 3]
 
 func InitSystem()
-    if (getPlatform()==HW_ESP32) then
-        SPEED_PACMAN=4
-        SPEED_GHOST=3
-        FRAMEPAUSE=0
-    elsif (getPlatform()==HW_WIN32) then
-        SPEED_GHOST=1.5
-        SPEED_PACMAN=2
-        FRAMEPAUSE=30
+    if (getPlatform() == HW_ESP32) then
+        SPEED_PACMAN = 4
+        SPEED_GHOST = 3
+        FRAMEPAUSE = 0
+    elsif (getPlatform() == HW_WIN32) then
+        SPEED_GHOST = 1.5
+        SPEED_PACMAN = 2
+        FRAMEPAUSE = 30
     end
 end
+
 
 // ================================================
 // Iniciar la pantalla
 // ================================================
 func InitScreen()
     // Inicio de pantalla
-    Display.view_width=VIEW_W;
-    Display.view_height=VIEW_H;
+    Display.viewWidth = VIEW_W;
+    Display.viewHeight = VIEW_H;
     Display.orientation(0);
-    Display.open(ANCHO,ALTO);
+    Display.open(ANCHO, ALTO);
     Display.orientation(0);
     // Carga el background con el dibujo del laberinto
 
-    Display.loadbg("Images/A_PacMap.bmp")
-    Display.posbg=[X_MAPINI,Y_MAPINI]
-    Display.mode(2) // Display en modo 2 , pintado con double buffer
+    Display.loadBackground("Images/A_PacMap.bmp")
+    Display.backPosition = [X_MAPINI, Y_MAPINI]
+    Display.mode(2)
     //Display.mode(1) // Display en modo 1 , pintado directo en pantalla
     Display.update();
 end
@@ -96,13 +126,28 @@ class ObjPacMan
         this.status = STATE.chase
         this.active = true
 
-        // --- Carga de Sprites (sin cambios, pivotes en 4,4) ---
+        // --- Carga de Sprites (sin cambios, pivotes en 8,8) ---
         var animSpeed = 70
-        this.sprRight=Sprite.load("Sprites/PacMan/PacManR.spr"); this.sprRight.ping_pong=true; this.sprRight.pivot=[4,4]; this.sprRight.animation_speed=animSpeed;
-        this.sprLeft=Sprite.load("Sprites/PacMan/PacManL.spr"); this.sprLeft.ping_pong=true; this.sprLeft.pivot=[4,4]; this.sprLeft.animation_speed=animSpeed;
-        this.sprUp=Sprite.load("Sprites/PacMan/PacManU.spr"); this.sprUp.ping_pong=true; this.sprUp.pivot=[4,4]; this.sprUp.animation_speed=animSpeed;
-        this.sprDown=Sprite.load("Sprites/PacMan/PacManD.spr"); this.sprDown.ping_pong=true; this.sprDown.pivot=[4,4]; this.sprDown.animation_speed=animSpeed;
-        this.sprDeath=Sprite.load("Sprites/PacMan/PacManDeath.spr"); this.sprDeath.anim_repeat(false); this.sprDeath.pivot=[4,4]; this.sprDeath.animation_speed=100;
+        this.sprRight = Sprite.load("Sprites/PacMan/PacManR.spr");
+        this.sprRight.pingPong = true;
+        this.sprRight.pivot = [8, 8];
+        this.sprRight.animationSpeed = animSpeed;
+        this.sprLeft = Sprite.load("Sprites/PacMan/PacManL.spr");
+        this.sprLeft.pingPong = true;
+        this.sprLeft.pivot = [8, 8];
+        this.sprLeft.animationSpeed = animSpeed;
+        this.sprUp = Sprite.load("Sprites/PacMan/PacManU.spr");
+        this.sprUp.pingPong = true;
+        this.sprUp.pivot = [8, 8];
+        this.sprUp.animationSpeed = animSpeed;
+        this.sprDown = Sprite.load("Sprites/PacMan/PacManD.spr");
+        this.sprDown.pingPong = true;
+        this.sprDown.pivot = [8, 8];
+        this.sprDown.animationSpeed = animSpeed;
+        this.sprDeath = Sprite.load("Sprites/PacMan/PacManDeath.spr");
+        this.sprDeath.animRepeat(false);
+        this.sprDeath.pivot = [8, 8];
+        this.sprDeath.animationSpeed = 100;
     end
 
     // La IA solo establece la "próxima" dirección a tomar.
@@ -130,12 +175,12 @@ class ObjPacMan
             // --- MODO HUIDA: (Lógica sin cambios) ---
             var celdaFantasma = CoordenadasACelda(fantasmaMasCercano.x, fantasmaMasCercano.y)
             var mejorDir = nil
-            var maxPunt = -1.0
+            var maxPunt = - 1
             var dirs = [DIRECTION.UP, DIRECTION.DOWN, DIRECTION.LEFT, DIRECTION.RIGHT]
             foreach (var dir in dirs)
                 var celdaPrueba = NextCellView(dir, columnaActual, filaActual)
                 if (EsCeldaTransitable(celdaPrueba[0], celdaPrueba[1])) then
-                    var punt = CalcularDistancia(celdaPrueba[0], celdaPrueba[1], celdaFantasma[0], celdaFantasma[1]) + 0.0
+                    var punt = CalcularDistancia(celdaPrueba[0], celdaPrueba[1], celdaFantasma[0], celdaFantasma[1]) + 0
                     if (dir == this.direction) then punt += 0.5 end
                     if (punt > maxPunt) then
                         maxPunt = punt
@@ -147,7 +192,7 @@ class ObjPacMan
         else
             // --- MODO BÚSQUEDA: CON SISTEMA DE PUNTUACIÓN REFINADO ---
             var mejorDir = nil
-            var maxPunt = -1.0
+            var maxPunt = - 1
             var direccionOpuesta = ObtenerDireccionOpuesta(this.direction)
             var dirs = [DIRECTION.UP, DIRECTION.DOWN, DIRECTION.LEFT, DIRECTION.RIGHT]
             foreach (var dir in dirs)
@@ -156,19 +201,19 @@ class ObjPacMan
                 var celdaPrueba = NextCellView(dir, celdaActual[0], celdaActual[1])
                 if (EsCeldaTransitable(celdaPrueba[0], celdaPrueba[1])) then
                     var contenido = mapa[celdaPrueba[1]][celdaPrueba[0]]
-                    var punt = 0.0
+                    var punt = 0
 
                     // --- INICIO DEL NUEVO SISTEMA DE PUNTUACIÓN ---
-                    if (contenido == 3) then      // 1. Píldora de poder = Máxima prioridad
-                        punt = 100.0
-                    elsif (contenido == 2) then // 2. Punto normal = Alta prioridad
-                        punt = 50.0
-                    elsif (contenido == 1) then // 3. Pasillo vacío = Baja prioridad
-                        punt = 1.0
+                    if (contenido == 3) then
+                        punt = 100
+                    elsif (contenido == 2) then
+                        punt = 50
+                    elsif (contenido == 1) then
+                        punt = 1
                     end
                     // --- FIN DEL NUEVO SISTEMA DE PUNTUACIÓN ---
 
-                    if (dir == this.direction) then punt += 0.5 end // Bonus de persistencia
+                    if (dir == this.direction) then punt += 0.5 end
 
                     if (punt > maxPunt) then
                         maxPunt = punt
@@ -177,11 +222,11 @@ class ObjPacMan
                 end
             end
 
-            if (mejorDir == nil) then // Callejón sin salida
-                 var celdaOpuesta = NextCellView(direccionOpuesta, columnaActual, filaActual)
-                 if (EsCeldaTransitable(celdaOpuesta[0], celdaOpuesta[1])) then
+            if (mejorDir == nil) then
+                var celdaOpuesta = NextCellView(direccionOpuesta, columnaActual, filaActual)
+                if (EsCeldaTransitable(celdaOpuesta[0], celdaOpuesta[1])) then
                     mejorDir = direccionOpuesta
-                 end
+                end
             end
             if (mejorDir != nil) then this.nextDirection = mejorDir end
         end
@@ -190,7 +235,7 @@ class ObjPacMan
     // El nuevo update implementa un sistema de movimiento profesional.
     def update()
         if (this.status == STATE.dead) then return end
-        if (CheckColisiones()) then this.status = STATE.dead; return end
+        if (CheckColisiones()) then this.status = STATE.dead;return end
 
         var celdaActual = CoordenadasACelda(this.x, this.y)
 
@@ -198,9 +243,28 @@ class ObjPacMan
         if (EstaEnCentro(this.x, this.y)) then
             // Primero, comemos el punto si lo hay y decidimos la próxima dirección.
             var celda = mapa[celdaActual[1]][celdaActual[0]]
-            if (celda == 2) then PlayerScore += 10; mapa[celdaActual[1]][celdaActual[0]] = 1; end
-            if (celda == 3) then PlayerScore += 50; mapa[celdaActual[1]][celdaActual[0]] = 1; end // TODO: Activar modo huida
+            if (celda == 2) then
+                PlayerScore += 10;
+                mapa[celdaActual[1]][celdaActual[0]] = 1;
+                dotsEatenCounter++;
+            end
+            if (celda == 3) then
+                PlayerScore += 50;
+                mapa[celdaActual[1]][celdaActual[0]] = 1;
+                dotsEatenCounter++;
+                // Activamos el modo Frightened
+                isFrightModeActive = true;
+                frightModeTimer = 0;
 
+                // Ponemos a todos los fantasmas activos en modo Frightened
+                foreach (var ghost in ghosts)
+                    if (ghost.state != STATE.housed) then
+                        ghost.state = STATE.frighten;
+                        ghost.reverseDirection();
+                    end
+                end
+
+            end
             this.elegirDireccion()
 
             // Ahora, intentamos tomar la "próxima dirección" deseada.
@@ -221,19 +285,27 @@ class ObjPacMan
             if (this.direction == DIRECTION.LEFT) then this.x -= SPEED_PACMAN end
             if (this.direction == DIRECTION.RIGHT) then this.x += SPEED_PACMAN end
         end
+        // ==========================================================
+        //                  LÓGICA DEL TÚNEL
+        // ==========================================================
+        if (this.x < 0) then
+            this.x = VIEW_W;
+        elsif (this.x > VIEW_W) then
+            this.x = 0;
+        end
     end
 
     // Las funciones draw y reset no necesitan cambios.
     def draw()
-        if (this.status==STATE.dead) then this.sprDeath.pos=[this.x, this.y]; draw.sprite(this.sprDeath);
-        elsif (this.direction==DIRECTION.RIGHT) then this.sprRight.pos=[this.x, this.y]; draw.sprite(this.sprRight);
-        elsif (this.direction==DIRECTION.LEFT) then this.sprLeft.pos=[this.x, this.y]; draw.sprite(this.sprLeft);
-        elsif (this.direction==DIRECTION.UP) then this.sprUp.pos=[this.x, this.y]; draw.sprite(this.sprUp);
-        elsif (this.direction==DIRECTION.DOWN) then this.sprDown.pos=[this.x, this.y]; draw.sprite(this.sprDown);
+        if (this.status == STATE.dead) then this.sprDeath.pos = [this.x, this.y];draw.sprite(this.sprDeath);
+        elsif (this.direction == DIRECTION.RIGHT) then this.sprRight.pos = [this.x, this.y];draw.sprite(this.sprRight);
+        elsif (this.direction == DIRECTION.LEFT) then this.sprLeft.pos = [this.x, this.y];draw.sprite(this.sprLeft);
+        elsif (this.direction == DIRECTION.UP) then this.sprUp.pos = [this.x, this.y];draw.sprite(this.sprUp);
+        elsif (this.direction == DIRECTION.DOWN) then this.sprDown.pos = [this.x, this.y];draw.sprite(this.sprDown);
         end;
     end
 
-   def reset()
+    def reset()
         println("Reiniciando Pac-Man a su estado inicial.")
         var celdaInicial = GetCentroDeCelda(X_CELDA_INICIAL_PACMAN, Y_CELDA_INICIAL_PACMAN)
         this.x = celdaInicial[0]
@@ -246,117 +318,149 @@ class ObjPacMan
 
         // Reinicia el sprite de la animación de muerte
         this.sprDeath.active(true)
-        this.sprDeath.next_frame(0)
+        this.sprDeath.nextFrame(0)
     end
 end
 
 class ObjGhost
     def init(nameGhost)
-        var animSpeed=250 // Milisegundos
+        var animSpeed = 250
         var coordenadas
-        this.active=true
+        this.active = true
 
-        switch ( nameGhost )
-            case GHOST.blinky   : coordenadas=CeldaACoordenadas(12,11)
-                                  this.state=STATE.chase
-                                  this.targetColumna=12
-                                  this.targetFila=11
-                                  this.sprLeft=Sprite.load("Sprites/GhostRed/GhostRL.spr")
-                                  this.sprRight=Sprite.load("Sprites/GhostRed/GhostRR.spr")
-                                  this.sprUp=Sprite.load("Sprites/GhostRed/GhostRU.spr")
-                                  this.sprDown=Sprite.load("Sprites/GhostRed/GhostRD.spr")
-                                  this.name=GHOST.blinky
-            case GHOST.pinky    : coordenadas=CeldaACoordenadas(13,14)
-                                  this.state=STATE.chase
-                                  this.targetColumna=13
-                                  this.targetFila=11
-                                  this.sprLeft=Sprite.load("Sprites/GhostPink/GhostPL.spr")
-                                  this.sprRight=Sprite.load("Sprites/GhostPink/GhostPR.spr")
-                                  this.sprUp=Sprite.load("Sprites/GhostPink/GhostPU.spr")
-                                  this.sprDown=Sprite.load("Sprites/GhostPink/GhostPD.spr")
-                                  this.name=GHOST.pinky
-            case GHOST.inky     : coordenadas=CeldaACoordenadas(14,13)
-                                  this.state=STATE.housed
-                                  this.targetColumna=15
-                                  this.targetFila=17
-                                  this.sprLeft=Sprite.load("Sprites/GhostGreen/GhostGL.spr")
-                                  this.sprRight=Sprite.load("Sprites/GhostGreen/GhostGR.spr")
-                                  this.sprUp=Sprite.load("Sprites/GhostGreen/GhostGU.spr")
-                                  this.sprDown=Sprite.load("Sprites/GhostGreen/GhostGD.spr")
-                                  this.name=GHOST.inky
-            case GHOST.clyde    : coordenadas=CeldaACoordenadas(15,13)
-                                  this.state=STATE.housed
-                                  this.targetColumna=16
-                                  this.targetFila=12
-                                  this.sprLeft=Sprite.load("Sprites/GhostOrange/GhostOL.spr")
-                                  this.sprRight=Sprite.load("Sprites/GhostOrange/GhostOR.spr")
-                                  this.sprUp=Sprite.load("Sprites/GhostOrange/GhostOU.spr")
-                                  this.sprDown=Sprite.load("Sprites/GhostOrange/GhostOD.spr")
-                                  this.name=GHOST.clyde
+        switch (nameGhost)
+            case GHOST.blinky:    coordenadas = CeldaACoordenadas(12, 11)
+                this.state = STATE.chase
+                this.targetColumna = 12
+                this.targetFila = 11
+                this.sprLeft = Sprite.load("Sprites/GhostRed/GhostRL.spr")
+                this.sprRight = Sprite.load("Sprites/GhostRed/GhostRR.spr")
+                this.sprUp = Sprite.load("Sprites/GhostRed/GhostRU.spr")
+                this.sprDown = Sprite.load("Sprites/GhostRed/GhostRD.spr")
+                this.name = GHOST.blinky
+            case GHOST.pinky:    coordenadas = CeldaACoordenadas(13, 14)
+                this.state = STATE.housed
+                this.targetColumna = 13
+                this.targetFila = 11
+                this.sprLeft = Sprite.load("Sprites/GhostPink/GhostPL.spr")
+                this.sprRight = Sprite.load("Sprites/GhostPink/GhostPR.spr")
+                this.sprUp = Sprite.load("Sprites/GhostPink/GhostPU.spr")
+                this.sprDown = Sprite.load("Sprites/GhostPink/GhostPD.spr")
+                this.name = GHOST.pinky
+            case GHOST.inky:    coordenadas = CeldaACoordenadas(14, 13)
+                this.state = STATE.housed
+                this.targetColumna = 15
+                this.targetFila = 17
+                this.sprLeft = Sprite.load("Sprites/GhostGreen/GhostGL.spr")
+                this.sprRight = Sprite.load("Sprites/GhostGreen/GhostGR.spr")
+                this.sprUp = Sprite.load("Sprites/GhostGreen/GhostGU.spr")
+                this.sprDown = Sprite.load("Sprites/GhostGreen/GhostGD.spr")
+                this.name = GHOST.inky
+            case GHOST.clyde:    coordenadas = CeldaACoordenadas(15, 13)
+                this.state = STATE.housed
+                this.targetColumna = 16
+                this.targetFila = 12
+                this.sprLeft = Sprite.load("Sprites/GhostOrange/GhostOL.spr")
+                this.sprRight = Sprite.load("Sprites/GhostOrange/GhostOR.spr")
+                this.sprUp = Sprite.load("Sprites/GhostOrange/GhostOU.spr")
+                this.sprDown = Sprite.load("Sprites/GhostOrange/GhostOD.spr")
+                this.name = GHOST.clyde
         end
 
-        this.x=coordenadas[0]
-        this.y=coordenadas[1]
-        this.direction=random(0,3)
-        this.sprLeft.pivot=[4,4]
-        this.sprLeft.animation_speed=animSpeed;
+        this.x = coordenadas[0]
+        this.y = coordenadas[1]
+        this.direction = random(0, 3)
+        this.sprLeft.pivot = [8, 8]
+        this.sprLeft.animationSpeed = animSpeed;
 
-        this.sprRight.pivot=[4,4]
-        this.sprRight.animation_speed=animSpeed;
+        this.sprRight.pivot = [8, 8]
+        this.sprRight.animationSpeed = animSpeed;
 
-        this.sprUp.pivot=[4,4]
-        this.sprUp.animation_speed=animSpeed;
+        this.sprUp.pivot = [8, 8]
+        this.sprUp.animationSpeed = animSpeed;
 
-        this.sprDown.pivot=[4,4]
-        this.sprDown.animation_speed=animSpeed;
+        this.sprDown.pivot = [8, 8]
+        this.sprDown.animationSpeed = animSpeed;
+
+        // ==========================================================
+        //      AÑADIR ESTO PARA CARGAR LOS SPRITES DE MODO FRIGHTEN
+        // ==========================================================
+        // Carga el sprite azul normal
+        this.sprFright = Sprite.load("Sprites/Ghostfrighten/Frighten.spr")
+        this.sprFright.pivot = [8, 8]
+
+        // Carga el sprite blanco que parpadea
+        this.sprFrightEnding = Sprite.load("Sprites/Ghostfrighten/FrightenEnding.spr")
+        this.sprFrightEnding.pivot = [8, 8]
+        this.sprFrightEnding.pingPong = true
+        this.sprFrightEnding.animationSpeed = 150
+        // ==========================================================
+
     end
+
 
     // Reinicia la posicion y demas parametros
     def reset()
         println("Reset Ghost")
         var coordenadas
-        this.active=true
-        switch ( this.name )
-            case GHOST.blinky   : coordenadas=CeldaACoordenadas(12,11)
-                                  this.state=STATE.chase
-                                  this.targetColumna=12
-                                  this.targetFila=11
-                                  this.name=GHOST.blinky
-            case GHOST.pinky    : coordenadas=CeldaACoordenadas(13,14)
-                                  this.state=STATE.chase
-                                  this.targetColumna=13
-                                  this.targetFila=11
-                                  this.name=GHOST.pinky
-            case GHOST.inky     : coordenadas=CeldaACoordenadas(14,13)
-                                  this.state=STATE.housed
-                                  this.targetColumna=15
-                                  this.targetFila=17
-                                  this.name=GHOST.inky
-            case GHOST.clyde    : coordenadas=CeldaACoordenadas(15,13)
-                                  this.state=STATE.housed
-                                  this.targetColumna=16
-                                  this.targetFila=12
-                                  this.name=GHOST.clyde
+        this.active = true
+        switch (this.name)
+            case GHOST.blinky:    coordenadas = CeldaACoordenadas(12, 11)
+                this.state = STATE.chase
+                this.targetColumna = 12
+                this.targetFila = 11
+                this.name = GHOST.blinky
+            case GHOST.pinky:    coordenadas = CeldaACoordenadas(13, 14)
+                this.state = STATE.housed
+                this.targetColumna = 13
+                this.targetFila = 11
+                this.name = GHOST.pinky
+            case GHOST.inky:    coordenadas = CeldaACoordenadas(14, 13)
+                this.state = STATE.housed
+                this.targetColumna = 15
+                this.targetFila = 17
+                this.name = GHOST.inky
+            case GHOST.clyde:    coordenadas = CeldaACoordenadas(15, 13)
+                this.state = STATE.housed
+                this.targetColumna = 16
+                this.targetFila = 12
+                this.name = GHOST.clyde
         end
-        this.x=coordenadas[0]
-        this.y=coordenadas[1]
-        this.direction=random(0,3)
+        this.x = coordenadas[0]
+        this.y = coordenadas[1]
+        this.direction = random(0, 3)
     end
 
     // Dibuja el Fantasma en pantalla
     def draw()
-        if (this.active==true)then
-            if (this.direction==DIRECTION.RIGHT) then
-                this.sprRight.pos=[this.x, this.y]
+        if (this.active == true) then
+            // --- COMPROBACIÓN DEL ESTADO FRIGHTEN ---
+            if (this.state == STATE.frighten) then
+                // Comprueba si debe parpadear
+                if (frightModeTimer >= FRIGHT_FLASH_START) then
+                    // Dibuja el sprite blanco parpadeante
+                    this.sprFrightEnding.pos = [this.x, this.y];
+                    draw.sprite(this.sprFrightEnding);
+                else
+                    // Dibuja el sprite azul normal
+                    this.sprFright.pos = [this.x, this.y];
+                    draw.sprite(this.sprFright);
+                end
+
+
+                // --- SI NO ESTÁ FRIGHTEN, DIBUJA EL SPRITE NORMAL ---
+
+            elsif (this.direction == DIRECTION.RIGHT) then
+                this.sprRight.pos = [this.x, this.y]
                 draw.sprite(this.sprRight);
-            elsif (this.direction==DIRECTION.LEFT) then
-                this.sprLeft.pos=[this.x, this.y]
+            elsif (this.direction == DIRECTION.LEFT) then
+                this.sprLeft.pos = [this.x, this.y]
                 draw.sprite(this.sprLeft);
-            elsif (this.direction==DIRECTION.UP) then
-                this.sprUp.pos=[this.x, this.y]
+            elsif (this.direction == DIRECTION.UP) then
+                this.sprUp.pos = [this.x, this.y]
                 draw.sprite(this.sprUp);
-            elsif (this.direction==DIRECTION.DOWN) then
-                this.sprDown.pos=[this.x, this.y]
+            elsif (this.direction == DIRECTION.DOWN) then
+                this.sprDown.pos = [this.x, this.y]
                 draw.sprite(this.sprDown);
             end;
 
@@ -365,9 +469,22 @@ class ObjGhost
 
     // Tratar cuando el fantasma esta en house
     def estaEnCasa(columnaActual, filaActual)
-        if (mapa[filaActual][columnaActual]==4) then
-            var direccionesValidas=ObtenerDireccionesValidas(columnaActual, filaActual,this.direction)
-            this.determinarDireccionObjetivo(13, 11, direccionesValidas)
+        if (mapa[filaActual][columnaActual] == 4) then
+            // Si el fantasma está en la casa
+            if (this.state == STATE.housed) then
+                // Modo "housed": flotar arriba y abajo
+                // Primero obtenemos las coordenadas de los límites
+                var coordsLimiteSuperior = CeldaACoordenadas(0, 13);
+                var coordsLimiteInferior = CeldaACoordenadas(0, 15);
+
+                // Ahora usamos las coordenadas guardadas en las variables
+                if (this.y <= coordsLimiteSuperior[1]) then this.direction = DIRECTION.DOWN;end
+                if (this.y >= coordsLimiteInferior[1]) then this.direction = DIRECTION.UP;end
+            else
+                // Modo "chase": ha sido liberado, debe salir
+                var direccionesValidas = ObtenerDireccionesValidas(columnaActual, filaActual, this.direction);
+                this.determinarDireccionObjetivo(13, 11, direccionesValidas);
+            end
             return true;
         end
         return false;
@@ -380,11 +497,11 @@ class ObjGhost
 
         // Verifica si hay direcciones válidas
         if (direccionesValidas.size() == 0) then
-            return // No hay direcciones válidas
+            return
         end
 
         var mejorDireccion = nil
-        var distanciaMinima = 999999 // Un valor grande para iniciar la comparación
+        var distanciaMinima = 999999
 
         // Revisa cada dirección válida y calcula la distancia hasta el objetivo
         foreach (var direccion in direccionesValidas)
@@ -403,102 +520,103 @@ class ObjGhost
     end
 
     def elegirDireccion()
-        var celdaActual = CoordenadasACelda(this.x, this.y)
-        var columnaActual = celdaActual[0]
-        var filaActual = celdaActual[1]
+        // Asignamos el estado global al estado local del fantasma
+        if (this.state != STATE.housed and this.state != STATE.frighten) then
+            this.state = GLOBAL_GHOST_STATE;
+        end
 
-        var direccionesValidas = []
+        var celdaActual = CoordenadasACelda(this.x, this.y);
+        var columnaActual = celdaActual[0];
+        var filaActual = celdaActual[1];
 
-        // Manejar la situación en la casa
         if (this.estaEnCasa(columnaActual, filaActual)) then
-            return
+            return;
         end
 
-        direccionesValidas=ObtenerDireccionesValidas(columnaActual, filaActual, this.direction)
+        var direccionesValidas = ObtenerDireccionesValidas(columnaActual, filaActual, this.direction);
 
-        // Si es Blinky busca la mejor dirección hacia Pac-Man
-        if (this.name == GHOST.blinky) then
-            var celdaPacman=CoordenadasACelda(PACMAN.x,PACMAN.y)
-            this.determinarDireccionObjetivo(celdaPacman[0], celdaPacman[1], direccionesValidas)
-        // Si es Pinky busca la mejor dirección hacia Pac-Man 4 posiciones delante de el
-        elsif (this.name == GHOST.pinky) then
-            var celdaPacman=CoordenadasACelda(PACMAN.x,PACMAN.y)
-            switch ( PACMAN.direction )
-                case DIRECTION.RIGHT: this.determinarDireccionObjetivo(celdaPacman[0]+4, celdaPacman[1], direccionesValidas)
-                case DIRECTION.LEFT: this.determinarDireccionObjetivo(celdaPacman[0]-4, celdaPacman[1], direccionesValidas)
-                case DIRECTION.UP: this.determinarDireccionObjetivo(celdaPacman[0], celdaPacman[1]-4, direccionesValidas)
-                case DIRECTION.DOWN: this.determinarDireccionObjetivo(celdaPacman[0], celdaPacman[1]+4, direccionesValidas)
-            end
-
-        // Si es Inky busca la mejor dirección hacia Pac-Man 2 posiciones delante de el ...
-        elsif (this.name== GHOST.inky) then
-            var targetX, targetY
-            var celdaPacman=CoordenadasACelda(PACMAN.x,PACMAN.y)
-            // Calcula la posición dos casillas adelante de Pac-Man
-            switch (PACMAN.direction)
-                case DIRECTION.UP:
-                    targetX = celdaPacman[0]
-                    targetY = celdaPacman[1] - 2
-                case DIRECTION.DOWN:
-                    targetX =  celdaPacman[0]
-                    targetY =  celdaPacman[1] + 2
-                case DIRECTION.LEFT:
-                    targetX =  celdaPacman[0] - 2
-                    targetY =  celdaPacman[1]
-                case DIRECTION.RIGHT:
-                    targetX =  celdaPacman[0] + 2
-                    targetY =  celdaPacman[1]
-            end
-            var blinky=ghosts[GHOST.blinky]
-            var celdaBlinky=CoordenadasACelda(blinky.x,blinky.y);
-
-            // Duplica la distancia desde Blinky hasta la posición proyectada de Pac-Man
-            targetX = targetX + (targetX - celdaBlinky[0])
-            targetY = targetY + (targetY - celdaBlinky[1])
-
-            // Ahora determina la mejor dirección hacia este objetivo
-            this.determinarDireccionObjetivo(targetX, targetY, direccionesValidas)
-
-        // Si es Clyde
-        elsif (this.name==GHOST.clyde) then
-            var celdaActual = CoordenadasACelda(this.x, this.y)
-            var celdaPacman = CoordenadasACelda(PACMAN.x, PACMAN.y)
-
-            // Calcula la distancia entre Clyde y Pac-Man
-            var distancia = CalcularDistancia(celdaActual[0], celdaActual[1], celdaPacman[0], celdaPacman[1])
-
-            if (distancia > 8 ) then
-                // Modo de persecución: dirigirse hacia Pac-Man
-                println("Distancia mayor de 8")
-                this.determinarDireccionObjetivo(celdaPacman[0], celdaPacman[1], direccionesValidas)
-            else
-                // Modo de dispersión: dirigirse a una esquina específica del mapa
-                var esquinaX=4, esquinaY=30 // Define estas coordenadas según el mapa
-                this.determinarDireccionObjetivo(esquinaX, esquinaY, direccionesValidas)
-            end
-        elsif (direccionesValidas.size() > 0) then
-            // Para otros fantasmas, elige una dirección aleatoria
-            var indiceAleatorio = random(0, direccionesValidas.size() - 1)
-            this.direction = direccionesValidas[indiceAleatorio]
+        if (direccionesValidas.size() == 0) then
+            return;
         end
 
+        // LÓGICA DE SELECCIÓN DE OBJETIVO
+        switch (this.state)
+            // --- MODO HUIDA (FRIGHTEN) ---
+            case STATE.frighten:    
+                if (direccionesValidas.size() > 0) then
+                    // Elige una dirección válida al azar
+                    var indiceAleatorio = random(0, direccionesValidas.size() - 1);
+                    this.direction = direccionesValidas[indiceAleatorio];
+                end
+                // --- MODO PERSECUCIÓN (CHASE) ---
+            case STATE.chase:    
+                if (this.name == GHOST.blinky) then
+                    var celdaPacman = CoordenadasACelda(PACMAN.x, PACMAN.y);
+                    this.determinarDireccionObjetivo(celdaPacman[0], celdaPacman[1], direccionesValidas);
+                elsif (this.name == GHOST.pinky) then
+                    var celdaPacman = CoordenadasACelda(PACMAN.x, PACMAN.y);
+                    switch (PACMAN.direction)
+                        case DIRECTION.RIGHT:    this.determinarDireccionObjetivo(celdaPacman[0] + 4, celdaPacman[1], direccionesValidas);
+                        case DIRECTION.LEFT:    this.determinarDireccionObjetivo(celdaPacman[0] - 4, celdaPacman[1], direccionesValidas);
+                        case DIRECTION.UP:    this.determinarDireccionObjetivo(celdaPacman[0], celdaPacman[1] - 4, direccionesValidas);
+                        case DIRECTION.DOWN:    this.determinarDireccionObjetivo(celdaPacman[0], celdaPacman[1] + 4, direccionesValidas);
+                    end
+                elsif (this.name == GHOST.inky) then
+                    var targetX, targetY;
+                    var celdaPacman = CoordenadasACelda(PACMAN.x, PACMAN.y);
+                    switch (PACMAN.direction)
+                        case DIRECTION.UP:    targetX = celdaPacman[0];targetY = celdaPacman[1] - 2;
+                        case DIRECTION.DOWN:    targetX = celdaPacman[0];targetY = celdaPacman[1] + 2;
+                        case DIRECTION.LEFT:    targetX = celdaPacman[0] - 2;targetY = celdaPacman[1];
+                        case DIRECTION.RIGHT:    targetX = celdaPacman[0] + 2;targetY = celdaPacman[1];
+                    end
+                    var blinky = ghosts[GHOST.blinky];
+                    var celdaBlinky = CoordenadasACelda(blinky.x, blinky.y);
+                    targetX = targetX + (targetX - celdaBlinky[0]);
+                    targetY = targetY + (targetY - celdaBlinky[1]);
+                    this.determinarDireccionObjetivo(targetX, targetY, direccionesValidas);
+                elsif (this.name == GHOST.clyde) then
+                    var celdaPacman = CoordenadasACelda(PACMAN.x, PACMAN.y);
+                    var distancia = CalcularDistancia(celdaActual[0], celdaActual[1], celdaPacman[0], celdaPacman[1]);
+                    if (distancia > 8) then
+                        this.determinarDireccionObjetivo(celdaPacman[0], celdaPacman[1], direccionesValidas);
+                    else
+                        this.determinarDireccionObjetivo(0, 30, direccionesValidas);
+                    end
+                end
+
+                // --- MODO DISPERSIÓN (SCATTER) ---
+            case STATE.scatter:    
+                switch (this.name)
+                    case GHOST.blinky:    this.determinarDireccionObjetivo(25, 0, direccionesValidas);
+                    case GHOST.pinky:    this.determinarDireccionObjetivo(2, 0, direccionesValidas);
+                    case GHOST.inky:    this.determinarDireccionObjetivo(27, 30, direccionesValidas);
+                    case GHOST.clyde:    this.determinarDireccionObjetivo(0, 30, direccionesValidas);
+                end
+        end
     end
 
- def update()
+    def reverseDirection()
+        this.direction = ObtenerDireccionOpuesta(this.direction);
+    end
+
+    def update()
+        // --- VELOCIDAD CONDICIONAL ---
+        var currentSpeed = SPEED_GHOST;
+        if (this.state == STATE.frighten) then
+            // Si está asustado, se mueve más despacio.
+            // Se puede ajustar este valor, por ejemplo, a la mitad (SPEED_GHOST / 2)
+            currentSpeed = SPEED_GHOST / 1.5;
+        end
+
         var celdaActual = CoordenadasACelda(this.x, this.y)
         var nuevaX = this.x
         var nuevaY = this.y
 
-        // --- INICIO DE LA LÓGICA DE ALINEACIÓN CON AJUSTE MANUAL ---
-
-        // La causa más probable del desfase está en los propios gráficos.
-        // Esta es la solución definitiva: un ajuste manual para alinear los fantasmas
-        // píxel a píxel hasta que se vean perfectos.
-
         // El centro matemático de un pasillo de 8 píxeles es 4.
         // Cambia estos valores de 1 en 1 para mover a los fantasmas.
-        const AJUSTE_X = 3 // Si están muy a la DERECHA, prueba con 2. Si están a la IZQUIERDA, prueba con 5.
-        const AJUSTE_Y = 3 // Si están muy ABAJO, prueba con 2. Si están muy ARRIBA, prueba con 5.
+        const AJUSTE_X = (CELL_SIZE div 2)
+        const AJUSTE_Y = (CELL_SIZE div 2)
 
         // Calculamos la esquina superior-izquierda del carril.
         var carrilX = X_MAPINI + celdaActual[0] * CELL_SIZE
@@ -511,13 +629,11 @@ class ObjGhost
             nuevaY = carrilY + AJUSTE_Y
         end
 
-        // --- FIN DE LA LÓGICA DE ALINEACIÓN ---
-
         // Aplicamos el movimiento en la dirección actual.
-        if (this.direction == DIRECTION.UP) then nuevaY -= SPEED_GHOST end
-        if (this.direction == DIRECTION.DOWN) then nuevaY += SPEED_GHOST end
-        if (this.direction == DIRECTION.LEFT) then nuevaX -= SPEED_GHOST end
-        if (this.direction == DIRECTION.RIGHT) then nuevaX += SPEED_GHOST end
+        if (this.direction == DIRECTION.UP) then nuevaY -= currentSpeed end
+        if (this.direction == DIRECTION.DOWN) then nuevaY += currentSpeed end
+        if (this.direction == DIRECTION.LEFT) then nuevaX -= currentSpeed end
+        if (this.direction == DIRECTION.RIGHT) then nuevaX += currentSpeed end
 
         // El resto de la lógica no cambia.
         var nuevaCelda = CoordenadasACelda(nuevaX, nuevaY)
@@ -530,6 +646,14 @@ class ObjGhost
         else
             this.elegirDireccion()
         end
+        // ==========================================================
+        //                  LÓGICA DEL TÚNEL
+        // ==========================================================
+        if (this.x < 0) then
+            this.x = VIEW_W;
+        elsif (this.x > VIEW_W) then
+            this.x = 0;
+        end
     end
 
 end
@@ -541,29 +665,24 @@ func DrawMap()
     var auxFila
     var cell
 
-    for (var fila=0;fila<31;fila++)
-        auxFila=fila * CELL_SIZE + 27 // El 27 son 24 + 3
-        for (var columna=0;columna<28;columna++)
-            cell=mapa[fila][columna]
-            // println("Valor Celda:",cell)
-            // switch (cell )
-            //    case 2 : draw.rect_fill(columna * CELL_SIZE + 3, auxFila ,2,2,0xC0C0C0)
-            //    case 3 : draw.ellipse_fill(columna * CELL_SIZE  + 3, auxFila ,3,4,0xC0C0C0)
-            //    case 5 : var auxCordenadas=CeldaACoordenadas(columna,fila); draw.bitmap(auxCordenadas[0], auxCordenadas[1]- CELL_SIZE, imgPacBonus[BonusActive])
-            //end
+    for (var fila = 0;fila < 31;fila++)
+        auxFila = fila * CELL_SIZE + 27
+        for (var columna = 0;columna < 28;columna++)
+            cell = mapa[fila][columna]
+
             // Puntos del mapa
-            if (cell==2) then
-                draw.rect_fill(columna * CELL_SIZE + 3, auxFila ,2,2,0xC0C0C0)
+            if (cell == 2) then
+                draw.fillRect(columna * CELL_SIZE + 3, auxFila, 2, 2, 0xC0C0C0)
 
-            // Powerups del mapa
-            elsif (cell==3) then
-                draw.ellipse_fill(columna * CELL_SIZE  + 3, auxFila ,3,4,0xC0C0C0)
+                // Powerups del mapa
+            elsif (cell == 3) then
+                draw.fillEllipse(columna * CELL_SIZE + 3, auxFila, 3, 4, 0xC0C0C0)
 
-            // Bonus del mapa
-            elsif (cell==5) then
-                var auxCordenadas=CeldaACoordenadas(columna,fila)
-                imgPacBonus.next_frame(BonusActive)
-                imgPacBonus.pos=[auxCordenadas[0], auxCordenadas[1] - CELL_SIZE]
+                // Bonus del mapa
+            elsif (cell == 5) then
+                var auxCordenadas = CeldaACoordenadas(columna, fila)
+                imgPacBonus.nextFrame(BonusActive)
+                imgPacBonus.pos = [auxCordenadas[0], auxCordenadas[1] - CELL_SIZE]
                 draw.sprite(imgPacBonus)
             end
 
@@ -572,24 +691,25 @@ func DrawMap()
 
 end
 
+
 // =================================================================
 // Devuelve las coordenadas x,y en el medio de la celda
 // =================================================================
 func CeldaACoordenadas(columna, fila)
 
     // Calcular las coordenadas de píxeles a partir de la fila y columna
-    var x =X_MAPINI + columna * CELL_SIZE + CELL_SIZE div 2
-    var y =Y_MAPINI + fila * CELL_SIZE + CELL_SIZE div 2
+    var x = X_MAPINI + columna * CELL_SIZE + CELL_SIZE div 2
+    var y = Y_MAPINI + fila * CELL_SIZE + CELL_SIZE div 2
 
-    return [x, y]
+    return[x, y]
 end
 
 func CoordenadasACelda(x, y)
 
     var columna = (x - X_MAPINI) div CELL_SIZE
-    var fila = (y - Y_MAPINI ) div CELL_SIZE
+    var fila = (y - Y_MAPINI) div CELL_SIZE
 
-    return [columna,fila]
+    return[columna, fila]
 end
 
 func EsCeldaTransitable(columna, fila)
@@ -602,19 +722,19 @@ end
 func NextCellView(direccion, columna, fila)
     switch (direccion)
         case DIRECTION.UP:    fila -= 1
-        case DIRECTION.DOWN:  fila += 1
-        case DIRECTION.LEFT:  columna -= 1
-        case DIRECTION.RIGHT: columna += 1
+        case DIRECTION.DOWN:    fila += 1
+        case DIRECTION.LEFT:    columna -= 1
+        case DIRECTION.RIGHT:    columna += 1
     end
-    return [columna, fila]
+    return[columna, fila]
 end
 
 func ObtenerDireccionOpuesta(direccionActual)
-    switch ( direccionActual )
-        case DIRECTION.UP   :return DIRECTION.DOWN
-        case DIRECTION.DOWN :return DIRECTION.UP
-        case DIRECTION.LEFT :return DIRECTION.RIGHT
-        case DIRECTION.RIGHT :return DIRECTION.LEFT
+    switch (direccionActual)
+        case DIRECTION.UP:    return DIRECTION.DOWN
+        case DIRECTION.DOWN:    return DIRECTION.UP
+        case DIRECTION.LEFT:    return DIRECTION.RIGHT
+        case DIRECTION.RIGHT:    return DIRECTION.LEFT
     end
 end
 
@@ -623,29 +743,112 @@ func ObtenerDireccionesValidas(columnaActual, filaActual, direction)
     var direccionOpuesta = ObtenerDireccionOpuesta(direction)
 
     // Lógica para UP (sin cambios)
-    if (EsCeldaTransitable(columnaActual, filaActual - 1) and DIRECTION.UP != direccionOpuesta ) then
-        direccionesValidas.insert(DIRECTION.UP)
+    if (EsCeldaTransitable(columnaActual, filaActual - 1) and DIRECTION.UP != direccionOpuesta) then
+        direccionesValidas.append(DIRECTION.UP)
     end
 
     // --- LÓGICA CORREGIDA PARA DOWN ---
     // Permite el movimiento hacia abajo si:
     // 1. La casilla destino no es la casa (!= 4), O
     // 2. Ya estamos dentro de la casa (== 4), permitiendo el movimiento interno.
-    if (EsCeldaTransitable(columnaActual, filaActual + 1) and DIRECTION.DOWN != direccionOpuesta and (mapa[filaActual+1][columnaActual] != 4 or mapa[filaActual][columnaActual] == 4) ) then
-        direccionesValidas.insert(DIRECTION.DOWN)
+    if (EsCeldaTransitable(columnaActual, filaActual + 1) and DIRECTION.DOWN != direccionOpuesta and (mapa[filaActual + 1][columnaActual] != 4 or mapa[filaActual][columnaActual] == 4)) then
+        direccionesValidas.append(DIRECTION.DOWN)
     end
 
     // Lógica para LEFT (sin cambios)
     if (EsCeldaTransitable(columnaActual - 1, filaActual) and DIRECTION.LEFT != direccionOpuesta) then
-        direccionesValidas.insert(DIRECTION.LEFT)
+        direccionesValidas.append(DIRECTION.LEFT)
     end
 
     // Lógica para RIGHT (sin cambios)
-    if (EsCeldaTransitable(columnaActual + 1, filaActual) and DIRECTION.RIGHT != direccionOpuesta)then
-        direccionesValidas.insert(DIRECTION.RIGHT)
+    if (EsCeldaTransitable(columnaActual + 1, filaActual) and DIRECTION.RIGHT != direccionOpuesta) then
+        direccionesValidas.append(DIRECTION.RIGHT)
     end
 
     return direccionesValidas
+end
+
+// =================================================================
+// Gestiona el temporizador y alterna los modos Chase/Scatter
+// =================================================================
+func UpdateGhostModeManager()
+    modeTimer++;
+
+    // Leemos la duración del array actual usando el índice [1]
+    var currentDuration = levelModePattern[currentModeIndex][1];
+
+    if (modeTimer >= currentDuration) then
+        currentModeIndex++;
+        if (currentModeIndex >= levelModePattern.size()) then
+            currentModeIndex = levelModePattern.size() - 1;
+        end
+
+        modeTimer = 0;
+        // Leemos el modo del array actual usando el índice [0]
+        GLOBAL_GHOST_STATE = levelModePattern[currentModeIndex][0];
+
+        // Invertimos la dirección de todos los fantasmas
+        foreach (var ghost in ghosts)
+            if (ghost.state != STATE.housed) then
+                ghost.reverseDirection();
+            end
+        end
+    end
+end
+
+// =================================================================
+//     Gestiona la salida de los fantasmas de la casa
+// =================================================================
+func UpdateGhostReleaseManager()
+    ghostReleaseTimer++;
+
+    // Liberación de Pinky
+    if (ghosts[GHOST.pinky].state == STATE.housed and dotsEatenCounter >= 7) then
+        ghosts[GHOST.pinky].state = STATE.chase;
+    end
+
+    // Liberación de Inky
+    if (ghosts[GHOST.inky].state == STATE.housed and dotsEatenCounter >= 17) then
+        ghosts[GHOST.inky].state = STATE.chase;
+    end
+
+    // Liberación de Clyde
+    if (ghosts[GHOST.clyde].state == STATE.housed and dotsEatenCounter >= 32) then
+        ghosts[GHOST.clyde].state = STATE.chase;
+    end
+
+    // Mecanismo de seguridad por tiempo para liberar al siguiente fantasma
+    // Suponiendo 25 FPS, 10 segundos son 250 frames.
+    if (ghostReleaseTimer > 10 * 25) then
+        foreach (var ghost in ghosts)
+            if (ghost.state == STATE.housed) then
+                ghost.state = STATE.chase;
+                ghostReleaseTimer = 0;
+                break;
+            end
+        end
+    end
+end
+
+// =================================================================
+//     Gestiona la duración del modo Frightened
+// =================================================================
+func UpdateFrightModeManager()
+    if (isFrightModeActive) then
+        frightModeTimer++;
+
+        // Si el tiempo se ha acabado
+        if (frightModeTimer >= FRIGHT_DURATION) then
+            isFrightModeActive = false;
+
+            // Los fantasmas que sigan asustados vuelven a su estado normal
+            foreach (var ghost in ghosts)
+                if (ghost.state == STATE.frighten) then
+                    ghost.state = GLOBAL_GHOST_STATE;
+                end
+            end
+        end
+    end
 end
 
 // ==================================================================
@@ -663,10 +866,10 @@ func StartGame()
     // Código para iniciar el juego
     println("Starting")
     PACMAN.reset()
-    StatusGame=GAME_STATE.playing
+    StatusGame = GAME_STATE.playing
     foreach (var ghost in ghosts)
-       ghost.active=true;
-   end
+        ghost.active = true;
+    end
 
     PACMAN.draw()
 end
@@ -675,41 +878,42 @@ end
 // Ejecuta la lógica del juego
 // =================================================================
 func PlayGame()
-    // 1. Actualizar y dibujar a los fantasmas
+    // 1. Actualizar el estado global de los fantasmas (Chase/Scatter)
+    UpdateGhostModeManager()
+    UpdateGhostReleaseManager()
+    UpdateFrightModeManager()
+    // 2. Actualizar y dibujar a los fantasmas
     foreach (var ghost in ghosts)
-        ghost.update()
-        ghost.draw()
+        ghost.update();
+        ghost.draw();
     end
 
-    // 2. Actualizar a Pac-Man
-    PACMAN.update() // Aquí dentro se comprueban colisiones y se cambia PACMAN.status
+    // 3. Actualizar a Pac-Man
+    PACMAN.update();
 
-    // 3. Comprobar si Pac-Man ha muerto en esta actualización
+    // 4. Comprobar si Pac-Man ha muerto
     if (PACMAN.status == STATE.dead) then
-        // Si ha muerto, simplemente cambiamos el estado del juego.
-        // La función LifeLost() se encargará de todo lo demás en el siguiente fotograma.
-        PlayerLives--
-        StatusGame = GAME_STATE.lifelost
-        println("Se ha perdido una vida. Vidas restantes: " + PlayerLives.string())
+        PlayerLives--;
+        StatusGame = GAME_STATE.lifelost;
+        println("Se ha perdido una vida. Vidas restantes: " + PlayerLives.toString());
     else
-        // Si Pac-Man no ha muerto, lo dibujamos normalmente.
-        PACMAN.draw()
+        PACMAN.draw();
     end
 end
 
 // Devuelve el centro exacto del pasillo para una celda.
 func GetCentroDeCelda(columna, fila)
-    // Usamos el offset visual de +3 que sabemos que se alinea con los puntos.
-    var x = X_MAPINI + columna * CELL_SIZE + 3
-    var y = Y_MAPINI + fila * CELL_SIZE + 3
-    return [x, y]
+    // Usamos el centro matemático real para que coincida con el pivote del sprite (4,4).
+    var x = X_MAPINI + columna * CELL_SIZE + (CELL_SIZE div 2)
+    var y = Y_MAPINI + fila * CELL_SIZE + (CELL_SIZE div 2)
+    return[x, y]
 end
 
 // Comprueba si el personaje está en el centro de una celda para poder girar.
 func EstaEnCentro(x, y)
     var celda = CoordenadasACelda(x, y)
     var centro = GetCentroDeCelda(celda[0], celda[1])
-    return (x == centro[0] and y == centro[1])
+    return(x == centro[0] and y == centro[1])
 end
 
 // =================================================================
@@ -731,10 +935,17 @@ func LifeLost()
             // Reseteamos el nivel para la siguiente vida.
             println("Animación de muerte terminada. Reiniciando nivel.")
 
+            // ----> AÑADIR ESTAS LÍNEAS DE RESETEO <----
+            dotsEatenCounter = 0;
+            ghostReleaseTimer = 0;
+            currentModeIndex = 0;
+            modeTimer = 0;
+            GLOBAL_GHOST_STATE = levelModePattern[0][0];
+
             // Usamos los métodos de reset de cada objeto para un reinicio limpio.
             PACMAN.reset()
 
-            foreach(var ghost in ghosts)
+            foreach (var ghost in ghosts)
                 ghost.reset()
             end
 
@@ -745,7 +956,7 @@ end
 
 func GameOver()
     // Paso 1: Dibujamos la pantalla de "Game Over".
-    draw.rect_fill(0, 0, VIEW_W, VIEW_H, 0x000000) // Ponemos un fondo negro para limpiar la pantalla.
+    //draw.fillRect(0, 0, VIEW_W, VIEW_H, 0)
 
     var textoGameOver = "GAME OVER"
     // Calculamos una posición aproximada para centrar el texto.
@@ -753,23 +964,36 @@ func GameOver()
     var textoX = (VIEW_W / 2) - (textoGameOver.size() * 4)
     var textoY = (VIEW_H / 2) - 8
 
-    draw.text(textoX, textoY, textoGameOver, 0xFF0000) // Dibujamos el texto en color rojo.
+    draw.text(textoX, textoY, textoGameOver, 0xFF0000)
 
     // Mostramos el resultado en pantalla.
     Display.update()
 
     // Paso 2: Esperamos unos segundos para que el jugador lo vea.
-    pause(4000) // Pausa de 4 segundos.
+    pause(4000)
 
     // Paso 3: Reiniciamos todas las variables para una partida nueva.
     println("Reiniciando el juego para una nueva partida...")
     PlayerLives = 3
     PlayerScore = 0
-    IniMap() // ¡Muy importante! Esto vuelve a generar todos los puntos en el mapa.
+    dotsEatenCounter = 0
+    // Resetea los sistemas de control de los fantasmas
+    ghostReleaseTimer = 0;
+    currentModeIndex = 0;
+    modeTimer = 0;
+    GLOBAL_GHOST_STATE = levelModePattern[0][0];
+
+    // Y lo más importante, resetea a cada fantasma individualmente
+    foreach (var ghost in ghosts)
+        ghost.reset()
+    end
+
+    IniMap()
 
     // Paso 4: Volvemos al estado inicial para que el juego comience de nuevo.
     StatusGame = GAME_STATE.start
 end
+
 
 // =================================================================
 // Update del Juego
@@ -777,37 +1001,61 @@ end
 func UpdateGame()
 
     switch (StatusGame)
-        case GAME_STATE.start : StartGame()
-        case GAME_STATE.playing : PlayGame()
-        case GAME_STATE.lifelost : LifeLost()
-        case GAME_STATE.gameover : GameOver()
-        default :
+        case GAME_STATE.start:    StartGame()
+        case GAME_STATE.playing:    PlayGame()
+        case GAME_STATE.lifelost:    LifeLost()
+        case GAME_STATE.gameover:    GameOver()
+        default:
     end
 
 end
+
 
 // =================================================================
 // Comprueba las colisiones del pacman con los fantasmas
 // =================================================================
 func CheckColisiones()
+    foreach (var ghost in ghosts)
+        if (abs(PACMAN.x - ghost.x) < 8 and abs(PACMAN.y - ghost.y) < 8) then
+            // --- Hay una colisión, ¿en qué estado está el fantasma? ---
+            if (ghost.state == STATE.frighten) then
+                // Pac-Man se come al fantasma
+                PlayerScore += 200;
+                ghost.state = STATE.housed;
+                // Ponemos su posición directamente en la casa para que no se quede atascado
+                var coordsCasa = CeldaACoordenadas(13, 14);
+                ghost.x = coordsCasa[0];
+                ghost.y = coordsCasa[1];
+            else
+                // El fantasma se come a Pac-Man
+                PACMAN.status = STATE.dead;
+                return true;
+            end
+        end
+    end
+    return false;
+end
+/*
+func CheckColisiones()
 
     foreach (var ghost in ghosts)
-        if (abs(PACMAN.x-ghost.x) < 5 and abs(PACMAN.y-ghost.y) < 5) then
-            PACMAN.dying=true;
+        if (abs(PACMAN.x - ghost.x) < 5 and abs(PACMAN.y - ghost.y) < 5) then
+            PACMAN.dying = true;
             return true;
         end
     end
 
     return false;
 end
+*/
 
 // ======================================================================
 // Verifica si una posicion en el mapa es valida
 // Solo se usa desde el PACMAN por lo que se puede analizar el quitarla
 // ======================================================================
 func EsPosicionValida(x, y)
-    var celda=CoordenadasACelda(x,y)
-    var columna =celda[0]
+    var celda = CoordenadasACelda(x, y)
+    var columna = celda[0]
     var fila = celda[1]
 
     // Verificar si la celda se encuentra dentro de los límites del laberinto
@@ -824,20 +1072,23 @@ end
 // Solo para Debug
 // =============================================================================
 func DrawGrid()
-    for (var y=0;y<32;y++)
-        draw.line(X_MAPINI, 16+Y_MAPINI+y* CELL_SIZE , X_MAPINI+VIEW_W+8  , 16+Y_MAPINI+y *CELL_SIZE , 0x444444 )
+    for (var y = 0;y < 32;y++)
+        draw.line(X_MAPINI, 16 + Y_MAPINI + y * CELL_SIZE, X_MAPINI + VIEW_W + 8, 16 + Y_MAPINI + y * CELL_SIZE, 0)
     end
-    for (var x=0;x<29;x++)
-        draw.line(X_MAPINI+x*CELL_SIZE , 16+Y_MAPINI , X_MAPINI+x*CELL_SIZE , 16+Y_MAPINI+VIEW_H, 0x444444)
+    for (var x = 0;x < 29;x++)
+        draw.line(X_MAPINI + x * CELL_SIZE, 16 + Y_MAPINI, X_MAPINI + x * CELL_SIZE, 16 + Y_MAPINI + VIEW_H, 0)
     end
 end
 
-func DrawHUD ()
-    draw.text(10,0,"Score: " ,0xffffff)
-    draw.text(80,0,PlayerScore.string() ,0xffffff)
-    draw.rect_fill(0,274,32,16,0x000000)
-    for (var a=0;a<PlayerLives-1;a++)
-        pacmanHud.pos=[a*16+2,274]
+func DrawHUD()
+    draw.text(10, 0, "Score: ", 0xffffff)
+    // Dibuja un rectángulo negro para borrar la puntuación anterior.
+    draw.fillRect(80, 0, 60, 9, 0)
+
+    draw.text(80, 0, PlayerScore.toString(), 0xffffff)
+    draw.fillRect(0, 274, 32, 16, 0)
+    for (var a = 0;a < PlayerLives - 1;a++)
+        pacmanHud.pos = [a * 16 + 2, 274]
         draw.sprite(pacmanHud)
     end
 end
@@ -860,14 +1111,14 @@ InitScreen()
 IniMap()
 pause(1000)
 
-var PACMAN=ObjPacMan()
+var PACMAN = ObjPacMan()
 
 
 var ghosts = [
-    ObjGhost(GHOST.blinky),
-    ObjGhost(GHOST.pinky),
-    ObjGhost(GHOST.inky),
-    ObjGhost(GHOST.clyde)
+ObjGhost(GHOST.blinky), 
+ObjGhost(GHOST.pinky), 
+ObjGhost(GHOST.inky), 
+ObjGhost(GHOST.clyde)
 ]
 
 
@@ -875,28 +1126,19 @@ foreach (var ghost in ghosts)
     ghost.draw()
 end
 
-println ("Memfree : ",memfree(),"  MemUsed : ",memuse());
-var timer0=clock();
-var newDirec=3
-for (var i = 0; i < 10000; i += 1)
+println("Memfree : ", memfree(), "  MemUsed : ", memuse());
+var timer0 = clock();
+var newDirec = 3
+for (var i = 0;i < 100000;i += 1)
 
     ProcessGameLogic()
-
-    // DrawGrid()
-    //var celda= CoordenadasACelda(PACMAN.x, PACMAN.y)
-    //draw.rect(celda[0]*CELL_SIZE ,  celda[1] *CELL_SIZE + 24,  CELL_SIZE , CELL_SIZE, 0xff0000)
-
-
-    //foreach(var ghost in ghosts)
-    //    celda = CoordenadasACelda(ghost.x, ghost.y)
-    //    draw.rect(celda[0]*CELL_SIZE , celda[1] *CELL_SIZE + 24,  CELL_SIZE , CELL_SIZE, 0xff0000)
-    //end
 
     Display.update()
     pause(FRAMEPAUSE)
 end
-println(DIRECTION.UP,"   ",DIRECTION.DOWN,"  ",DIRECTION.LEFT,"  ",DIRECTION.RIGHT)
-println ("Memfree : ",memfree(),"  MemUsed : ",memuse());
+println(DIRECTION.UP, "   ", DIRECTION.DOWN, "  ", DIRECTION.LEFT, "  ", DIRECTION.RIGHT)
+println("Memfree : ", memfree(), "  MemUsed : ", memuse());
 pause(3000)
 
 Display.close();
+
